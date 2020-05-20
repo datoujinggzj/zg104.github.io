@@ -17,7 +17,7 @@ So, I bet you might want to know:
 ### Education
 __[Georgetown University](https://www.georgetown.edu/) | Washington, D.C., USA__ <br/>
 <sup>_Mathemathics & Statistics Master Degree      &nbsp; &nbsp; &nbsp;      08/2018 - Present_</sup> <br/>
-<sub>**Relevant Courses:**</sub>
+**Relevant Courses:**
 - Stochastical Simulation
 - Data Mining in R
 - Deep Learning with TF 2.0
@@ -25,7 +25,7 @@ __[Georgetown University](https://www.georgetown.edu/) | Washington, D.C., USA__
 
 __[China Algricultural University](https://en.cau.edu.cn/) | Beijing, CHINA__  <br/>
 <sup>_Applied Mathematics Bachelor Degree  &nbsp; &nbsp; &nbsp;      08/2014 - 06/2018_</sup>  <br/>
-<sub>**Relevant Courses:**</sub>
+**Relevant Courses:**
 - Probability and Statistics
 - Numerical methods
 - Financial Mathematics
