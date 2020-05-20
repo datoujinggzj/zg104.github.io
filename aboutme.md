@@ -16,7 +16,6 @@ My name is **Zijing Gao**. I have the following qualities:
 
 #### [Georgetown University](https://www.georgetown.edu/) | Washington, D.C., USA
 Mathemathics & Statistics Master Degree      &nbsp; &nbsp; &nbsp;      08/2018 - Present
-
 - Stochastical Simulation
 - Data Mining in R
 - Deep Learning with TF 2.0
@@ -24,7 +23,6 @@ Mathemathics & Statistics Master Degree      &nbsp; &nbsp; &nbsp;      08/2018 -
 
 #### [China Algricultural University](https://en.cau.edu.cn/) | Beijing, CHINA
 Applied Mathematics Bachelor Degree  &nbsp; &nbsp; &nbsp;      08/2014 - 06/2018
-
 - Probability and Statistics
 - Numerical methods
 - Financial Mathematics
