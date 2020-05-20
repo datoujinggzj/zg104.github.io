@@ -16,9 +16,7 @@ So, I bet you might want to know:
 
 ### Education
 __[Georgetown University](https://www.georgetown.edu/) | Washington, D.C., USA__
-
 <sup>_Mathemathics & Statistics Master Degree      &nbsp; &nbsp; &nbsp;      08/2018 - Present_</sup> 
-
 <sub>**Relevant Courses:**</sub>
 - Stochastical Simulation
 - Data Mining in R
@@ -26,9 +24,7 @@ __[Georgetown University](https://www.georgetown.edu/) | Washington, D.C., USA__
 - Data Visualization in Python
 
 __[China Algricultural University](https://en.cau.edu.cn/) | Beijing, CHINA__ 
-
 <sup>_Applied Mathematics Bachelor Degree  &nbsp; &nbsp; &nbsp;      08/2014 - 06/2018_</sup> 
-
 <sub>**Relevant Courses:**</sub>
 - Probability and Statistics
 - Numerical methods
