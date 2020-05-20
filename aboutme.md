@@ -17,7 +17,7 @@ So, I bet you might want to know:
 ### Education
 [Georgetown University](https://www.georgetown.edu/) | Washington, D.C., USA <br/>
 <sub>_Mathemathics & Statistics Master Degree      &nbsp; &nbsp; &nbsp;      08/2018 - Present_</sub> <br/>
-Experiences
+**Experiences**
 - Served as a Research Assistant in MATH 642 (Machine Learning) mainly in the field of predictive analysis.
 - Served as a math tutor in the Math Assistance Center.
 
