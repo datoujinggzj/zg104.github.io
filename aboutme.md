@@ -17,15 +17,15 @@ So, I bet you might want to know:
 ### Education
 __[Georgetown University](https://www.georgetown.edu/) | Washington, D.C., USA__  \
 <sup>_Mathemathics & Statistics Master Degree      &nbsp; &nbsp; &nbsp;      08/2018 - Present_</sup>
-###### Relevant Courses:
+**Relevant Courses:**
 - Stochastical Simulation
 - Data Mining in R
 - Deep Learning with TF 2.0
 - Data Visualization in Python
 
 __[China Algricultural University](https://en.cau.edu.cn/) | Beijing, CHINA__ \
-^_Applied Mathematics Bachelor Degree  &nbsp; &nbsp; &nbsp;      08/2014 - 06/2018_^
-###### Relevant Courses:
+<sup>_Applied Mathematics Bachelor Degree  &nbsp; &nbsp; &nbsp;      08/2014 - 06/2018_</sup>
+**Relevant Courses:**
 - Probability and Statistics
 - Numerical methods
 - Financial Mathematics
