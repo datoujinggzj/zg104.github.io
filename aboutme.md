@@ -15,7 +15,7 @@ My name is **Zijing Gao**. I'd like to introduce myself briefly:
 So, I bet you might want to know:
 
 ### Education
-__[Georgetown University](https://www.georgetown.edu/) | Washington, D.C., USA__
+__[Georgetown University](https://www.georgetown.edu/) | Washington, D.C., USA__ <br/>
 <sup>_Mathemathics & Statistics Master Degree      &nbsp; &nbsp; &nbsp;      08/2018 - Present_</sup> 
 <sub>**Relevant Courses:**</sub>
 - Stochastical Simulation
