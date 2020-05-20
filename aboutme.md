@@ -12,23 +12,21 @@ My name is **Zijing Gao**. I have the following qualities:
 
 - Possessing strong technical skills rooted in substantial training as an engineer.
 
-__What else do you need?__
-
 ### Education
 
 #### [Georgetown University](https://www.georgetown.edu/) | Washington, D.C., USA
 __Mathemathics & Statistics Master Degree__        &nbsp; &nbsp; &nbsp;      08/2018 - Present
-- ##### Stochastical Simulation
-- ##### Data Mining in R
-- ##### Deep Learning with TF 2.0
-- ##### Data Visualization in Python
+- Stochastical Simulation
+- Data Mining in R
+- Deep Learning with TF 2.0
+- Data Visualization in Python
 
 #### [China Algricultural University](https://en.cau.edu.cn/) | Beijing, CHINA
 __Applied Mathematics Bachelor Degree__   &nbsp; &nbsp; &nbsp;      08/2014 - 06/2018
-- ##### Probability and Statistics
-- ##### Numerical methods
-- ##### Financial Mathematics
-- ##### Statistical Computing
+- Probability and Statistics
+- Numerical methods
+- Financial Mathematics
+- Statistical Computing
 
 ### Hard Skills
 - Programming languages (Python, R)
