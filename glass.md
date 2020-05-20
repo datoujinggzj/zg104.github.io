@@ -22,9 +22,10 @@ __The project overview:__ Constructed different machine learning methods to iden
 
 - Modeling: 
 
-![](image/lstm.png)
+![quad_chart](image/Zijing_Gao_quad_chart-642-1.png)
 
-Long Short Term Memory, usually just called "LSTMs" – are a special kind of RNN, capable of learning long-term dependencies. They were introduced by Hochreiter & Schmidhuber (1997), and were refined and popularized by many people in solving time series problems. Financial data is typically time series data, so I assume that LSTM may be a better choice than the traditional method, such as ARIMA. I constrcuted LSTM networks based on TensorFlow in Python, and spent much effort on the transformation of procecessed data. 
+There are many machine learning classification methods, such as logistic regression, Bayesian methods, Support Vector Machine (SVM), ensemble tree models, and neural networks. I am sort of a math guy that is particularly curious of how each model was derived. I assume that each methods has its own "secret" which is waiting for us to explore. <br/> So, I constructed unsupervised learning models, such as K-means clustering, Hierarchical clustering, and Self-Organized Maps for processing the unlabled data to detect the relationship among features and reduce the dimensionality. 
+
 
 - Evaluation: LSTM is also a kind of neural network, which can be hard to interpret. I utilized an attention-based LSTM neural network to predict the short term stock price trend, which gives me a relatively good result before parameter tuning. My proposed model is significantly better than the other machine learning models, with an adjusted R2 average of 0.95. As is known, parameter tuning is very time-counsuming when I use grid searching. There are many hyperparameters waiting for tuning, such as the number of epochs, the batch size, the number of neurons, and so on. 2000 years later, I finally imrpoved my model accuracy with a good fitting to my test set. However, I can imagine how unefficient I would be if I bump up into some real-life problems.
 
