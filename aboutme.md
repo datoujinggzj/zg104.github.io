@@ -1,13 +1,16 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: Why you'll need me.
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+My name is Zijing Gao. I have the following qualities:
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+- Thorough and meticulous Data Analyst passionate about helping businesses succeed.
+
+- Mathematics and Statistics program graduate with keenness in obtaining details.
+
+- Possessing strong technical skills rooted in substantial training as an engineer.
 
 What else do you need?
 
