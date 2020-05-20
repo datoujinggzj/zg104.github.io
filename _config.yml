@@ -1,7 +1,7 @@
 # --- Basic options --- #
 
 # Name of website
-title: Zijing Gao Website
+title: Zijing Gao
 # Short description of your site
 description: Thorough and meticulous Data Analyst passionate about helping businesses succeed.
 
@@ -12,6 +12,7 @@ author: Zijing Gao
 
 navbar-links:
   About Me: "aboutme"
+  Project: "Project"
   Resources:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Learn markdown: "https://www.markdowntutorial.com/"
