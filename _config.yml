@@ -12,7 +12,9 @@ author: Zijing Gao
 
 navbar-links:
   About Me: "aboutme"
-  Project: "Project"
+  Project: 
+    - Stock Prediction: "Project"
+    - Glass Identification: "glass"
   Resources:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Learn markdown: "https://www.markdowntutorial.com/"
