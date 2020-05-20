@@ -27,7 +27,9 @@ __[China Algricultural University](https://en.cau.edu.cn/) | Beijing, CHINA__  <
 - Served as a volunteer in organizing the campus robot contest.
 - Won the third-class scholarship.
 
-### Hard Skills
+### Skills
+
+#### Hard Skills
 - Programming languages (Python, R)
 - Machine Learning & Deep Learning
 - Relational Databases (PostgreSQL, MySQL)
@@ -35,7 +37,7 @@ __[China Algricultural University](https://en.cau.edu.cn/) | Beijing, CHINA__  <
 - Mathematics & Statistics
 - Cloud Computing (GCP,AWS)
 
-### Soft Skills
+#### Soft Skills
 - Logic and Analysis
 - Communication and Public Speaking
 - Clear Writing and Report Writing
