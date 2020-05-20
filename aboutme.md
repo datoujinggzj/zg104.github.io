@@ -16,12 +16,34 @@ __What else do you need?__
 
 ### Education
 
-#### [Georgetown University](https://www.georgetown.edu/) | Washington, D.C.
-__Mathemathics & Statistics Master Degress__        &nbsp; &nbsp; &nbsp;      08/2018 - Present
+#### [Georgetown University](https://www.georgetown.edu/) | Washington, D.C., USA
+__Mathemathics & Statistics Master Degree__        &nbsp; &nbsp; &nbsp;      08/2018 - Present
 - ##### Stochastical Simulation
 - ##### Data Mining in R
 - ##### Deep Learning with TF 2.0
 - ##### Data Visualization in Python
+
+#### [China Algricultural University](https://en.cau.edu.cn/) | Beijing, CHINA
+__Applied Mathematics Bachelor Degree__   &nbsp; &nbsp; &nbsp;      08/2014 - 06/2018
+- ##### Probability and Statistics
+- ##### Numerical methods
+- ##### Financial Mathematics
+- ##### Statistical Computing
+
+### Hard Skills
+- Programming languages (Python, R)
+- Machine Learning & Deep Learning
+- Relational Databases (PostgreSQL, MySQL)
+- Data Visualization Tools (Tableau, Looker)
+- Mathematics & Statistics
+- Cloud Computing (GCP,AWS)
+
+### Soft Skills
+- Logic and Analysis
+- Communication and Public Speaking
+- Clear Writing and Report Writing
+- Critical Thinking
+
 
 
 
