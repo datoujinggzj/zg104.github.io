@@ -4,7 +4,7 @@ title: About me
 subtitle: Why you'll need me.
 ---
 
-My name is Zijing Gao. I have the following qualities:
+My name is **Zijing Gao**. I have the following qualities:
 
 - Thorough and meticulous Data Analyst passionate about helping businesses succeed.
 
