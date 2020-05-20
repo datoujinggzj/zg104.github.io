@@ -16,7 +16,8 @@ So, I bet you might want to know:
 
 ### Education
 __[Georgetown University](https://www.georgetown.edu/) | Washington, D.C., USA__
-&nbsp;<sup>_Mathemathics & Statistics Master Degree      &nbsp; &nbsp; &nbsp;      08/2018 - Present_</sup> \
+&nbsp;
+<sup>_Mathemathics & Statistics Master Degree      &nbsp; &nbsp; &nbsp;      08/2018 - Present_</sup> \
 **Relevant Courses:**
 - Stochastical Simulation
 - Data Mining in R
