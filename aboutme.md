@@ -17,13 +17,11 @@ So, I bet you might want to know:
 ### Education
 [Georgetown University](https://www.georgetown.edu/) | Washington, D.C., USA <br/>
 <sub>_Mathemathics & Statistics Master Degree      &nbsp; &nbsp; &nbsp;      08/2018 - Present_</sub> <br/>
-**Experiences**
 - Served as a Research Assistant in MATH 642 (Machine Learning) mainly in the field of predictive analysis.
 - Served as a math tutor in the Math Assistance Center.
 
 [China Algricultural University](https://en.cau.edu.cn/) | Beijing, CHINA <br/>
 <sub>_Applied Mathematics Bachelor Degree  &nbsp; &nbsp; &nbsp;      08/2014 - 06/2018_</sub>  <br/>
-#### Experiences
 - Served as a volunteer in organizing the campus robot contest.
 - Won the third-class scholarship.
 
