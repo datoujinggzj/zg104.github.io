@@ -16,7 +16,7 @@ __What else do you need?__
 
 ### Education
 
-#### Georgetown University | Washington, D.C. ([Visit Georgetown University!](https://www.georgetown.edu/))
+#### [Georgetown University](https://www.georgetown.edu/) | Washington, D.C.
 - __Mathemathics & Statistics Master Degress__        &nbsp; &nbsp; &nbsp;      08/2018 - Present
 
 
