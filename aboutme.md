@@ -12,14 +12,12 @@ My name is **Zijing Gao**. I have the following qualities:
 
 - Possessing strong technical skills rooted in substantial training as an engineer.
 
-What else do you need?
+__What else do you need?__
 
 ### Education
 
 #### Georgetown University | Washington, D.C. ([Visit Georgetown University!](https://www.georgetown.edu/))
-- __Mathemathics & Statistics Master Degress
-- ##### 08/2018 - Present
-- ##### GPA: 3.89/4
+- __Mathemathics & Statistics Master Degress__               ##### 08/2018 - Present
 
 
 
