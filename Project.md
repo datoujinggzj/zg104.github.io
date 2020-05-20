@@ -23,7 +23,7 @@ data preprocessing, right? Even though I was not a big guy in programming, I tri
 
 - Modeling: 
 
-![lstm](https://github.com/zg104/Projects/blob/master/Deep%20Learning/lstm.png)
+![](Deep Learning/lstm.png)
 
 Long Short Term Memory, usually just called "LSTMs" – are a special kind of RNN, capable of learning long-term dependencies. They were introduced by Hochreiter & Schmidhuber (1997), and were refined and popularized by many people in solving time series problems. Financial data is typically time series data, so I assume that LSTM may be a better choice than the traditional method, such as ARIMA. I constrcuted LSTM networks based on TensorFlow in Python, and spent much effort on the transformation of procecessed data. 
 
