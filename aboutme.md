@@ -15,21 +15,19 @@ My name is **Zijing Gao**. I'd like to introduce myself briefly:
 So, I bet you might want to know:
 
 ### Education
-__[Georgetown University](https://www.georgetown.edu/) | Washington, D.C., USA__ <br/>
+[Georgetown University](https://www.georgetown.edu/) | Washington, D.C., USA <br/>
 <sub>_Mathemathics & Statistics Master Degree      &nbsp; &nbsp; &nbsp;      08/2018 - Present_</sub> <br/>
-#### Experiences
+__Experiences__
 - Served as a Research Assistant in MATH 642 (Machine Learning) mainly in the field of predictive analysis.
 - Served as a math tutor in the Math Assistance Center.
 
-__[China Algricultural University](https://en.cau.edu.cn/) | Beijing, CHINA__  <br/>
+[China Algricultural University](https://en.cau.edu.cn/) | Beijing, CHINA <br/>
 <sub>_Applied Mathematics Bachelor Degree  &nbsp; &nbsp; &nbsp;      08/2014 - 06/2018_</sub>  <br/>
 #### Experiences
 - Served as a volunteer in organizing the campus robot contest.
 - Won the third-class scholarship.
 
-### Skills
-
-#### Hard Skills
+### Hard Skills
 - Programming languages (Python, R)
 - Machine Learning & Deep Learning
 - Relational Databases (PostgreSQL, MySQL)
@@ -37,7 +35,7 @@ __[China Algricultural University](https://en.cau.edu.cn/) | Beijing, CHINA__  <
 - Mathematics & Statistics
 - Cloud Computing (GCP,AWS)
 
-#### Soft Skills
+### Soft Skills
 - Logic and Analysis
 - Communication and Public Speaking
 - Clear Writing and Report Writing
