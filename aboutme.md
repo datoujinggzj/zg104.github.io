@@ -17,19 +17,13 @@ So, I bet you might want to know:
 ### Education
 __[Georgetown University](https://www.georgetown.edu/) | Washington, D.C., USA__ <br/>
 <sup>_Mathemathics & Statistics Master Degree      &nbsp; &nbsp; &nbsp;      08/2018 - Present_</sup> <br/>
-**Relevant Courses:** <br/>
-- Stochastical Simulation
-- Data Mining in R
-- Deep Learning with TF 2.0
-- Data Visualization in Python
+- Served as a research assistant in MATH 642 (Machine Learning) mainly in the field of predictive analysis.
+- Served as a math tutor in math assistance center.
 
 __[China Algricultural University](https://en.cau.edu.cn/) | Beijing, CHINA__  <br/>
 <sup>_Applied Mathematics Bachelor Degree  &nbsp; &nbsp; &nbsp;      08/2014 - 06/2018_</sup>  <br/>
-**Relevant Courses:** <br/>
-- Probability and Statistics
-- Numerical methods
-- Financial Mathematics
-- Statistical Computing
+- Served as a volunteer in organizing the campus robot contest.
+- Won the third-class scholarship 
 
 ### Hard Skills
 - Programming languages (Python, R)
