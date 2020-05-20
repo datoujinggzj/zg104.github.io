@@ -14,7 +14,7 @@ This page contains details about projects that I have worked on. In order to hel
 
 ### Google Stock Price Prediction in Deep Learning
 
-(Stock Price Prediction)[] by Zijing Gao.
+(Stock Price Prediction)[https://github.com/zg104/Projects/blob/master/Deep%20Learning/RNN%20project.ipynb] by Zijing Gao.
 
 __The project overview:__ Utilized an attention-based LSTM neural network to predict the Google stock price.
 
