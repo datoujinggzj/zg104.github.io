@@ -16,7 +16,9 @@ navbar-links:
     - Stock Prediction: "Project"
     - Glass Identification: "glass"
     - Deep Learning: "deeplearning"
-  Resume: "resume"
+  Resume: 
+    - English: "EnglishCV"
+    - Chinese: "ChineseCV"
   Resources:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Learn markdown: "https://www.markdowntutorial.com/"
