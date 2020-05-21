@@ -15,6 +15,8 @@ navbar-links:
   Project: 
     - Stock Prediction: "Project"
     - Glass Identification: "glass"
+    - Deep Learning: "deeplearning"
+  Resume: "resume"
   Resources:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Learn markdown: "https://www.markdowntutorial.com/"
