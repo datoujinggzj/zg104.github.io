@@ -21,6 +21,10 @@ This page contains details about projects that I have worked on. In order to hel
 __The project overview:__ Constructed the TensorFlow framework to establish a multiple hidden-layer CNN model for animal image recognition.
 
 - **Data Preprocessing:** I collected a bunch of animal images, especially for dogs and cats, since they are pretty much the same and hard to distinguish. I always call my cat "Nian Nian", which means "I miss you!", and it looks like a cute dog sometimes. I know exactly CNN is greedy, since it needs a ton of data to feed. I almost collected 10,000 more images in all, and I was planing to feed the image of "Nian Nian" as a single test sample into the model to see what would happen! <br/> I utilized ImageDataGenerator based on Keras in Python to rescale and transform the images for processing. 
+ 
+You might want to know how cute he is!
+
+![](image/nian.jpg)
 
 - **Modeling:** As is known, CNN is different from the traditional deep neural network where extra processed are applied before we feed the data into neural networks. I created 3 by 3 feature detector matrix for filtering in each convoluntion layer. Then, I conducted paddling, pooling, and fully connected layers to squad and flatten the multidimensional data after several iterations of the previous steps.
 
