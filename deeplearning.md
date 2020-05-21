@@ -14,7 +14,7 @@ This page contains details about projects that I have worked on. In order to hel
 
 ### Animal Image Recognization in Deep Learning
 
-![](image/LSTM_2.png)
+![](image/cnn.png)
 
 [Animal Image Recognization](https://github.com/zg104/Projects/blob/master/Deep%20Learning/cnn.py) by Zijing Gao.
 
