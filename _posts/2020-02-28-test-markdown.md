@@ -114,6 +114,7 @@ I am not saying we should go back to where we start. A lot of machine learning a
 
 However, we should understand each method to develop and utilize it into real application.
 
+
 ## It is your turn!
 
 {: .box-note}
@@ -133,7 +134,7 @@ However, we should understand each method to develop and utilize it into real ap
    - Also, linear regression is sensitive to the outliers. However, the sigmoid function restrict the values between 0 and 1, which can be interpreted as the conditional probability of assigning the data to the particular class given the data parametrized by theta.
 
     <p align="center">
-        <img src="https://static.javatpoint.com/tutorial/machine-learning/images/linear-regression-vs-logistic-regression.png" width="800" height="310">
+        <img src="https://static.javatpoint.com/tutorial/machine-learning/images/linear-regression-vs-logistic-regression.png" width="800" height="300">
     </p>
 
 
