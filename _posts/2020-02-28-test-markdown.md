@@ -1,16 +1,21 @@
 ---
 layout: post
-title: Sample blog post
-subtitle: Each post also has a subtitle
-gh-repo: daattali/beautiful-jekyll
+title: Mathematics or Statistics
+subtitle: Which do you think is more important for being a data scientist
+gh-repo: zg104
 gh-badge: [star, fork, follow]
 tags: [test]
 comments: true
 ---
 
-This is a demo post to show you how to write blog posts with markdown.  I strongly encourage you to [take 5 minutes to learn how to write in markdown](https://markdowntutorial.com/) - it'll teach you how to transform regular text into bold/italics/headings/tables/etc.
+Let me take a brief introduction of myself!
 
-**Here is some bold text**
+I am currently a graduate student in Georgetown University, majoring in Matheatics & Statistics.
+Don't think I am a boring person though lots of people of this major probably are. I love reclining, drinking a cup of my favorite coffee and let the time pass by quietly. That is why I have adequate space and time to free myself from study.
+
+**Here, you might want to know how terrible math can be if you are not that guy.**
+
+
 
 ## Here is a secondary heading
 
