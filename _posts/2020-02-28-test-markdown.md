@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mathematics or Statistics in basic logistic regression
+title: Mathematics Versus Statistics in basic logistic regression
 subtitle: Which do you think is more important?
 ---
 
