@@ -114,18 +114,17 @@ I am not saying we should go back to where we start. A lot of machine learning a
 
 However, we should understand each method to develop and utilize it into real application.
 
-## Here, I have some questions for you.
+## It is your turn!
 
 {: .box-note}
-**Questions:** 
+**I have some questions for you:**
 1.  Why we use logistic regression, not linear regression? Why are the disadvantages of linear regression for classification? 
 2.  What type of datasets is most suited for logistic regression? 
 3.  Can you explain or interpret the hypothesis output of logistic regression?
 4.  Why we define the sigmoid function, create a new version of cost function, and applied MLE to derive logistic regression? 
 5.  How to deal with overfitting?  
-6.  What are the disadvantage of logistic regression?
+6.  What are the disadvantage of logistic regression? 
 
-## My answers
 
 {: .box-warning}
 **My answers:**
@@ -164,4 +163,4 @@ However, we should understand each method to develop and utilize it into real ap
    
 ## Conclusion 
 
-__Mathematics and statistics are just like twins that Nobody is able to completly separate. So, let this be a reminder for us all to always remember that it is extremely important and necessary to truly understand the mathematical backgroud of every machine learning algorithm as much as possible.__
+__Mathematics and statistics are just like twins that Nobody is able to completly separate. <br/> So, let this be a reminder for us all to always remember that it is extremely important and necessary to truly understand the mathematical backgroud of every machine learning algorithm as much as possible.__
