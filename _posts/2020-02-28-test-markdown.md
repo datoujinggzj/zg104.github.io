@@ -33,7 +33,7 @@ Obviously, we classify people that are taller and heavier as "Male". So, we try 
 
 If you are a Python guy, you definitely will write:
 
-```Python
+```python
 from sklearn.linear_model import LogisticRegression
 logmodel = LogisticRegression()
 logmodel.fit(X_train,y_train)  # Suppose we have splited the data into traing, test set.
@@ -58,7 +58,7 @@ I seems that just 3 or 4 lines of code will give you want you want. You do not s
 
 Now, let us taste the version using plain Python without machine learning packages from [Kaggle](https://www.kaggle.com/jeppbautista/logistic-regression-from-scratch-python).
 
-```Python
+```python
 # prepare the data
 import numpy as np
 X = np.c_[np.ones((X.shape[0], 1)), X]
@@ -118,24 +118,24 @@ However, we should understand each method to develop and utilize it into real ap
 
 {: .box-note}
 **Questions:** 
-1.  Why we use logistic regression, not linear regression? Why are the disadvantages of linear regression for classification? <br/>
-2.  What type of datasets is most suited for logistic regression? <br/>
-3.  Can you explain or interpret the hypothesis output of logistic regression? <br/>
-4.  Why we define the sigmoid function, create a new version of cost function, and applied MLE to derive logistic regression? <br/>
-5.  How to deal with overfitting?  <br/>
-6.  What are the disadvantage of logistic regression? <br/>
+1.  Why we use logistic regression, not linear regression? Why are the disadvantages of linear regression for classification? 
+2.  What type of datasets is most suited for logistic regression? 
+3.  Can you explain or interpret the hypothesis output of logistic regression?
+4.  Why we define the sigmoid function, create a new version of cost function, and applied MLE to derive logistic regression? 
+5.  How to deal with overfitting?  
+6.  What are the disadvantage of logistic regression?
 
 ## My answers
 
-{: .box-warning
+{: .box-warning}
 **My answers:**
 
-1. [Example](#example)  - Linear regression can give us the values which are not between 0 and 1. 
+1. - Linear regression can give us the values which are not between 0 and 1. 
    - Also, linear regression is sensitive to the outliers. However, the sigmoid function restrict the values between 0 and 1, which can be interpreted as the conditional probability of assigning the data to the particular class given the data parametrized by theta.
 
-<p align="center">
-    <img src="https://static.javatpoint.com/tutorial/machine-learning/images/linear-regression-vs-logistic-regression.png" width="800" height="350">
-</p>
+    <p align="center">
+        <img src="https://static.javatpoint.com/tutorial/machine-learning/images/linear-regression-vs-logistic-regression.png" width="800" height="350">
+    </p>
 
 
 
@@ -152,15 +152,15 @@ However, we should understand each method to develop and utilize it into real ap
 5. - It can be pretty easy for every machine learning method to be overfitting. It is not a big deal!
    - A regularization term is added to the cost function where the first part is loss function, and the second is the penalty term.
 
-<p align="center">
-    <img src="https://miro.medium.com/max/3232/1*vwhvjVQiEgLcssUPX6vxig.png" width="700" height="400">
-</p>
+    <p align="center">
+        <img src="https://miro.medium.com/max/3232/1*vwhvjVQiEgLcssUPX6vxig.png" width="700" height="400">
+    </p>
 
 
 6. - You should use k-fold cross validation to determine the highest polynomial of the features if the decision boundary is non-linear. It can be easy for this to overfit.
    - Logistic regression is unstable when dealing with well separated datasets.
    - Logistic regression requires relatively large datasets for training.
-   - Logistic regression is not that popular for multiclassification problems. Sigmoid function should be ungraded to Softmax function(You may hear about it if you know about Neural Networks).}
+   - Logistic regression is not that popular for multiclassification problems. Sigmoid function should be ungraded to Softmax function(You may hear about it if you know about Neural Networks).
    
 ## Conclusion 
 
