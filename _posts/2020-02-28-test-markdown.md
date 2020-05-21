@@ -110,12 +110,19 @@ However, we should understand each method to develop and utilize it into real ap
 
 ### Here, I have some questions for you.
 {: .box-note}
-**Note:** 
+**Questions:** 
+1. Why we use logistic regression, not linear regression? Why are the disadvantages of linear regression for classification?
+2. What type of datasets is most suited for logistic regression?
+3. Can you explain or interpret the hypothesis output of logistic regression?
+4. Why we define the sigmoid function, create a new version of cost function, and applied MLE to derive logistic regression?
+5. How to deal with overfitting?
+6. What are the disadvantage of logistic regression?
 
 ### Warning
 
 {: .box-warning}
-**Warning:** This is a warning box.
+**My answers:**
+1. Linear regression can give us the values which are not between 0 and 1. 
 
 ### Error
 
