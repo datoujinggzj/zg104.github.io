@@ -20,7 +20,8 @@ navbar-links:
     - English: "EnglishCV"
     - Chinese: "ChineseCV"
   Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
+    - Machine Learning: "https://www.youtube.com/watch?v=PPLop4L2eGk&list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN&index=2&t=0s"
+    - Learn Deep Learning: "https://www.superdatascience.com/pages/deep-learning"
     - Learn markdown: "https://www.markdowntutorial.com/"
   Author's home: "https://deanattali.com"
 
