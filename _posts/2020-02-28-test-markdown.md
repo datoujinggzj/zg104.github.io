@@ -118,19 +118,19 @@ However, we should understand each method to develop and utilize it into real ap
 
 {: .box-note}
 **Questions:** 
-1. Why we use logistic regression, not linear regression? Why are the disadvantages of linear regression for classification?
-2. What type of datasets is most suited for logistic regression?
-3. Can you explain or interpret the hypothesis output of logistic regression?
-4. Why we define the sigmoid function, create a new version of cost function, and applied MLE to derive logistic regression?
-5. How to deal with overfitting?
-6. What are the disadvantage of logistic regression?
+1.  Why we use logistic regression, not linear regression? Why are the disadvantages of linear regression for classification? <br/>
+2.  What type of datasets is most suited for logistic regression? <br/>
+3.  Can you explain or interpret the hypothesis output of logistic regression? <br/>
+4.  Why we define the sigmoid function, create a new version of cost function, and applied MLE to derive logistic regression? <br/>
+5.  How to deal with overfitting?  <br/>
+6.  What are the disadvantage of logistic regression? <br/>
 
 ## My answers
 
-{: .box-warning}
+{: .box-warning
 **My answers:**
 
-1. - Linear regression can give us the values which are not between 0 and 1. 
+1. [Example](#example)  - Linear regression can give us the values which are not between 0 and 1. 
    - Also, linear regression is sensitive to the outliers. However, the sigmoid function restrict the values between 0 and 1, which can be interpreted as the conditional probability of assigning the data to the particular class given the data parametrized by theta.
 
 <p align="center">
@@ -160,7 +160,7 @@ However, we should understand each method to develop and utilize it into real ap
 6. - You should use k-fold cross validation to determine the highest polynomial of the features if the decision boundary is non-linear. It can be easy for this to overfit.
    - Logistic regression is unstable when dealing with well separated datasets.
    - Logistic regression requires relatively large datasets for training.
-   - Logistic regression is not that popular for multiclassification problems. Sigmoid function should be ungraded to Softmax function(You may hear about it if you know about Neural Networks).
+   - Logistic regression is not that popular for multiclassification problems. Sigmoid function should be ungraded to Softmax function(You may hear about it if you know about Neural Networks).}
    
 ## Conclusion 
 
