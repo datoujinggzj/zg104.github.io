@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Projects
-subtitle: That's where I squeeze time from socialization.
+title: Predictive Analysis
+subtitle: I predict I will be rich.
 ---
 
 ### How have I organized this page?
