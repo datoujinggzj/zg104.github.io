@@ -125,21 +125,24 @@ However, we should understand each method to develop and utilize it into real ap
 5. How to deal with overfitting?
 6. What are the disadvantage of logistic regression?
 
+## My answers
 
 {: .box-warning}
 **My answers:**
 
-1. Linear regression can give us the values which are not between 0 and 1. Also, linear regression is sensitive to the outliers.
-However, the sigmoid function restrict the values between 0 and 1, which can be interpreted as the conditional probability of assigning the data to the particular class given the data parametrized by theta.
+1. - Linear regression can give us the values which are not between 0 and 1. 
+   - Also, linear regression is sensitive to the outliers. However, the sigmoid function restrict the values between 0 and 1, which can be interpreted as the conditional probability of assigning the data to the particular class given the data parametrized by theta.
 
 <p align="center">
     <img src="https://github.com/zg104/zg104.github.io/blob/master/image/loglin.png" width="500" height="350">
 </p>
 
 
-2. Logistic regression likes overlapping data, instead of well separated data. Linear Discriminent Analysis will perform better for well separated data since the decision boundary is linear.
+2. - Logistic regression likes overlapping data, instead of well separated data.  
+   - Linear Discriminent Analysis will perform better for well separated data since the decision boundary is linear.
 
-3. We try to set a threshold to determine which class each data point should be assigned based on the conditional probability (I have clarified in Q1) derived from the sigmoid function. Typically, we set the threshold to be 0.5. However, it can be adjusted between 0 and 1 for personal specification, such as restriction on TPR (True Positive Rate). 
+3. - We try to set a threshold to determine which class each data point should be assigned based on the conditional probability (I have clarified in Q1) derived from the sigmoid function. 
+   - Typically, we set the threshold to be 0.5. However, it can be adjusted between 0 and 1 for personal specification, such as restriction on TPR (True Positive Rate). 
 
 4. - Sigmoid function helps transform the linear esitimation into non-linear one. 
    - If we use the mean squared error as the cost function the same as linear regression, it is impossible to find the derivatives of the cost function with respect to theta, since the sigmoid function will make the cost function non-convex. So, we have to use gradient descent to minimize the cost function instead of computing the gradient by hand.
