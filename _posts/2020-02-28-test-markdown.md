@@ -11,8 +11,6 @@ Don't think I am a boring person though lots of people of this major probably ar
 
 **Here, you might want to know how terrible math can be**
 
-![](https://github.com/zg104/zg104.github.io/blob/master/image/l2-term.png)
-
 Let's just take the most basic machine learning classification method - Logistic Regression for example. You maybe very familier with it if you are assigned to solve an easy binary classification problem. Given a dataset heading like this, what would you do?
 
 | id | Height(cm) | Weight(kg) | Gender |
@@ -138,9 +136,13 @@ However, the sigmoid function restrict the values between 0 and 1, which can be 
    - If we use the mean squared error as the cost function the same as linear regression, it is impossible to find the derivatives of the cost function with respect to theta, since the sigmoid function will make the cost function non-convex. So, we have to use gradient descent to minimize the cost function instead of computing the gradient by hand.
    - You might wonder why the cost function of logistic regression is like [this!](https://towardsdatascience.com/optimization-loss-function-under-the-hood-part-ii-d20a239cde11) That is beacuse we applied the MLE to maximize the probability to make the model the most plausible for all data points. You always minimize the loss function, which is just the negative form of the loglikelihood after MLE.
 
-5. It can be pretty easy for every machine learning method to be overfitting. It is not a big deal! <br/> A regularization term is added to the cost function where the first part is loss function, and the second is the penalty term. 
+5. It can be pretty easy for every machine learning method to be overfitting. It is not a big deal! <br/> A regularization term is added to the cost function where the first part is loss function, and the second is the penalty term.
 
-### Error
+<p align="center">
+    <img src="https://github.com/zg104/zg104.github.io/blob/master/image/l2-term.png">
+</p>
 
-{: .box-error}
-**Error:** This is an error box.
+6. - You should use k-fold cross validation to determine the highest polynomial of the features if the decision boundary is non-linear. It can be easy for this to overfit.
+   - Logistic regression is unstable when dealing with well separated datasets.
+   - Logistic regression requires relatively large datasets for training.
+   - Logistic regression is not that popular for multiclassification problems. Sigmoid function should be ungraded to Softmax function(You may hear about it if you know about Neural Networks).
