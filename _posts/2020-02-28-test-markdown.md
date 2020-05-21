@@ -33,7 +33,7 @@ Obviously, we classify people that are taller and heavier as "Male". So, we try 
 
 If you are a Python guy, you definitely will write:
 
-```python
+```ruby
 from sklearn.linear_model import LogisticRegression
 logmodel = LogisticRegression()
 logmodel.fit(X_train,y_train)  # Suppose we have splited the data into traing, test set.
@@ -134,7 +134,7 @@ However, we should understand each method to develop and utilize it into real ap
    - Also, linear regression is sensitive to the outliers. However, the sigmoid function restrict the values between 0 and 1, which can be interpreted as the conditional probability of assigning the data to the particular class given the data parametrized by theta.
 
     <p align="center">
-        <img src="https://static.javatpoint.com/tutorial/machine-learning/images/linear-regression-vs-logistic-regression.png" width="800" height="350">
+        <img src="https://static.javatpoint.com/tutorial/machine-learning/images/linear-regression-vs-logistic-regression.png" width="800" height="310">
     </p>
 
 
