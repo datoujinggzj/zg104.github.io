@@ -33,7 +33,7 @@ Obviously, we classify people that are taller and heavier as "Male". So, we try 
 
 If you are a Python guy, you definitely will write:
 
-```python
+```Python
 from sklearn.linear_model import LogisticRegression
 logmodel = LogisticRegression()
 logmodel.fit(X_train,y_train)  # Suppose we have splited the data into traing, test set.
@@ -58,7 +58,7 @@ I seems that just 3 or 4 lines of code will give you want you want. You do not s
 
 Now, let us taste the version using plain Python without machine learning packages from [Kaggle](https://www.kaggle.com/jeppbautista/logistic-regression-from-scratch-python).
 
-```python
+```Python
 # prepare the data
 import numpy as np
 X = np.c_[np.ones((X.shape[0], 1)), X]
@@ -138,6 +138,9 @@ However, we should understand each method to develop and utilize it into real ap
 </p>
 
 
+![](image/loglin.png)
+
+
 2. - Logistic regression likes overlapping data, instead of well separated data.  
    - Linear Discriminent Analysis will perform better for well separated data since the decision boundary is linear.
 
@@ -153,6 +156,8 @@ However, we should understand each method to develop and utilize it into real ap
 <p align="center">
     <img src="https://github.com/zg104/zg104.github.io/blob/master/image/l2-term.png">
 </p>
+
+![](image/l2-term.png)
 
 6. - You should use k-fold cross validation to determine the highest polynomial of the features if the decision boundary is non-linear. It can be easy for this to overfit.
    - Logistic regression is unstable when dealing with well separated datasets.
