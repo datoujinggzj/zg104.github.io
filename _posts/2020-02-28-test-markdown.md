@@ -9,7 +9,13 @@ Let me take a brief introduction of myself!
 I am currently a graduate student in Georgetown University, majoring in Matheatics & Statistics.
 Don't think I am a boring person though lots of people of this major probably are. I love reclining, drinking a cup of my favorite coffee and let the time pass by quietly. That is why I have adequate space and time to free myself from study.
 
-**Here, you might want to know how terrible math can be**
+## Get started
+
+**Here, you might want to know how much mathematics is included in logistic regression**
+
+<p align="center">
+    <img src="https://saedsayad.com/images/LogReg_1.png" width="600" height="400">
+</p>
 
 Let's just take the most basic machine learning classification method - Logistic Regression for example. You maybe very familier with it if you are assigned to solve an easy binary classification problem. Given a dataset heading like this, what would you do?
 
@@ -22,6 +28,8 @@ Let's just take the most basic machine learning classification method - Logistic
 | 5 | 157 | 43 | Female |
 
 Obviously, we classify people that are taller and heavier as "Male". So, we try to teach the machine to do this, either.
+
+## Programming
 
 If you are a Python guy, you definitely will write:
 
@@ -106,7 +114,8 @@ I am not saying we should go back to where we start. A lot of machine learning a
 
 However, we should understand each method to develop and utilize it into real application.
 
-### Here, I have some questions for you.
+## Here, I have some questions for you.
+
 {: .box-note}
 **Questions:** 
 1. Why we use logistic regression, not linear regression? Why are the disadvantages of linear regression for classification?
@@ -116,7 +125,6 @@ However, we should understand each method to develop and utilize it into real ap
 5. How to deal with overfitting?
 6. What are the disadvantage of logistic regression?
 
-### Warning
 
 {: .box-warning}
 **My answers:**
@@ -127,6 +135,7 @@ However, the sigmoid function restrict the values between 0 and 1, which can be 
 <p align="center">
     <img src="https://github.com/zg104/zg104.github.io/blob/master/image/loglin.png" width="500" height="350">
 </p>
+
 
 2. Logistic regression likes overlapping data, instead of well separated data. Linear Discriminent Analysis will perform better for well separated data since the decision boundary is linear.
 
@@ -146,3 +155,7 @@ However, the sigmoid function restrict the values between 0 and 1, which can be 
    - Logistic regression is unstable when dealing with well separated datasets.
    - Logistic regression requires relatively large datasets for training.
    - Logistic regression is not that popular for multiclassification problems. Sigmoid function should be ungraded to Softmax function(You may hear about it if you know about Neural Networks).
+   
+## Conclusion 
+
+Mathematics and statistics are just like twins that Nobody is able to completly separate. So, let this be a reminder for us all to always remember that it is extremely important and necessary to truly understand the mathematical backgroud of every machine learning algorithm as much as possible.
