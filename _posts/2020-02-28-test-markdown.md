@@ -2,10 +2,6 @@
 layout: post
 title: Mathematics or Statistics
 subtitle: Which do you think is more important for being a data scientist
-gh-repo: zg104
-gh-badge: [star, fork, follow]
-tags: [test]
-comments: true
 ---
 
 Let me take a brief introduction of myself!
@@ -15,7 +11,7 @@ Don't think I am a boring person though lots of people of this major probably ar
 
 **Here, you might want to know how terrible math can be if you are not that guy.**
 
-
+![](image/logit.png)
 
 ## Here is a secondary heading
 
