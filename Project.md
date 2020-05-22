@@ -2,6 +2,7 @@
 layout: page
 title: Stock Prediction
 subtitle: I predict I will be rich.
+cover-img: image/cover4.jpg
 ---
 
 ### How have I organized this page?
@@ -39,9 +40,13 @@ Financial data is full of stochastical uncertainty, just like the wind that we n
 
 ### Coding
 
-#### XGBoost
+#### XGBoost & LSTM
 
 ```python 
+###############################
+# Stock Prediction in XGBoost #
+###############################
+
 import math
 import matplotlib
 import numpy as np
@@ -231,11 +236,8 @@ ax = est_df.plot(x='date', y='est', style='r-', grid=True, ax=ax)
 ax.legend(['train', 'validation', 'test', 'predictions'])
 ax.set_xlabel("date")
 ax.set_ylabel("USD")
-```
 
-#### LSTM
 
-```ruby
 ############################
 # Stock Prediction in LSTM #
 ############################
