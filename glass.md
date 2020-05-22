@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Classification 
-subtitle: How am I classified?
+title: Glass Identification
+subtitle: Determining the type of glass based on glass fragments. 
 ---
 
 ### How have I organized this page?
