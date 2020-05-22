@@ -2,7 +2,7 @@
 layout: page
 title: Glass Identification
 subtitle: Determining the type of glass based on glass fragments. 
-cover-img: image/cover4.jpg
+cover-img: image/cover7.jpg
 ---
 
 ### How have I organized this page?
