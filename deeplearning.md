@@ -2,7 +2,7 @@
 layout: page
 title: Deep Learning
 subtitle: How deep is your love?
-cover-img: image/cover2.jpg
+cover-img: image/cover3.jpg
 ---
 
 ### How have I organized this page?
