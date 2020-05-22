@@ -4,7 +4,7 @@ title: Resume
 subtitle: You want me!
 ---
 
-![](image/Zijing's Resume-1.png)
+![](image/resume_english.png)
 
 __You might want to know more about me! Here it is.__
 
