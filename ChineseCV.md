@@ -2,6 +2,7 @@
 layout: page
 title: Resume
 subtitle: You want me!
+cover-img: image/cover12.jpg
 ---
 
 ![](image/resume_chinese-1.png)
