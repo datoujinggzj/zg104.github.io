@@ -2,7 +2,7 @@
 layout: page
 title: Stock Prediction
 subtitle: I predict I will be rich.
-cover-img: image/cover6.jpg
+cover-img: image/cover8.jpg
 ---
 
 ### How have I organized this page?
