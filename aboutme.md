@@ -2,6 +2,7 @@
 layout: page
 title: About me
 subtitle: Why you'll need me.
+cover-img: image/cover10.jpg
 ---
 
 My name is **Zijing Gao**. I'd like to introduce myself briefly:
