@@ -16,7 +16,7 @@ Don't think I am a boring person though lots of people of this major probably ar
 **Here, you might want to know how much mathematics is included in logistic regression**
 
 <p align="center">
-    <img src="https://saedsayad.com/images/LogReg_1.png" width="600" height="400">
+    <img src="https://saedsayad.com/images/LogReg_1.png" width="600" height="370">
 </p>
 
 Let's just take the most basic machine learning classification method - Logistic Regression for example. You may be very familier with it if you are assigned to solve an easy binary classification problem. Given a dataset heading like this, what would you do?
