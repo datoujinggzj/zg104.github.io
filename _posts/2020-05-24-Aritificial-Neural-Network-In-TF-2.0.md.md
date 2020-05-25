@@ -6,6 +6,10 @@ cover-img: image/cover14.jpeg
 tags: [books, test]
 ---
 
+## Digit Recognition in Deep Learning
+
+To make machines more intelligent, the developers are diving into machine learning and deep learning techniques. A human learns to perform a task by practicing and repeating it again and again so that it memorizes how to perform the tasks. Then the neurons in his brain automatically trigger and they can quickly perform the task they have learned. Deep learning is also very similar to this. It uses different types of neural network architectures for different types of problems. For example – object recognition, image and sound classification, object detection, image segmentation, etc.
+
 
 ![](https://www.digitalvidya.com/wp-content/uploads/2019/01/Image-1-2.png)
 
@@ -18,7 +22,7 @@ As Tom Golway said:
 
 [Deep Learning](https://en.wikipedia.org/wiki/Deep_learning) is the most powerful branch of Machine Learning. It's a technique that instructs your computer to do what comes naturally to humans: learn by example. Deep learning is a critical technology behind driverless cars, enabling them to recognize a stop sign or to distinguish a pedestrian from a lamppost. It is the key to voice control in consumer devices like phones, tablets, TVs, and hands-free speakers. Deep learning is getting lots of attention lately and for good reason. It’s achieving results that were not possible before.
 
-## Neural Networks versus traditional ML methods
+## Neural Networks vs. Traditional ML Algorithms
 
 As is known, deep learning is basically deep neural networks which contains multiple hidden layers composed of a great many hidden units. That is where "deep" comes from. So, what is the difference between Neural Networks and traditional machine learning methods?
 
@@ -61,9 +65,9 @@ A fully connected neural network like that will result in extremely large comput
 
 But, TensorFlow 2.0 get us out of this justing using several lines of codes. Amazing!
 
-## ANN for Digit Recognition TF 2.0
+## ANN for Digit Recognition in TF 2.0
 
-### Recap of the steps
+### Steps
 
 1. Load in the data
     - MNIST dataset
@@ -81,7 +85,7 @@ But, TensorFlow 2.0 get us out of this justing using several lines of codes. Ama
  
 ### Programming 
 
-Let's get straight into the Python code!
+__Why not get straight into the Python code?__
 
 ```python
 ###################################
@@ -199,39 +203,39 @@ Here is the evaluation results:
 
 - Accuracy curve
 
-<p align="center">
-  <img src="/image/accuracy.png">
-</p>
+  <p align="center">
+    <img src="/image/accuracy.png">
+  </p>
 
-The classification accuracy from both the training set and test set is reaching 99% after 10 epochs training. Awesome!
+  The classification accuracy from both the training set and test set is reaching 99% after 10 epochs training. Awesome!
 
 - Confusion Matrix
 
-<p align="center">
-  <img src="/image/confusionm.png">
-</p>
+  <p align="center">
+    <img src="/image/confusionm.png">
+  </p>
 
-The confusion matrix is a classical metric for evalutaing the classification accuracy. It gives a more specific feedback about the misclassification distribution of each category.
+  The confusion matrix is a classical metric for evalutaing the classification accuracy. It gives a more specific feedback about the misclassification distribution of each category.
 
 - Misclassification case
 
-<p align="center">
-  <img src="/image/confuse.png">
-</p>
+  <p align="center">
+    <img src="/image/confuse.png">
+  </p>
 
-<p align="center">
-  <img src="/image/confuse2.png">
-</p>
+   <p align="center">
+     <img src="/image/confuse2.png">
+   </p>
 
-<p align="center">
-  <img src="/image/confuse3.png">
-</p>
+  <p align="center">
+    <img src="/image/confuse3.png">
+  </p>
 
-<p align="center">
-  <img src="/image/confuse4.png">
-</p>
+  <p align="center">
+    <img src="/image/confuse4.png">
+  </p>
 
-These 4 images illustrate the misclassification cases. It is resonable to consider all of these misclassifcation make sense, isn't it? 
+  These 4 images illustrate the misclassification cases. It is resonable to consider all of these misclassifcation make sense, isn't it? 
 
 
 ## It is your turn!
@@ -386,7 +390,7 @@ These 4 images illustrate the misclassification cases. It is resonable to consid
 
 - [Tensorflow Playground](https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=4,2&seed=0.17096&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false)
 
-- [MNIST tutorial](https://www.tensorflow.org/quantum/tutorials/mnist)
+- [MNIST Tutorial in TensorFlow](https://www.tensorflow.org/quantum/tutorials/mnist)
 
 - [MNIST Playground](http://www.ccom.ucsd.edu/~cdeotte/programs/MNIST.html)
 
