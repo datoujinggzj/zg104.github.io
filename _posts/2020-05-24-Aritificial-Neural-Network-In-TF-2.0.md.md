@@ -2,7 +2,7 @@
 layout: post
 title: Artificial Neural Network in TensorFlow 2.0
 subtitle: ANN for Classification & Regression intro in TF 2.0
-cover-img: image/cover15.jpg
+cover-img: image/cover14.jpeg
 tags: [books, test]
 ---
 
@@ -84,7 +84,7 @@ But, TensorFlow 2.0 get us out of this justing using several lines of codes. Ama
 
 Let's get straight into the Python code!
 
-```python
+```javascript
 ###################################
 # Number identification in TF 2.0 #
 ###################################
@@ -201,14 +201,16 @@ Here is the evaluation results:
 - Accuracy curve
 
 <p align="center">
-  <img src=/image/accuracy.png>
+  <img src="/image/accuracy.png">
 </p>
 
 The classification accuracy from both the training set and test set is reaching 99% after 10 epochs training. Awesome!
 
 - Confusion Matrix
 
-![](/image/confusionm.png)
+<p align="center">
+  <img src="/image/confusionm.png">
+</p>
 
 The confusion matrix is a classical metric for evalutaing the classification accuracy. It gives a more specific feedback about the misclassification distribution of each category.
 
@@ -219,15 +221,15 @@ The confusion matrix is a classical metric for evalutaing the classification acc
 </p>
 
 <p align="center">
-  <img src=/image/confuse2.png>
+  <img src="/image/confuse2.png">
 </p>
 
 <p align="center">
-  <img src=/image/confuse3.png>
+  <img src="/image/confuse3.png">
 </p>
 
 <p align="center">
-  <img src=/image/confuse4.png>
+  <img src="/image/confuse4.png">
 </p>
 
 These 4 images illustrate the misclassification cases. It is resonable to consider all of these misclassifcation make sense, isn't it? 
