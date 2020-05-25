@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Stock Prediction
-subtitle: I predict I will be rich.
+title: Google Stock Price Prediction in Deep Learning
+subtitle: Develop XGBoost & LSTM in Predicting Google Stock Price.
 cover-img: image/cover8.jpg
 ---
 
@@ -14,7 +14,7 @@ This page contains details about projects that I have worked on. In order to hel
 - Coding (If applicable)
 - Additional Materials (If applicable)
 
-## Google Stock Price Prediction in Deep Learning
+## Google Stock Price Prediction in LSTM & XGBoost
 
 ![](image/LSTM_2.png)
 
