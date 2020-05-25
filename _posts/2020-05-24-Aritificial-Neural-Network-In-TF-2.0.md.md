@@ -34,11 +34,7 @@ As is known, deep learning is basically deep neural networks which contains mult
 
 <br/>
 
-## Types of Neural Networks 
-
-<br/>
-
-| Types of NN | Features | Fields |
+| Types of Neural Networks | Features | Fields |
 | :--------  | :---------  | :------ |
 | [Aritificial Neural Network](https://en.wikipedia.org/wiki/Artificial_neural_network) | One of the simplest neural networks | basic Classification & Regression
 | [Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) | Convolution; Paddling; Falttening; Pooling; Fully Connection | Image Identification; Computer Vision |
