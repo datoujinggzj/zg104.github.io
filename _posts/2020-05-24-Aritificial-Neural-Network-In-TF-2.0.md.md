@@ -28,6 +28,8 @@ As is known, deep learning is basically deep neural networks which contains mult
 | [XGBoost](https://en.wikipedia.org/wiki/XGBoost) | Gradient Boosting; Clever Penalization; shrinking | Supervised | 
 | [Neural Networks](https://en.wikipedia.org/wiki/Neural_network) | Blackbox; Backpropogation; Hidden Layers | Supervised | 
 
+<br/>
+
 ## Types of Neural Networks 
 
 ![](https://www.digitalvidya.com/wp-content/uploads/2019/01/Image-1-2.png)
@@ -40,7 +42,7 @@ As is known, deep learning is basically deep neural networks which contains mult
 
 So, let us start from the simpliest one to dive into -- __ANN__.
 
-## Intro to Artificial Neural Network
+## Intro to Artificial Neural Network (ANN) 
 
 An __Artificial Neural Network (ANN)__ is a computational model that is inspired by the way biological neural networks in the human brain process information. Artificial Neural Networks have generated a lot of excitement in Machine Learning research and industry, thanks to many breakthrough results in speech recognition, computer vision and text processing. In this blog post we will try to develop an understanding of ANN, and number identification in TensoFlow 2.0.
 
@@ -59,7 +61,7 @@ A fully connected neural network like that will result in extremely large comput
 
 But, TensorFlow 2.0 get us out of this justing using several lines of codes. Amazing!
 
-## Building an ANN for number identification in TF 2.0
+## ANN for Digit Recognition TF 2.0
 
 ### Recap of the steps
 
