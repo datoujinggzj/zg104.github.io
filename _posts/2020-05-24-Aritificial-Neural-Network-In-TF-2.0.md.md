@@ -29,12 +29,11 @@ As is known, deep learning is basically deep neural networks which contains mult
 | [Neural Networks](https://en.wikipedia.org/wiki/Neural_network) | Blackbox; Backpropogation; Hidden Layers | Supervised | 
 
 <br/>
+## Types of Neural Networks 
 
 ![](https://www.digitalvidya.com/wp-content/uploads/2019/01/Image-1-2.png)
 
-
-## Types of Neural Networks 
-
+<br/>
 | Types of NN | Features | Fields |
 | :--------  | :---------  | :------ |
 | [Aritificial Neural Network](https://en.wikipedia.org/wiki/Artificial_neural_network) | One of the simplest neural networks | basic Classification & Regression
@@ -84,7 +83,7 @@ But, TensorFlow 2.0 get us out of this justing using several lines of codes. Ama
 
 Let's get straight into the Python code!
 
-```javascript
+```python
 ###################################
 # Number identification in TF 2.0 #
 ###################################
