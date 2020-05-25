@@ -6,6 +6,10 @@ cover-img: image/cover14.jpeg
 tags: [books, test]
 ---
 
+
+![](https://www.digitalvidya.com/wp-content/uploads/2019/01/Image-1-2.png)
+
+
 As Tom Golway said:
 
 > What people call deep learnig is no more than finding answers to questions we know to ask. 
@@ -27,13 +31,10 @@ As is known, deep learning is basically deep neural networks which contains mult
 | [Random Forest](https://en.wikipedia.org/wiki/Random_forest) | Feature bagging; Tree based | Supervised | 
 | [XGBoost](https://en.wikipedia.org/wiki/XGBoost) | Gradient Boosting; Clever Penalization; shrinking | Supervised | 
 | [Neural Networks](https://en.wikipedia.org/wiki/Neural_network) | Blackbox; Backpropogation; Hidden Layers | Supervised | 
-
 <br/>
+
 ## Types of Neural Networks 
 
-![](https://www.digitalvidya.com/wp-content/uploads/2019/01/Image-1-2.png)
-
-<br/>
 | Types of NN | Features | Fields |
 | :--------  | :---------  | :------ |
 | [Aritificial Neural Network](https://en.wikipedia.org/wiki/Artificial_neural_network) | One of the simplest neural networks | basic Classification & Regression
