@@ -8,7 +8,9 @@ tags: [books, test]
 
 ## Digit Recognition in Deep Learning
 
-To make machines more intelligent, the developers are diving into machine learning and deep learning techniques. A human learns to perform a task by practicing and repeating it again and again so that it memorizes how to perform the tasks. Then the neurons in his brain automatically trigger and they can quickly perform the task they have learned. Deep learning is also very similar to this. It uses different types of neural network architectures for different types of problems. For example – object recognition, image and sound classification, object detection, image segmentation, etc.
+To make machines more intelligent, the developers are diving into machine learning and deep learning techniques. A human learns to perform a task by practicing and repeating it again and again so that it memorizes how to perform the tasks. Then the neurons in his brain automatically trigger and they can quickly perform the task they have learned. 
+
+Deep learning is also very similar to this. It uses different types of neural network architectures for different types of problems. For example – object recognition, image and sound classification, object detection, image segmentation, etc.
 
 
 ![](https://www.digitalvidya.com/wp-content/uploads/2019/01/Image-1-2.png)
@@ -304,7 +306,9 @@ Here is the evaluation results:
     
     - Dropout is a regularization method that approximates training a large number of neural networks with different architectures in parallel. It has the effect of making the training process noisy, forcing nodes within a layer to probabilistically take on more or less responsibility for the inputs.
     
-    ![](https://www.oreilly.com/library/view/tensorflow-for-deep/9781491980446/assets/tfdl_0408.png)
+    <p align="center">
+        <img src="https://www.oreilly.com/library/view/tensorflow-for-deep/9781491980446/assets/tfdl_0408.png">
+    </p>
 
 4. B
    
