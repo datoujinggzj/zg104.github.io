@@ -222,7 +222,7 @@ Here is the evaluation results:
 - Classification Report 
 
   <p align="center">
-    <img src="/image/classification_report.png" width="400" height="300">
+    <img src="/image/classification_report.png" width="400" height="280">
   </p>
   
   The classification report is from the [sklearn.metrics](https://scikit-learn.org/stable/modules/classes.html#sklearn-metrics-metrics). It provides more advanced evaluation indicators to describe the performance of the machine learning models.
