@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Glass Identification
-subtitle: Determining the type of glass based on glass fragments. 
+title: Glass Indentification in Criminal Analysis
+subtitle: Develop Machine Learning Algorithms in Classifying Glass Types
 cover-img: image/cover7.jpg
 ---
 
@@ -14,7 +14,7 @@ This page contains details about projects that I have worked on. In order to hel
 - Coding (If applicable)
 - Additional Materials (If applicable)
 
-## Glass Indentification in Criminal Analysis 
+## Glass Indentification in Machine Learning
 
 ![quad_chart](image/Zijing_Gao_quad_chart-642-1.png)
 
