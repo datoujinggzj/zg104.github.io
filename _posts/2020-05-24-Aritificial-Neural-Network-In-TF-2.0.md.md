@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Artificial Neural Network in TensorFlow 2.0
-subtitle: ANN for Classification & Regression intro in TF 2.0
+title: Digit Recognition in Aritificial Neural Network Using TensorFlow 2.0
+subtitle: Develop an ANN for MINST Digit Classification
 cover-img: image/cover14.jpeg
 tags: [blogs, insights]
 ---
