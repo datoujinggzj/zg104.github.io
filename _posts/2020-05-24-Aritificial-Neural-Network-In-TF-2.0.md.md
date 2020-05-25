@@ -54,7 +54,7 @@ If we have more and more hidden layers to compose a complex deep neural network 
 
 A fully connected neural network like that will result in extremely large computation trouble, which is hard to interpret. A complex composition need to be differentiated with respect to the unknown parameters by chain rule. You might see the real mathematics behind that! 
 
-
+![](image/back.png)
 
 **Here, you might want to know how much mathematics is included in logistic regression**
 
