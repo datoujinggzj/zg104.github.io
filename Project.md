@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Google Stock Price Prediction in Deep Learning
-subtitle: Develop XGBoost & LSTM in Predicting Google Stock Price.
+subtitle: Develop XGBoost & LSTM in Predicting Google Stock Price
 cover-img: image/cover8.jpg
 ---
 
