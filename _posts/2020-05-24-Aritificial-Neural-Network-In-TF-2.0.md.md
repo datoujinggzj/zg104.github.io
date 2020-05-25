@@ -2,7 +2,7 @@
 layout: post
 title: Artificial Neural Network in TensorFlow 2.0
 subtitle: ANN for Classification & Regression intro in TF 2.0
-cover-img: image/cover14.jepg
+cover-img: image/cover14.jpeg
 tags: [books, test]
 ---
 
@@ -28,7 +28,6 @@ As is known, deep learning is basically deep neural networks which contains mult
 | [XGBoost](https://en.wikipedia.org/wiki/XGBoost) | Gradient Boosting; Clever Penalization; shrinking | Supervised | 
 | [Neural Networks](https://en.wikipedia.org/wiki/Neural_network) | Blackbox; Backpropogation; Hidden Layers | Supervised | 
 
-<br/>
 
 ## Types of Neural Networks 
 
@@ -200,7 +199,7 @@ Here is the evaluation results:
 - Accuracy curve
 
 <p align="center">
-    <img src=/image/accuracy.png>
+  <img src=/image/accuracy.png>
 </p>
 
 The classification accuracy from both the training set and test set is reaching 99% after 10 epochs training. Awesome!
@@ -208,7 +207,7 @@ The classification accuracy from both the training set and test set is reaching 
 - Confusion Matrix
 
 <p align="center">
-    <img src=/image/confusionm.png>
+  <img src=/image/confusionm.png>
 </p>
 
 The confusion matrix is a classical metric for evalutaing the classification accuracy. It gives a more specific feedback about the misclassification distribution of each category.
@@ -216,19 +215,19 @@ The confusion matrix is a classical metric for evalutaing the classification acc
 - Misclassification case
 
 <p align="center">
-    <img src=/image/confuse.png>
+  <img src=/image/confuse.png>
 </p>
 
 <p align="center">
-    <img src=/image/confuse2.png>
+  <img src=/image/confuse2.png>
 </p>
 
 <p align="center">
-    <img src=/image/confuse3.png>
+  <img src=/image/confuse3.png>
 </p>
 
 <p align="center">
-    <img src=/image/confuse4.png>
+  <img src=/image/confuse4.png>
 </p>
 
 These 4 images illustrate the misclassification cases. It is resonable to consider all of these misclassifcation make sense, isn't it? 
