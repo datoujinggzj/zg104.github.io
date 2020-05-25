@@ -239,7 +239,9 @@ These 4 images illustrate the misclassification cases. It is resonable to consid
 {: .box-note}
 **I have some questions for you:**
 1.  What are the disadvantages of neural networks?
+
 2.  What are the steps for using a gradient descent algorithm?
+
 3.  Which of the following techniques perform similar operations as dropout in a neural network?
 
     A. Bagging <br/>
