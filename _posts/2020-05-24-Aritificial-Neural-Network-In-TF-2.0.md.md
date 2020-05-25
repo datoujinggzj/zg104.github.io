@@ -2,7 +2,7 @@
 layout: post
 title: Artificial Neural Network in TensorFlow 2.0
 subtitle: ANN for Classification & Regression intro in TF 2.0
-cover-img: image/cover14.jpeg
+cover-img: image/cover15.jpg
 tags: [books, test]
 ---
 
@@ -206,16 +206,14 @@ The classification accuracy from both the training set and test set is reaching 
 
 - Confusion Matrix
 
-<p align="center">
-  <img src=/image/confusionm.png>
-</p>
+![](/image/confusionm.png)
 
 The confusion matrix is a classical metric for evalutaing the classification accuracy. It gives a more specific feedback about the misclassification distribution of each category.
 
 - Misclassification case
 
 <p align="center">
-  <img src=/image/confuse.png>
+  <img src="/image/confuse.png">
 </p>
 
 <p align="center">
