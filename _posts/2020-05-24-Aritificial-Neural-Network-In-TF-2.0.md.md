@@ -46,7 +46,7 @@ As is known, deep learning is basically deep neural networks which contains mult
 | [Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) | Convolution; Paddling; Falttening; Pooling; Fully Connection | Image Identification; Computer Vision |
 | [Recurrent Neural Network](https://en.wikipedia.org/wiki/Recurrent_neural_network) | Long Short Term Memory (LSTM); Recursive | Natural Language Processing; Time Series Analysis |
 
-So, let us start from the simpliest one to dive into -- __ANN__.
+So, let us start from the simplest one to dive into __ANN__.
 
 ## Intro to Artificial Neural Network (ANN) 
 
