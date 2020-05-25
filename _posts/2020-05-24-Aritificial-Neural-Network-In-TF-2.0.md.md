@@ -218,6 +218,14 @@ Here is the evaluation results:
   </p>
 
   The confusion matrix is a classical metric for evalutaing the classification accuracy. It gives a more specific feedback about the misclassification distribution of each category.
+  
+- Classification Report 
+
+  <p align="center">
+    <img src="/image/classification_report.png" width="400" height="300">
+  </p>
+  
+  The classification report is from the [sklearn.metrics](https://scikit-learn.org/stable/modules/classes.html#sklearn-metrics-metrics). It provides more advanced evaluation indicators to describe the performance of the machine learning models.
 
 - Misclassification case
 
