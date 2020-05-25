@@ -18,15 +18,15 @@ As Tom Golway said:
 
 As is known, deep learning is basically deep neural networks which contains multiple hidden layers composed of a great many hidden units. That is where "deep" comes from. So, what is the difference between Neural Networks and traditional machine learning methods?
 
-| Algorithms | Features | Category | Popularity |
-| :--------  | :---------  | :----  | :---- |
-| [K-means Clustering](https://en.wikipedia.org/wiki/K-means_clustering) | Feature Learning | Unsupervised | :fire::fire: :fire:|
-| [Logistic Regression](https://en.wikipedia.org/wiki/Logistic_regression) | Sigmoid(Softmax) function | Supervised | :fire::fire: :fire:|
-| [k-Nearest Neighbors](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm) | Voting Algorithm | Supervised | :fire::fire::fire: |
-| [Support Vector Machine](https://en.wikipedia.org/wiki/Support_vector_machine) | Max Margin; kernels | Supervised | :fire::fire::fire::fire: |
-| [Random Forest](https://en.wikipedia.org/wiki/Random_forest) | Feature bagging; Tree based | Supervised | :fire::fire::fire::fire:|
-| [XGBoost](https://en.wikipedia.org/wiki/XGBoost) | Gradient Boosting; Clever Penalization; shrinking | Supervised | :fire::fire::fire::fire: |
-| [Neural Networks](https://en.wikipedia.org/wiki/Neural_network) | Blackbox; Backpropogation; Hidden Layers | Supervised | :fire::fire::fire::fire::fire:|
+| Algorithms | Features | Category | 
+| :--------  | :---------  | :----  | 
+| [K-means Clustering](https://en.wikipedia.org/wiki/K-means_clustering) | Feature Learning | Unsupervised | 
+| [Logistic Regression](https://en.wikipedia.org/wiki/Logistic_regression) | Sigmoid(Softmax) function | Supervised | 
+| [k-Nearest Neighbors](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm) | Voting Algorithm | Supervised | 
+| [Support Vector Machine](https://en.wikipedia.org/wiki/Support_vector_machine) | Max Margin; kernels | Supervised | 
+| [Random Forest](https://en.wikipedia.org/wiki/Random_forest) | Feature bagging; Tree based | Supervised | 
+| [XGBoost](https://en.wikipedia.org/wiki/XGBoost) | Gradient Boosting; Clever Penalization; shrinking | Supervised | 
+| [Neural Networks](https://en.wikipedia.org/wiki/Neural_network) | Blackbox; Backpropogation; Hidden Layers | Supervised | 
 
 ## Types of Neural Networks 
 
@@ -195,8 +195,13 @@ plt.title("True label: %s Predicted: %s" % (y_test[i], p_test[i]));
 
 Here is the evaluation results:
 
+- Confusion Matrix
 
+![](/image/cm.png)
 
+- Misclassification case
+
+![](/image/confuse.png)
  
 
 
