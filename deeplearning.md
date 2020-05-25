@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Deep Learning
-subtitle: How deep is your love?
+title: Animal Image Recognition in Deep Learning
+subtitle: Develop CNN in Identifying Animal Images
 cover-img: image/cover9.jpg
 ---
 
@@ -13,7 +13,7 @@ This page contains details about projects that I have worked on. In order to hel
 - Main Processes of the Project
 - Coding (If applicable)
 
-## Animal Image Recognization in Deep Learning
+## Animal Image Recognition in CNN
 
 ![](image/cnn.png)
 
