@@ -31,9 +31,12 @@ As is known, deep learning is basically deep neural networks which contains mult
 | [Random Forest](https://en.wikipedia.org/wiki/Random_forest) | Feature bagging; Tree based | Supervised | 
 | [XGBoost](https://en.wikipedia.org/wiki/XGBoost) | Gradient Boosting; Clever Penalization; shrinking | Supervised | 
 | [Neural Networks](https://en.wikipedia.org/wiki/Neural_network) | Blackbox; Backpropogation; Hidden Layers | Supervised | 
+
 <br/>
 
 ## Types of Neural Networks 
+
+<br/>
 
 | Types of NN | Features | Fields |
 | :--------  | :---------  | :------ |
