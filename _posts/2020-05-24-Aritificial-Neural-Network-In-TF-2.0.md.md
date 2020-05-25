@@ -281,11 +281,15 @@ These 4 images illustrate the misclassification cases. It is resonable to consid
 
     - Hard to tune the hyperparameters (time-consuming, computational cost)
 
-2.  - Initialize random weight and bias     
-    - Pass an input through the network and get values from output layer   
-    - Calculate error between the actual value and the predicted value
-    - Go to each neurons which contributes to the error and change its respective values to reduce the error
-    - Reiterate until you find the best weights of network
+2.  - Initialize random weight and bias.
+
+    - Pass an input through the network and get values from output layer.  
+    
+    - Calculate error between the actual value and the predicted value.
+    
+    - Go to each neurons which contributes to the error and change its respective values to reduce the error.
+    
+    - Reiterate until you find the best weights of network.
 
 3.  A
     - Bagging is just bootstrap, which is a ensmble methods for estimating some statistical variables. The core is to average the training results using different training sets, which are randomly selected with replacement from the original data, to reduce the probability to overfit, and generalized the model.
