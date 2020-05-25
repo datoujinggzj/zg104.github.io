@@ -3,7 +3,7 @@ layout: post
 title: Artificial Neural Network in TensorFlow 2.0
 subtitle: ANN for Classification & Regression intro in TF 2.0
 cover-img: image/cover14.jpeg
-tags: [books, test]
+tags: [blogs, insights]
 ---
 
 ## Digit Recognition in Deep Learning
