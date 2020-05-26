@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Glass Indentification in Criminal Analysis
+title: Glass Identification in Criminal Analysis
 subtitle: Develop Machine Learning Algorithms in Classifying Glass Types
 cover-img: image/cover7.jpg
 ---
