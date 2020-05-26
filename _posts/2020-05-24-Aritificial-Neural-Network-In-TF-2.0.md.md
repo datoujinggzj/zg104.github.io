@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Digit Recognition in Aritificial Neural Network Using TensorFlow 2.0
+title: Digit Recognition in Artificial Neural Network Using TensorFlow 2.0
 subtitle: Develop an ANN for MINST Digit Classification
 cover-img: image/cover14.jpeg
 tags: [blogs, insights]
