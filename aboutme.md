@@ -5,7 +5,21 @@ subtitle: Why you'll need me.
 cover-img: image/cover10.jpg
 ---
 
-My name is **Zijing Gao**. I'd like to introduce myself briefly:
+# I'm Zijing Gao...
+
+I originally studied Applied Mathematcis to Bachelor’s level and then moved into the machine learning field, completing a Master in Deep Learning, Time Series analysis, and Stochastic Simulation in quantitative finance at Georgetown University in 2020.
+
+I have stayed in the exciting field of machine learning for more than 3 years. I have worked as an intern in several companies in industries including consulting, finance, as well as some research experience.
+
+I just graduate from Georgetown University in May 2020, top 20% best colleges and universities nationwide, where I developped myself in constructing algorithms, building models by cloud computing, and improve model performance in several industries to practice what I learn. This website will be constantly updated if excellent projects, learning materials, and business accmen are collected.
+
+These days, I have specialised in deep learning, which is an exciting area of machine learning that not only allows computers to interpret text, sound and images, but also allow us to predict the stock market in a more statistical and technical way. I am aiming to develop deep learning algorithms to achieve commercial success in the finance industry if possible.
+
+Through me last two working experiences, I can provide various support for the data science team to steadily produce machine learning solutions. I participated in the model establishment, development, and evaluation along with leading in data analysis and visualization tasks.
+
+You can find more details on my projects, resume/CV, blogs, qualifications, and career on various parts of this website!
+
+__Here are 3 sentences I'd like to use to summarize myself:__
 
 - Thorough and meticulous Data Analyst passionate about helping businesses succeed.
 
@@ -13,20 +27,8 @@ My name is **Zijing Gao**. I'd like to introduce myself briefly:
 
 - Possessing strong technical skills rooted in substantial training as an engineer.
 
-So, I bet you might want to know:
+## Technologies:
 
-### Education
-[Georgetown University](https://www.georgetown.edu/) | Washington, D.C., USA <br/>
-<sub>_Mathemathics & Statistics Master Degree      &nbsp; &nbsp; &nbsp;      08/2018 - Present_</sub> <br/>
-- Served as a Research Assistant in MATH 642 (Machine Learning) mainly in the field of predictive analysis.
-- Served as a math tutor in the Math Assistance Center.
-
-[China Algricultural University](https://en.cau.edu.cn/) | Beijing, CHINA <br/>
-<sub>_Applied Mathematics Bachelor Degree  &nbsp; &nbsp; &nbsp;      08/2014 - 06/2018_</sub>  <br/>
-- Served as a volunteer in organizing the campus robot contest.
-- Won the third-class scholarship.
-
-### Hard Skills
 - Programming languages (Python, R)
 - Machine Learning & Deep Learning
 - Relational Databases (PostgreSQL, MySQL)
@@ -34,8 +36,10 @@ So, I bet you might want to know:
 - Mathematics & Statistics
 - Cloud Computing (GCP,AWS)
 
-### Soft Skills
+## Soft Skills:
+
 - Logic and Analysis
 - Communication and Public Speaking
 - Clear Writing and Report Writing
 - Critical Thinking
+- Time Management
