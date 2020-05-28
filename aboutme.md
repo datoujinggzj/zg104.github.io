@@ -7,6 +7,8 @@ cover-img: image/cover10.jpg
 
 # I'm Zijing Gao...
 
+![](/image/self.jpg)
+
 I originally studied Applied Mathematcis to Bachelor’s level and then moved into the machine learning field, completing a Master in Deep Learning, Time Series analysis, and Stochastic Simulation in quantitative finance at Georgetown University in 2020.
 
 I have stayed in the exciting field of machine learning for more than 3 years. I have worked as an intern in several companies in industries including consulting, finance, as well as some research experience.
