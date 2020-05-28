@@ -24,9 +24,7 @@ You can find more details on my projects, resume/CV, blogs, qualifications, and 
 __Here are 3 sentences I'd like to use to summarize myself:__
 
 - Thorough and meticulous Data Analyst passionate about helping businesses succeed.
-
 - Mathematics and Statistics program graduate with keenness in obtaining details.
-
 - Possessing strong technical skills rooted in substantial training as an engineer.
 
 ## Technologies:
