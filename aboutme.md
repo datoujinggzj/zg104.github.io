@@ -27,7 +27,7 @@ __Here are 3 sentences I'd like to use to summarize myself:__
 - Mathematics and Statistics program graduate with keenness in obtaining details.
 - Possessing strong technical skills rooted in substantial training as an engineer.
 
-## Technologies:
+__Technologies:__
 
 - Programming languages (Python, R)
 - Machine Learning & Deep Learning
@@ -36,7 +36,7 @@ __Here are 3 sentences I'd like to use to summarize myself:__
 - Mathematics & Statistics
 - Cloud Computing (GCP,AWS)
 
-## Soft Skills:
+__Soft Skills:__
 
 - Logic and Analysis
 - Communication and Public Speaking
