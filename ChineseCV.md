@@ -5,7 +5,7 @@ subtitle: You want me!
 cover-img: image/cover12.jpg
 ---
 
-![](image/resume_chinese-1.png)
+![](image/chinese_resume_1.jpg)
 
 __You might want to know more about me specifically! Here it is.__
 
