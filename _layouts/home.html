@@ -6,24 +6,6 @@ layout: page
 
 {% assign posts = paginator.posts | default: site.posts %}
 
-body, html {
-  height: 100%;
-  margin: 0;
-}
-
-.bg {
-  /* The image used */
-  background-image: url("/image/back.jpg");
-
-  /* Full height */
-  height: 50%;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 
 <div class="posts-list">
   {% for post in posts %}
