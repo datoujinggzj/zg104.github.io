@@ -6,7 +6,7 @@ cover-img: image/cover14.jpeg
 tags: [blogs, insights]
 ---
 
-## Digit Recognition in Deep Learning
+# Digit Recognition in Deep Learning
 
 To make machines more intelligent, the developers are diving into machine learning and deep learning techniques. A human learns to perform a task by practicing and repeating it again and again so that it memorizes how to perform the tasks. Then the neurons in his brain automatically trigger and they can quickly perform the task they have learned. 
 
@@ -201,7 +201,7 @@ plt.imshow(x_test[i], cmap='gray')
 plt.title("True label: %s Predicted: %s" % (y_test[i], p_test[i]));
 ```
 
-Here is the evaluation results:
+__Here is the evaluation results__:
 
 - Accuracy curve
 
