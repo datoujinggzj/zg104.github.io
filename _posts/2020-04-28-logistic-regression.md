@@ -6,11 +6,6 @@ cover-img: image/cover2.jpg
 tags: [blogs, insights]
 ---
 
-Let me take a brief introduction of myself!
-
-I am currently a graduate student in Georgetown University, majoring in Mathematics & Statistics.
-Don't think I am a boring person though lots of people of this major probably are. I love reclining, drinking a cup of my favorite coffee and let the time pass by quietly. That is why I have adequate space and time to free myself from study.
-
 # Logistic Regression
 
 **Here, you might want to know how much mathematics is included in logistic regression**
