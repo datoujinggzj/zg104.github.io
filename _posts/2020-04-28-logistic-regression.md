@@ -11,7 +11,7 @@ Let me take a brief introduction of myself!
 I am currently a graduate student in Georgetown University, majoring in Mathematics & Statistics.
 Don't think I am a boring person though lots of people of this major probably are. I love reclining, drinking a cup of my favorite coffee and let the time pass by quietly. That is why I have adequate space and time to free myself from study.
 
-## Get started
+# Logistic Regression
 
 **Here, you might want to know how much mathematics is included in logistic regression**
 
@@ -182,3 +182,5 @@ However, we should understand each method to develop and utilize it into real ap
 ## Conclusion 
 
 __Mathematics and coding are just like twins that Nobody is able to completly separate if you want to be an expert in machine learning. <br/> So, let this be a reminder for us all to always remember that it is extremely important and necessary to truly understand the mathematical backgroud of every machine learning algorithm as much as possible.__
+
+**Enjoy Machine Learning!**
