@@ -16,9 +16,10 @@ navbar-links:
     - Stock Prediction: "Project"
     - Glass Identification: "glass"
     - Deep Learning: "deeplearning"
-  Resume: 
-    - English: "EnglishCV"
-    - Chinese: "ChineseCV"
+# remember to unlock it if needed
+#   Resume: 
+#     - English: "EnglishCV"
+#     - Chinese: "ChineseCV"
   Resources:
     - Learn Machine Learning: "https://www.youtube.com/watch?v=PPLop4L2eGk&list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN&index=2&t=0s"
     - Learn Deep Learning: "https://www.superdatascience.com/pages/deep-learning"
