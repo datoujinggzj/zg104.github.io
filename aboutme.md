@@ -1,7 +1,6 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'll need me.
 cover-img: image/cover10.jpg
 ---
 
