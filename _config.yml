@@ -16,6 +16,8 @@ navbar-links:
     - Stock Prediction: "Project"
     - Glass Identification: "glass"
     - Deep Learning: "deeplearning"
+    - Kaggle:
+        - "Safe_Driver_Prediction"
 # remember to unlock it if needed
 #   Resume: 
 #     - English: "EnglishCV"
