@@ -176,7 +176,7 @@ There are many more strategies of course and MachineLearningMastery.com gives a 
 After undersampling, the number of records with target = 0 after undersampling is 195246.
 
 <p align="center">
-  <img src="/image/before_aftersample.png">
+  <img src="/image/after_undersample.png">
 </p>
 
 ### Data Quality
