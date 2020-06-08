@@ -8,35 +8,12 @@ cover-img: image/bps.jpg
 ### How have I organized this page?
 This page contains details about Kaggle projects that I have been working on. In order to help readers get the crux of my work with a single look, I have organized each project using a self-designed template:
 
-- The Project Overview
-- The Links to the Project
-- Main Processes of the Project
-- Coding (If applicable)
+- [Project Overview](#projectoverview)
+- [Main Processes of the Project](#main)
+- [Links to the Project](#link)
+- [Other Materials](#other)
 
-# Links
-
-[Porto Seguro's Safe Driver Prediction EDA & XGBoost -- Version 1](https://colab.research.google.com/drive/1ZyBvbnQhL09dwoCaoi11tSE_1stC88T6#scrollTo=HUQg-1XPLpDe)
-
-- Data Preparation
-- EDA
-- XGBoost (undersampling)
-
-The normalized Gini Coefficient is around 0.233. Not bad! I assume that the number of feature selected for training is 81 which is a little bit large.
-
-[Porto Seguro's Safe Driver Prediction EDA & XGBoost -- Version 2](https://colab.research.google.com/drive/1eP8kkBU3dUSEZZFBV7z0VuehQirUqNH9#scrollTo=UG9y6BjdZndW)
-
-- Still undersampling
-- Remove feature selection by importance using RF.
-
-The normalized Gini Coefficient is around 0.284. Good! The number of features for training shrinks to 36. They are proven to be more significantly correlated feature for this model.
-
-
-
-
-
-
-
-# Main Processes of the Project
+# <span id="projectoverview">Project Overview</span>
 
 __Description__
 
@@ -60,6 +37,13 @@ The Gini Coefficient ranges from approximately 0 for random guessing, to approxi
 The Normalized Gini Coefficient adjusts the score by the theoretical maximum so that the maximum score is 1.
 
 [Here](https://www.kaggle.com/cppttz/gini-coefficient-an-explanation-with-math/) is the math explanation of Gini coefficient.
+
+
+
+
+
+
+# <span id="main">Main Processes of the Project</span>
 
 
 ## Data Preparation 
@@ -375,4 +359,23 @@ As mentioned before, we can apply standard scaling to the training data. Some cl
   <img src="https://dzone.com/storage/temp/13069535-xgboost-features.png">
 </p>
 
+
+#-----------------------------
+
+# <span id="link">Links</span>
+
+[Porto Seguro's Safe Driver Prediction EDA & XGBoost -- Version 1](https://colab.research.google.com/drive/1ZyBvbnQhL09dwoCaoi11tSE_1stC88T6#scrollTo=HUQg-1XPLpDe)
+
+- Data Preparation
+- EDA
+- XGBoost (undersampling)
+
+The normalized Gini Coefficient is around 0.233. Not bad! I assume that the number of feature selected for training is 81 which is a little bit large.
+
+[Porto Seguro's Safe Driver Prediction EDA & XGBoost -- Version 2](https://colab.research.google.com/drive/1eP8kkBU3dUSEZZFBV7z0VuehQirUqNH9#scrollTo=UG9y6BjdZndW)
+
+- Still undersampling
+- Remove feature selection by importance using RF.
+
+The normalized Gini Coefficient is around 0.284. Good! The number of features for training shrinks to 36. They are proven to be more significantly correlated feature for this model.
 
