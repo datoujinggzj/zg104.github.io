@@ -13,9 +13,9 @@ This page contains details about Kaggle projects that I have been working on. In
 - [Links to the Project](#link)
 - [Other Materials](#other)
 
-## <span id="projectoverview">Project Overview</span>
+# <span id="projectoverview">Project Overview</span>
 
-### Description
+## Description
 
 Nothing ruins the thrill of buying a brand new car more quickly than seeing your new insurance bill. The sting’s even more painful when you know you’re a good driver. It doesn’t seem fair that you have to pay so much if you’ve been cautious on the road for years.
 
@@ -24,7 +24,7 @@ Nothing ruins the thrill of buying a brand new car more quickly than seeing your
 
 In this competition, I was challenged to build a model that predicts the probability that a driver will initiate an auto insurance claim in the next year. While Porto Seguro has used machine learning for the past 20 years, they’re looking to Kaggle’s machine learning community to explore new, more powerful methods. A more accurate prediction will allow them to further tailor their prices, and hopefully make auto insurance coverage more accessible to more drivers.
 
-### Evaluation (Scoring Metric)
+## Evaluation (Scoring Metric)
 
 Submissions are evaluated using the [Normalized Gini Coefficient](https://en.wikipedia.org/wiki/Gini_coefficient).
 
@@ -37,10 +37,10 @@ The Normalized Gini Coefficient adjusts the score by the theoretical maximum so 
 [Here](https://www.kaggle.com/cppttz/gini-coefficient-an-explanation-with-math/) is the math explanation of Gini coefficient.
 
 
-## <span id="main">Main Processes of the Project</span>
+# <span id="main">Main Processes of the Project</span>
 
 
-### Data Preparation 
+## Data Preparation 
 
 - [Basic Inspection of the Data](#jump1)
 - [Metadata](#jump2)
@@ -52,7 +52,7 @@ The Normalized Gini Coefficient adjusts the score by the theoretical maximum so 
 - [Feature Selection](#jump8)
 - [Feature Scaling](#jump9)
 
-### XGBoost
+## XGBoost
 
 - [XGBoost](#XGBoost)
 - [Model Set Up](#jump10)
@@ -60,7 +60,7 @@ The Normalized Gini Coefficient adjusts the score by the theoretical maximum so 
 - [Model Training & Evaluation](#jump12)
 - [Parameter Tuning](#jump13)
  
-#### <span id="jump1">Basic Inspection of the Data</span>
+### <span id="jump1">Basic Inspection of the Data</span>
 
 Here is an excerpt of the the data description:
 
@@ -75,7 +75,7 @@ That's important information to get us started.
 
 After importing the packages we might need for this challenge, I would like to check the basic information of the training set using `train.info()` and `train.describe()`. Then, we should check out the number of rows and columns in the training set using `train.shape`. So, we have 59 variables and 595212 observations in the training set. Then, we have 58 variables and 892816 observations in the test set. We miss one variable which is the target variable. It is totally fine.
 
-#### <span id="jump2">Metadata</span>
+### <span id="jump2">Metadata</span>
 
 Basically, [metadata](https://en.wikipedia.org/wiki/Metadata) is the data of the data.
 
@@ -101,7 +101,7 @@ Using metadata, we can extract the columns we might want to use convinently and 
 
 Above the number of variables per role and level are displayed.
 
-#### <span id="jump3">Descriptive Statistics</span>
+### <span id="jump3">Descriptive Statistics</span>
 
 We can also apply the describe method on the dataframe. However, it doesn't make much sense to calculate the mean, std, ... on categorical variables and the id variable. We'll explore the categorical variables visually later.
 
@@ -109,7 +109,7 @@ Thanks to our meta file we can easily select the variables on which we want to c
 
 After checking the description of different types of variables we might use, we have the folowing information attached.
 
-##### Interval variables
+#### Interval variables
 
 __reg variables__
 
@@ -129,12 +129,12 @@ __calc variables__
 
 Overall, we can see that the range of the interval variables is rather small. Perhaps some transformation (e.g. log) is already applied in order to anonymize the data?
 
-##### Ordinal variables
+#### Ordinal variables
 
 - Only one missing variable: ps_car_11
 - We could apply scaling to deal with the different ranges
 
-##### Binary variables
+#### Binary variables
 
 - A priori in the train data is 3.645%, which is strongly imbalanced.
 - From the means we can conclude that for most variables the value is zero in most cases.
@@ -143,7 +143,7 @@ Overall, we can see that the range of the interval variables is rather small. Pe
   <img src="/image/before_undersample.png">
 </p>
 
-#### <span id="jump4">Handling Imbalanced Classes</span>
+### <span id="jump4">Handling Imbalanced Classes</span>
 
 As we mentioned above the proportion of records with target=1 is far less than target=0. This can lead to a model that has great accuracy but does have any added value in practice. Two possible strategies to deal with this problem are:
 
@@ -158,9 +158,9 @@ After undersampling, the number of records with target = 0 after undersampling i
   <img src="/image/after_undersample.png">
 </p>
 
-#### <span id="jump5">Data Quality</span>
+### <span id="jump5">Data Quality</span>
 
-##### Checking missing values
+#### Checking missing values
 
 ```python
 Variable ps_ind_02_cat has 216 records (0.04%) with missing values 
@@ -186,7 +186,7 @@ In total, there are 13 variables with missing values
 
 So, we are going to drop the variables with too many missing values and [impute](https://www.kaggle.com/dansbecker/handling-missing-values) other variables with the mean or mode. 
 
-##### Checking the cardinality of the categorical variables
+#### Checking the cardinality of the categorical variables
 
 Cardinality refers to the number of different values in a variable. As we will create dummy variables from the categorical variables later on, we need to check whether there are variables with many distinct values. We should handle these variables differently as they would result in many dummy variables.
 
@@ -260,15 +260,15 @@ def target_encode(trn_series=None,
 
 This technique of encoding enables __ps_car_11_cat__ to serve as a numerical feature along with the information unchanged as a categorical features even though it contains `104` distinct values! Amazing! Actually, I want to drop this column at first since the traditional method of encoding can be a massive increment to the dimension of the training set.
 
-#### <span id="jump6">Exploratory Data Analysis</span>
+### <span id="jump6">Exploratory Data Analysis</span>
 
-##### Categorical variables
+#### Categorical variables
 
 Let's look into the categorical variables and the proportion of customers with target = 1. 
 
 As we can see from the variables with missing values, it is a good idea to keep the missing values as a separate category value, instead of replacing them by the mode for instance. The customers with a missing value appear to have a much higher (in some cases much lower) probability to ask for an insurance claim.
 
-##### Interval
+#### Interval
 
 Checking the correlations between interval variables. A heatmap is a good way to visualize the correlation between variables. 
 
@@ -293,7 +293,7 @@ Allright, so now what? How can we decide which of the correlated variables to ke
 
 With __7__ components we already explain more than 90% of all variance in the features. So we could reduce the number of features to half of the original numerical features.
 
-##### Checking the correlations between ordinal variables
+#### Checking the correlations between ordinal variables
 
 <p align="center">
   <img src="/image/heatmap_1.png">
@@ -301,10 +301,10 @@ With __7__ components we already explain more than 90% of all variance in the fe
 
 For the ordinal variables we do not see many correlations.
 
-#### <span id="jump7">Feature Engineering</span>
+### <span id="jump7">Feature Engineering</span>
 
 
-##### Creating [dummy variables](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/discussion/60425)
+#### Creating [dummy variables](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/discussion/60425)
 
 The values of the categorical variables do not represent any order or magnitude. For instance, category 2 is not twice the value of category 1. Therefore we can create dummy variables to deal with that. We drop the first dummy variable as this information can be derived from the other dummy variables generated for the categories of the original variable.
 
@@ -314,7 +314,7 @@ After dummification we have 109 variables in train
 ```
 So, creating dummy variables adds 52 variables to the training set.
 
-##### Creating [interaction variables](https://chrisalbon.com/machine_learning/linear_regression/adding_interaction_terms/)
+#### Creating [interaction variables](https://chrisalbon.com/machine_learning/linear_regression/adding_interaction_terms/)
 
 Interaction effects can be account for by including a new feature comprising the product of corresponding values from the interacting features.
 
@@ -322,9 +322,9 @@ Interaction effects can be account for by including a new feature comprising the
 Before creating interactions we have 109 variables in train
 After creating interactions we have 164 variables in train
 ```
-#### <span id="jump8">Feature Selection</span>
+### <span id="jump8">Feature Selection</span>
 
-##### Removing features with low or zeri variance
+#### Removing features with low or zeri variance
 
 Personally, I prefer to let the classifier algorithm chose which features to keep. But there is one thing that we can do ourselves. That is removing features with no or a very low variance. Sklearn has a handy method to do that: VarianceThreshold. By default it removes features with zero variance. This will not be applicable for this competition as we saw there are no zero-variance variables in the previous steps. But if we would remove features with less than 1% variance, we would remove 31 variables.
 
@@ -334,7 +334,7 @@ These variables are ['ps_ind_10_bin', 'ps_ind_11_bin', 'ps_ind_12_bin', 'ps_ind_
 ```
 We would lose rather many variables if we would select based on variance. But because we do not have so many variables, we'll let the classifier chose. For data sets with many more variables this could reduce the processing time.
 
-##### Selecting features with a Random Forest and SelectFromModel
+#### Selecting features with a Random Forest and SelectFromModel
 
 Here we'll base feature selection on the feature importances of a random forest. With Sklearn's [SelectFromModel](https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SelectFromModel.html) you can then specify how many variables you want to keep. You can set a threshold on the level of feature importance manually. But we'll simply select the top __50%__ best variables by setting the threshold to be `"median"`.
 
@@ -344,11 +344,11 @@ Number of features after selection: 81
 ```
 Now, we halve the number of features selected as an input of our model! Exciting!
 
-#### <span id="jump9">Feature Scaling</span>
+### <span id="jump9">Feature Scaling</span>
 
 As mentioned before, we can apply standard scaling to the training data. Some classifiers perform better when this is done.
 
-#### <span id="XGBoost">XGBoost</span>
+### <span id="XGBoost">XGBoost</span>
 
 [XGBoost](XGBoost is the leading model for working with standard tabular data (the type of data you store in Pandas DataFrames, as opposed to more exotic types of data like images and videos). XGBoost models dominate many Kaggle competitions.) is the leading model for working with standard tabular data (the type of data you store in Pandas DataFrames, as opposed to more exotic types of data like images and videos). XGBoost models dominate many Kaggle competitions.
 
@@ -358,7 +358,7 @@ As mentioned before, we can apply standard scaling to the training data. Some cl
 </p>
 
 
-#### <span id="jump10">Model Set Up</span>
+### <span id="jump10">Model Set Up</span>
 
 ```python
 ################
@@ -386,7 +386,7 @@ import gc
 > The problem with "__early stopping__" by choosing the best round for each fold is that it overfits to the validation data. It's therefore liable not to produce the optimal model for predicting test data, and if it's used to produce validation data for stacking/ensembling with other models, it would cause this one to have too much weight in the ensemble. Another possibility (and the default for XGBoost, it seems) is to use the round where the early stop actually happens (with the lag that verifies lack of improvement) rather than the best round. That solves the overfitting problem (provided the lag is long enough), but so far it doesn't seem to have helped. (I got a worse validation score with 20-round early stopping per fold than with a constant number of rounds for all folds, so the early stopping actually seemed to underfit.)
 
 
-#### <span id="jump11">Auxiliary Functions</span>
+### <span id="jump11">Auxiliary Functions</span>
 
 ```python
 #######################
@@ -461,7 +461,7 @@ Let me explain these parameters:
 
 - `reg_lambda`: __L2 regularization term on weights__. Increasing this value will make model more conservative. Normalised to number of training examples.
 
-#### <span id="jump12">Model Training & Evaluation</span>
+### <span id="jump12">Model Training & Evaluation</span>
 
 ```python
 # Run CV
@@ -539,9 +539,9 @@ Gini for full training set:
 
 As is known, the better, the closer normalized Gini is approaching `0.5`. Pretty good! We will continue to tune the hyperparameters to improve our model.
 
-### <span id="jump13">Parameter Tuning</span>
+## <span id="jump13">Parameter Tuning</span>
 
-## <span id="link">Links</span>
+# <span id="link">Links</span>
 
 [Porto Seguro's Safe Driver Prediction EDA & XGBoost -- Version 1](https://colab.research.google.com/drive/1ZyBvbnQhL09dwoCaoi11tSE_1stC88T6#scrollTo=HUQg-1XPLpDe)
 
