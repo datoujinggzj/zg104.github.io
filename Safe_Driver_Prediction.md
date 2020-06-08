@@ -81,7 +81,7 @@ The Normalized Gini Coefficient adjusts the score by the theoretical maximum so 
 - [Model Training](#Model-Training)
 - [Model Evaluation](#Model-Evaluation)
  
-### Basic inspection of the data
+### <span id="Basic-inspection-of-the-data">Basic inspection of the data</span>
 
 Here is an excerpt of the the data description:
 
