@@ -64,24 +64,25 @@ The Normalized Gini Coefficient adjusts the score by the theoretical maximum so 
 
 ## Data Preparation 
 
-- [Basic inspection of the data](#Basic-inspection-of-the-data)
-- [Metadata](#Metadata)
-- [Descriptive statistics](#Descriptive-statistics)
-- [Handling imbalanced classes](#Handling-imbalanced-classes)
-- [Data Quality](#Data-Quality)
-- [EDA](#Exploratory-Data-Analysis)
-- [Feature Engineering](#Feature-Engineering)
-- [Feature Selection](#Feature-Selection)
-- [Feature Scaling](#Feature-Scaling)
+- [Basic Inspection of the Data](#jump1)
+- [Metadata](#jump2)
+- [Descriptive Statistics](#jump3)
+- [Handling Imbalanced Classes](#jump4)
+- [Data Quality](#jump5)
+- [EDA](#jump6)
+- [Feature Engineering](#jump7)
+- [Feature Selection](#jump8)
+- [Feature Scaling](#jump9)
 
 ## XGBoost
 
-- [Model Set Up](#Model-Set-Up)
-- [Auxiliary Functions](#Auxiliary-Functions)
-- [Model Training](#Model-Training)
-- [Model Evaluation](#Model-Evaluation)
+- [XGBoost](#XGBoost)
+- [Model Set Up](#jump10)
+- [Auxiliary Functions](#jump11)
+- [Model Training](#jump12)
+- [Model Evaluation](#jump13)
  
-### <span id="Basic-inspection-of-the-data">Basic inspection of the data</span>
+### <span id="jump1">Basic Inspection of the Data</span>
 
 Here is an excerpt of the the data description:
 
@@ -96,7 +97,7 @@ That's important information to get us started.
 
 After importing the packages we might need for this challenge, I would like to check the basic information of the training set using `train.info()` and `train.describe()`. Then, we should check out the number of rows and columns in the training set using `train.shape`. So, we have 59 variables and 595212 observations in the training set. Then, we have 58 variables and 892816 observations in the test set. We miss one variable which is the target variable. It is totally fine.
 
-### Metadata
+### <span id="jump2">Metadata</span>
 
 Basically, [metadata](https://en.wikipedia.org/wiki/Metadata) is the data of the data.
 
@@ -122,7 +123,7 @@ Using metadata, we can extract the columns we might want to use convinently and 
 
 Above the number of variables per role and level are displayed.
 
-### Descriptive statistics
+### <span id="jump3">Descriptive Statistics</span>
 
 We can also apply the describe method on the dataframe. However, it doesn't make much sense to calculate the mean, std, ... on categorical variables and the id variable. We'll explore the categorical variables visually later.
 
@@ -164,7 +165,7 @@ Overall, we can see that the range of the interval variables is rather small. Pe
   <img src="/image/before_undersample.png">
 </p>
 
-### Handling imbalanced classes
+### <span id="jump4">Handling Imbalanced Classes</span>
 
 As we mentioned above the proportion of records with target=1 is far less than target=0. This can lead to a model that has great accuracy but does have any added value in practice. Two possible strategies to deal with this problem are:
 
@@ -179,7 +180,7 @@ After undersampling, the number of records with target = 0 after undersampling i
   <img src="/image/after_undersample.png">
 </p>
 
-### Data Quality
+### <span id="jump5">Data Quality</span>
 
 #### Checking missing values
 
@@ -279,7 +280,7 @@ def target_encode(trn_series=None,
     return add_noise(ft_trn_series, noise_level), add_noise(ft_tst_series, noise_level)
 ```
 
-### Exploratory Data Analysis
+### <span id="jump6">EDA</span>
 
 #### Categorical variables
 
@@ -320,7 +321,7 @@ With __7__ components we already explain more than 90% of all variance in the fe
 
 For the ordinal variables we do not see many correlations.
 
-### Feature Engineering
+### <span id="jump7">Feature Engineering</span>
 
 #### Creating [dummy variables](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/discussion/60425)
 
@@ -340,7 +341,7 @@ Interaction effects can be account for by including a new feature comprising the
 Before creating interactions we have 109 variables in train
 After creating interactions we have 164 variables in train
 ```
-### Feature Selection
+### <span id="jump8">Feature Selection</span>
 
 #### Removing features with low or zeri variance
 
@@ -361,11 +362,11 @@ Number of features before selection: 162
 Number of features after selection: 81
 ```
 
-### Feature Scaling
+### <span id="jump9">Feature Scaling</span>
 
 As mentioned before, we can apply standard scaling to the training data. Some classifiers, such as CNN, SVM  perform better when this is done.
 
-### XGBoost
+### <span id="XGBoost">XGBoost</span>
 
 [XGBoost](XGBoost is the leading model for working with standard tabular data (the type of data you store in Pandas DataFrames, as opposed to more exotic types of data like images and videos). XGBoost models dominate many Kaggle competitions.) is the leading model for working with standard tabular data (the type of data you store in Pandas DataFrames, as opposed to more exotic types of data like images and videos). XGBoost models dominate many Kaggle competitions.
 
