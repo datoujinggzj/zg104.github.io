@@ -24,9 +24,7 @@ Nothing ruins the thrill of buying a brand new car more quickly than seeing your
 
 In this competition, I was challenged to build a model that predicts the probability that a driver will initiate an auto insurance claim in the next year. While Porto Seguro has used machine learning for the past 20 years, they’re looking to Kaggle’s machine learning community to explore new, more powerful methods. A more accurate prediction will allow them to further tailor their prices, and hopefully make auto insurance coverage more accessible to more drivers.
 
-## Evaluation
-
-__Scoring Metric__
+## Evaluation (Scoring Metric)
 
 Submissions are evaluated using the [Normalized Gini Coefficient](https://en.wikipedia.org/wiki/Gini_coefficient).
 
