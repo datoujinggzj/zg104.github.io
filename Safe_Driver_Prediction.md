@@ -130,7 +130,7 @@ Thanks to our meta file we can easily select the variables on which we want to c
 
 After checking the description of different types of variables we might use, we have the folowing information attached.
 
-#### interval variables
+#### Interval variables
 
 __reg variables__
 
