@@ -65,7 +65,7 @@ The Normalized Gini Coefficient adjusts the score by the theoretical maximum so 
 ## Data Preparation 
 
 - [Basic inspection of the data](#Basic-inspection-of-the-data)
-- <a href="#Basic-inspection-of-the-data">Basic inspection of the data</a>
+- <a id="Basic-inspection-of-the-data">Basic inspection of the data</a>
 - [Metadata](#Metadata)
 - [Descriptive statistics](#Descriptive-statistics)
 - [Handling imbalanced classes](#Handling-imbalanced-classes)
