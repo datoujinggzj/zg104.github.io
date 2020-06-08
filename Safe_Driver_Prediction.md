@@ -37,10 +37,6 @@ The Normalized Gini Coefficient adjusts the score by the theoretical maximum so 
 [Here](https://www.kaggle.com/cppttz/gini-coefficient-an-explanation-with-math/) is the math explanation of Gini coefficient.
 
 
-
-
-
-
 # <span id="main">Main Processes of the Project</span>
 
 
