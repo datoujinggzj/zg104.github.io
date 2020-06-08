@@ -322,6 +322,8 @@ Interaction effects can be account for by including a new feature comprising the
 Before creating interactions we have 109 variables in train
 After creating interactions we have 164 variables in train
 ```
+Now, we add 55 interaction features for consideration. 
+
 ### <span id="jump8">Feature Selection</span>
 
 #### Removing features with low or zeri variance
@@ -381,9 +383,9 @@ import time
 import gc
 ```
 
-> Setting `MAX_ROUNDS` fairly high is recommended and using `OPTIMIZE_ROUNDS = True` to get an idea of the appropriate number of rounds (which, in my judgment, should be close to the maximum value of `best_ntree_limit` among all 5 folds, maybe even a bit higher if your model is adequately regularized...or alternatively, you could set `verbose=True` and look at the details to try to find a number of rounds that works well for all folds). Then I would turn off `OPTIMIZE_ROUNDS` and set `MAX_ROUNDS` to the appropraite number of total rounds.
+Setting `MAX_ROUNDS` fairly high is recommended and using `OPTIMIZE_ROUNDS = True` to get an idea of the appropriate number of rounds (which, in my judgment, should be close to the maximum value of `best_ntree_limit` among all 5 folds, maybe even a bit higher if your model is adequately regularized...or alternatively, you could set `verbose=True` and look at the details to try to find a number of rounds that works well for all folds). Then I would turn off `OPTIMIZE_ROUNDS` and set `MAX_ROUNDS` to the appropraite number of total rounds.
 
-> The problem with "__early stopping__" by choosing the best round for each fold is that it overfits to the validation data. It's therefore liable not to produce the optimal model for predicting test data, and if it's used to produce validation data for stacking/ensembling with other models, it would cause this one to have too much weight in the ensemble. Another possibility (and the default for XGBoost, it seems) is to use the round where the early stop actually happens (with the lag that verifies lack of improvement) rather than the best round. That solves the overfitting problem (provided the lag is long enough), but so far it doesn't seem to have helped. (I got a worse validation score with 20-round early stopping per fold than with a constant number of rounds for all folds, so the early stopping actually seemed to underfit.)
+The problem with "__early stopping__" by choosing the best round for each fold is that it overfits to the validation data. It's therefore liable not to produce the optimal model for predicting test data, and if it's used to produce validation data for stacking/ensembling with other models, it would cause this one to have too much weight in the ensemble. Another possibility (and the default for XGBoost, it seems) is to use the round where the early stop actually happens (with the lag that verifies lack of improvement) rather than the best round. That solves the overfitting problem (provided the lag is long enough), but so far it doesn't seem to have helped. (I got a worse validation score with 20-round early stopping per fold than with a constant number of rounds for all folds, so the early stopping actually seemed to underfit.)
 
 
 ### <span id="jump11">Auxiliary Functions</span>
