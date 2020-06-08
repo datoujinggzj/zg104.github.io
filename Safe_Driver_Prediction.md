@@ -38,7 +38,7 @@ The normalized Gini Coefficient is around 0.284. Good! The number of features fo
 
 # Main Processes of the Project
 
-## Description
+__Description__
 
 Nothing ruins the thrill of buying a brand new car more quickly than seeing your new insurance bill. The sting’s even more painful when you know you’re a good driver. It doesn’t seem fair that you have to pay so much if you’ve been cautious on the road for years.
 
@@ -47,9 +47,9 @@ Nothing ruins the thrill of buying a brand new car more quickly than seeing your
 
 In this competition, I was challenged to build a model that predicts the probability that a driver will initiate an auto insurance claim in the next year. While Porto Seguro has used machine learning for the past 20 years, they’re looking to Kaggle’s machine learning community to explore new, more powerful methods. A more accurate prediction will allow them to further tailor their prices, and hopefully make auto insurance coverage more accessible to more drivers.
 
-## Evaluation
+__Evaluation__
 
-__Scoring Metric__
+_Scoring Metric_
 
 Submissions are evaluated using the [Normalized Gini Coefficient](https://en.wikipedia.org/wiki/Gini_coefficient).
 
@@ -61,8 +61,6 @@ The Normalized Gini Coefficient adjusts the score by the theoretical maximum so 
 
 [Here](https://www.kaggle.com/cppttz/gini-coefficient-an-explanation-with-math/) is the math explanation of Gini coefficient.
 
-
-# Porto Seguro’s Safe Driver Prediction in XGBoost
 
 ## Data Preparation 
 
@@ -113,8 +111,6 @@ Concretely we will store:
 
 Using metadata, we can extract the columns we might want to use convinently and systematically.
 
-Below the number of variables per role and level are displayed.
-
 | role | level | count |
 | :-- | :-- | :-- |
 | id | nominal | 1 |
@@ -123,6 +119,8 @@ Below the number of variables per role and level are displayed.
 | input | nominal | 14 |
 | input | ordinal | 16 |
 | target | binary | 1 |
+
+Above the number of variables per role and level are displayed.
 
 ### Descriptive statistics
 
@@ -134,17 +132,17 @@ After checking the description of different types of variables we might use, we 
 
 #### interval variables
 
-reg variables
+__reg variables__
 
 - only ps_reg_03 has missing values
 - the range (min to max) differs between the variables. We could apply scaling (e.g. StandardScaler), but it depends on the classifier we will want to use.
 
-car variables
+__car variables__
 
 - ps_car_12 and ps_car_15 have missing values
 - again, the range differs and we could apply scaling.
 
-calc variables
+__calc variables__
 
 - no missing values
 - this seems to be some kind of ratio as the maximum is 0.9
