@@ -17,7 +17,7 @@ navbar-links:
     - Glass Identification: "glass"
     - Deep Learning: "deeplearning"
   Kaggle:
-    - Safe_Driver_Prediction: "Safe_Driver_Prediction"
+    - Safe Driver Prediction: "Safe_Driver_Prediction"
 # remember to unlock it if needed
 #   Resume: 
 #     - English: "EnglishCV"
