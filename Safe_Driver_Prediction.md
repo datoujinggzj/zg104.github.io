@@ -543,6 +543,58 @@ As is known, the better, the closer normalized Gini is approaching `0.5`. Pretty
 
 ## <span id="jump13">Parameter Tuning</span>
 
+Building a model using XGBoost is easy. But, improving the model using XGBoost is difficult (at least I struggled a lot). This algorithm uses multiple parameters. To improve the model, parameter tuning is must. It is very difficult to get answers to practical questions like – Which set of parameters you should tune ? What is the ideal value of these parameters to obtain optimal output?
+
+```python
+baseline CV: 0.28266
+
+Try lambda=2.0, 0.5
+Try alpha=.5.0: new optimum, CV=0.28322
+Try alpha=0.8, 0.3; gamma=0.5, 2.0, 3.0, 2.5, 4.0
+Try maxdepth=4: new optimum, CV=0.28324
+Try gamma=1.0, 2.0, 4.0
+Try gamma=5.0: new optimum, CV=0.28348
+Try gamma=7.0
+Try gamma=8.0: new optimum, CV=0.28356
+Try gamma=10.0; subsample=0.7, 0.9; colsample=0.7, 0.9; lambda=2.0
+Try lambda=1.3: new optimum, CV=0.28371
+Try lambda=1.5, 1.2
+Try subsample=0.83 with colsample=0.77
+Try scaleposweight=1.3; alpha=0.4. 0.6; scaleposweight=3.0; minchildweight=4.0
+Try scaleposweight=2.0 without upsampling: new optimum, CV=0.28397
+Try scaleposweight=2.3
+Try scaleposweight=1.8: new optimum, CV=0.28447
+Try scaleposweight=1.7: new optimum, CV=0.28452
+Try scaleposweight= 1.6; maxdepth=5
+Try colsamplebylevel instead of bytree
+Try maxdeltastep=1.0
+Try booster=dart with K=4, maxrounds=200, and learningrate=.0.08. (Dart is too slow to use with usual parameters.)
+Try lambda=1.4, 1.2; gamma=7.0, 9.0; minchildweight=2.0, 0.5
+Try minchildweight=0.8: new optimum, CV=0.28455
+Try minchildweight=0.9, 0.7
+Try minchildweight=0.77: new optimum, CV=0.28462
+Try alpha=.2.0, 0.9
+Try subsample=0.83, 0.77 with alpha=0.9
+Try colsample=0.78 with subsample=0.77 and alpha=0.9
+Try colsample=0.82 with subsample=0.77 and alpha=0.9
+Try subsample=0.77, 0.82, 0.75
+Try colsamplebylevel=0.8, 0.9, 0.7 with subsample=0.75
+Try colsamplebylevel=0.8; labmda=5.0
+Try alpha=2: new optimum, CV=0.28481
+Try alpha=3
+Try alpha=2.3: new optimum, CV=0.28482
+Try lambda=1.5, 1.0, 1.2; scaleposweight=1.8
+Try scaleposweight=1.6: : new optimum, CV=0.28512
+Try scaleposweight=1.5; minchildweight=0.8, 0.7, 1.0, 0.9, 0.6, 0.5, 0.2; maxdepth=5, 3; gamma=3.0, 12.0
+Try adding pscar11_cat as a feature
+Try gamma=10.0: new optimum, CV=0.28565
+Try subsample=0.7, 0.85; colsample=0.7, 0.75; lambda=3.0, 5.0, 8.0, 11.0, 6.0, 4.0, 1.0
+Try gamma=11.0, 9.0; alpha=4.0, 1.0, 3.0, 5.0, 2.0
+Try alpha=6.0: new optimum, CV=0.28591
+Try alpha=8.0: new optimum, CV=0.28613
+```
+Parameter tuning is a time-consuming task for improving the model performance, but it is a MUST.
+
 # <span id="link">Links</span>
 
 [Porto Seguro's Safe Driver Prediction EDA & XGBoost -- Version 1](https://colab.research.google.com/drive/1ZyBvbnQhL09dwoCaoi11tSE_1stC88T6#scrollTo=HUQg-1XPLpDe)
@@ -560,3 +612,18 @@ The normalized Gini Coefficient is around 0.233. Not bad! I assume that the numb
 
 The normalized Gini Coefficient is around 0.284. Good! The number of features for training shrinks to 36. They are proven to be more significantly correlated feature for this model.
 
+# <span id="other">Other Materials</span>
+
+## Reading Materials
+
+- [XGBoost Tuning](https://www.analyticsvidhya.com/blog/2016/03/complete-guide-parameter-tuning-xgboost-with-codes-python/)
+- [XGBoost Document](https://xgboost.readthedocs.io/en/latest/python/python_intro.html)
+- [XGBoost in R](https://bookdown.org/v_anandkumar88/docs2/xgboost.html)
+- [XGBoost by Tong He](https://www.saedsayad.com/docs/xgboost.pdf)
+
+## Learning Path
+
+- [Kaggle Learning](https://www.kaggle.com/learn/overview)
+- [XGBoost Explained Videos](https://www.youtube.com/watch?v=OtD8wVaFm6E&list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&index=55)
+
+__Happy Learning!__
