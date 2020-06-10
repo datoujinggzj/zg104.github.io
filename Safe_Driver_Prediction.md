@@ -614,16 +614,15 @@ The normalized Gini Coefficient is around 0.284. Good! The number of features fo
 
 # <span id="other">Other Materials</span>
 
-## Reading Materials
+__Reading Materials__
 
 - [XGBoost Tuning](https://www.analyticsvidhya.com/blog/2016/03/complete-guide-parameter-tuning-xgboost-with-codes-python/)
 - [XGBoost Document](https://xgboost.readthedocs.io/en/latest/python/python_intro.html)
 - [XGBoost in R](https://bookdown.org/v_anandkumar88/docs2/xgboost.html)
 - [XGBoost by Tong He](https://www.saedsayad.com/docs/xgboost.pdf)
 
-## Learning Path
+__Learning Path__
 
 - [Kaggle Learning](https://www.kaggle.com/learn/overview)
 - [XGBoost Explained Videos](https://www.youtube.com/watch?v=OtD8wVaFm6E&list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&index=55)
 
-__Happy Learning!__
