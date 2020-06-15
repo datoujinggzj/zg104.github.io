@@ -2,7 +2,7 @@
 layout: page
 title: Porto Seguro’s Safe Driver Prediction
 subtitle: Predict if a driver will file an insurance claim next year.
-cover-img: image/bps.jpg
+cover-img: image/COVID19.jpg
 ---
 
 <p align="center">
@@ -266,11 +266,7 @@ Now, let us further dive into the case of each epicentre.
 
 ### <span id="china">China(1st epicentre)</span>
 
-Since China was the first epicentre we are checking for Provinces within China
-
 __Plot country active cases, confirmed, recovered, and growth metrics in China__
-
-Here is the statistcis of `China`
 
 <p align="center">
   <img src="/image/china1.png">
@@ -296,7 +292,7 @@ Here is the statistcis of `China`
   <img src="/image/china6.png">
 </p>
 
-Now, it seems the control of COVID-19 is relatively effcient in China. As a Chinese, I am pround of it! The growth rate and ratio is close to `0`.
+Since China was the first epicentre we are checking for Provinces within China. Now, it seems the control of COVID-19 is relatively effcient in China. As a Chinese, I am pround of it! The growth rate and ratio is close to `0`.
 
 __Province cases in China__
 
