@@ -62,6 +62,7 @@ import os
 After loading in the data, we observe that the data is of the shape `df.shape = (42264, 8)` by the data of `'2020-06-14'`.
 The first 5 observations of the data is listed below:
 
+
 | SNo | ObservationDate | Province/State | Country/Region | Last Update | Confirmed | Deaths | Recovered |
 | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
 | 1 | 01/22/2020 | Anhui | Mainland China | 1/22/2020 17:00 | 1.0 | 0.0 | 0.0 |
@@ -86,15 +87,6 @@ df_update['ProvinceID'] = le.fit_transform(df_update['Province/State'])
 df_update['CountryID']=le.fit_transform(df_update['Country/Region'])
 df_update.head()
 ```
-
-| SNo | ObservationDate | Province/State | Country/Region | Last Update | Confirmed | Deaths | Recovered | ProvinceID | CountryID |
-| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
-| 41534 | 2020-06-14 | Afghanistan | Afghanistan | 2020-06-15 03:33:14 | 24766 | 471 | 4725 | 3 | 0 |
-| 41535 | 2020-06-14 | Albania | Albania | 2020-06-15 03:33:14 | 1521 | 36 | 1044	| 10 | 1 |
-| 41536 | 2020-06-14 | Algeria | Algeria | 2020-06-15 03:33:14 | 10919 | 767 | 7606 | 12 | 2 |
-| 41537 | 2020-06-14 | Andorra | Andorra | 2020-06-15 03:33:14 | 853 | 51 | 781 | 22 | 3 |
-| 41538 | 2020-06-14 | Angola | Angola | 2020-06-15 03:33:14 | 140 | 6 | 61 | 23 | 4 |
-
 
 ### <span id="jump3">Correlation Analysis</span>
 
