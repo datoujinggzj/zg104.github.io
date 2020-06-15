@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Porto Seguro’s Safe Driver Prediction
-subtitle: Predict if a driver will file an insurance claim next year.
+title: COVID-19 Analysis, Visualization, and Prediction
+subtitle: Don't panic and be safe!
 cover-img: image/COVID19.jpg
 ---
 
