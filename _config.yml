@@ -18,6 +18,7 @@ navbar-links:
     - Deep Learning: "deeplearning"
   Kaggle:
     - Safe Driver Prediction: "Safe_Driver_Prediction"
+    - COVID-19 Analysis: "covid"
 # remember to unlock it if needed
 #   Resume: 
 #     - English: "EnglishCV"
