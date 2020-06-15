@@ -63,13 +63,13 @@ After loading in the data, we observe that the data is of the shape `df.shape = 
 The first 5 observations of the data is listed below:
 
 
-| SNo | ObservationDate | Province/State | Country/Region | Last Update | Confirmed | Deaths | Recovered |
-| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
-| 1 | 01/22/2020 | Anhui | Mainland China | 1/22/2020 17:00 | 1.0 | 0.0 | 0.0 |
-| 2 | 01/22/2020 | Beijing | Mainland China | 1/22/2020 17:00 | 14.0 | 0.0 | 0.0 |
-| 3 | 01/22/2020 | Chongqing | Mainland China | 1/22/2020 17:00 | 6.0 | 0.0 | 0.0 |
-| 4 | 01/22/2020 | Fujian | Mainland China | 1/22/2020 17:00 | 1.0 | 0.0 | 0.0 |
-| 5 | 01/22/2020 | Gansu | Mainland China | 1/22/2020 17:00 | 0.0 | 0.0 | 0.0 |
+| ObservationDate | Province/State | Country/Region | Last Update | Confirmed | Deaths | Recovered |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| 01/22/2020 | Anhui | China | 1/22/2020 17:00 | 1.0 | 0.0 | 0.0 |
+| 01/22/2020 | Beijing | China | 1/22/2020 17:00 | 14.0 | 0.0 | 0.0 |
+| 01/22/2020 | Chongqing | China | 1/22/2020 17:00 | 6.0 | 0.0 | 0.0 |
+| 01/22/2020 | Fujian | China | 1/22/2020 17:00 | 1.0 | 0.0 | 0.0 |
+| 01/22/2020 | Gansu | China | 1/22/2020 17:00 | 0.0 | 0.0 | 0.0 |
 
 
 ### <span id="jump2">Data Quality</span>
