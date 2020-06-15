@@ -5,8 +5,9 @@ subtitle: Predict if a driver will file an insurance claim next year.
 cover-img: image/bps.jpg
 ---
 
-https://techcrunch.com/wp-content/uploads/2020/02/coronavirus.jpg
-
+<p align="center">
+  <img src="https://techcrunch.com/wp-content/uploads/2020/02/coronavirus.jpg">
+</p>
 
 ### How have I organized this page?
 This page contains details about Kaggle projects that I have been working on. In order to help readers get the crux of my work with a single look, I have organized each project using a self-designed template:
