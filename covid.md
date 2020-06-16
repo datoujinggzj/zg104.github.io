@@ -40,12 +40,13 @@ Pandemic is spreading all over the world; it becomes more important to understan
 
 ## COVID-19 By Country
 
-- [China(1st Epicentre)](#china)
 - [World(excluding China)](#world)
+- [China(1st Epicentre)](#china)
 - [Italy(2nd Epicentre)](#Italy)
 - [US(3rd Epicentre)](#US)
 
 ### <span id="jump1">Basic Inspection of the Data</span>
+
 
 First, we `import` the packages we might need for analysis.
 
@@ -87,6 +88,8 @@ df_update['ProvinceID'] = le.fit_transform(df_update['Province/State'])
 df_update['CountryID']=le.fit_transform(df_update['Country/Region'])
 df_update.head()
 ```
+
+[LabelEncoder](https://www.kaggle.com/questions-and-answers/61046) is a technique which helps us encode categorical features. It is extremely helpful and necessary for making the model compact and efficient.
 
 ### <span id="jump3">Correlation Analysis</span>
 
@@ -264,6 +267,39 @@ __COVID-19 spread comparison of in different continents__
 
 Now, let us further dive into the case of each epicentre.
 
+### <span id="world">World(excluding China)</span>
+
+Global cases are on an exponential increase and the recovery and death cases do show some divergence which is a good indication.
+
+__Per day statistics for world__
+
+<p align="center">
+  <img src="/image/perdayworld.png">
+</p>
+
+Therefore, there is still a long way to go for the entire world. The number of the total confirmed cases all around the world reach 8,000,000. Crazy!
+
+However, the death rate seems to stay stable which can be a 'good' thing.
+
+
+__Global Trend of confirmed, and death cases increment__
+
+Now, let us check out how the global increment of confirmed and death cases and find out the contribution of it.
+
+<p align="center">
+  <img src="/image/worldincrease.png">
+</p>
+
+Global confirmed cases have been on an increasing trend and this has been largely contributed by Brazil and US at this moment as can be seen in the pie-chart. June 11 saw the highest increase in confirmed cases with `154235` cases in a day.
+
+
+<p align="center">
+  <img src="/image/worlddeath.png">
+</p>
+
+Death cases have also been on the rise globally as seen below. 29th April has seen a drastic increase in the number of deaths in a single day of `10485`.
+
+
 ### <span id="china">China(1st epicentre)</span>
 
 __Plot country active cases, confirmed, recovered, and growth metrics in China__
@@ -311,5 +347,57 @@ __Per day statistics for China__
 Above is the per day statistics of China where the line graph shows flattening of curve for confirmed cases. However on `Feb 13` there was a sudden rise in Confirmed cases and on `Apr 17` there was a sudden rice in Deaths cases.
 
 
+### <span id="Italy">Italy(2nd Epicentre)</span>
 
+Italy was the second epicentre for COVID-19, hence let's look at these statistics. The numbers are high and confirmed cases are increasing by the day. However the increment rate for confirmed cases has been constantly stable and may soon be seeing a plateau phase. Recovery and deaths were both neck to neck with some divergence over the last few days. Italy has more than `100000` confirmed cases on `30th March`.
+
+__Per day statistics for Italy__
+
+<p align="center">
+  <img src="/image/perdayitaly.png">
+</p>
+
+There was a drastic increment of confirmed cases in Italy in the mid March, which maybe sustained for 2 months. Recently, the situation seems to be controled.
+
+__Italy Trend of confirmed, and death cases increment__
+
+<p align="center">
+  <img src="/image/italyincrease.png">
+</p>
+
+We can see that there is a steady decrease of confirmed cases happening in `March 21` in Italy. 
+
+<p align="center">
+  <img src="/image/italydeath.png">
+</p>
+
+The highest number of deaths in Italy was seen on `March 27` with `919` deaths reported. The population of Italy in 2020 is around `60,461,826`. So the confirm rate (`0.4%`) is also a number drawing drastic attention.
+
+__Plot country active cases, confirmed, recovered, and growth metrics in Italy__
+
+<p align="center">
+  <img src="/image/it1.png">
+</p>
+
+<p align="center">
+  <img src="/image/it2.png">
+</p>
+
+<p align="center">
+  <img src="/image/it3.png">
+</p>
+
+<p align="center">
+  <img src="/image/it4.png">
+</p>
+
+<p align="center">
+  <img src="/image/it5.png">
+</p>
+
+<p align="center">
+  <img src="/image/it6.png">
+</p>
+
+The number of death cases is still increasing, but the speed slows down a little. Active cases has been decreasing since early April, which is good news. The growth rate and ratio behavior is very similar to the curve of China. With great help from China, Italy is able to survive and handle COVID-19 in a feasible way.
 
