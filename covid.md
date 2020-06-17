@@ -401,3 +401,58 @@ __Plot country active cases, confirmed, recovered, and growth metrics in Italy__
 
 The number of death cases is still increasing, but the speed slows down a little. Active cases has been decreasing since early April, which is good news. The growth rate and ratio behavior is very similar to the curve of China. With great help from China, Italy is able to survive and handle COVID-19 in a feasible way.
 
+
+### <span id="US">US(3rd epicentre)</span>
+
+__Per day statistics for US__
+
+<p align="center">
+  <img src="/image/perdayus.png">
+</p>
+
+There was a drastic increment of confirmed cases in Italy in the mid March, which maybe sustained for 2 months. Recently, the situation seems to be controled.
+
+__US Trend of confirmed, and death cases increment__
+
+<p align="center">
+  <img src="/image/usconfirm.png">
+</p>
+
+On `April 24`, the confirmed cases reached a peak of 36k in a day. Every 7 days we notice a peak in the numbers.
+
+<p align="center">
+  <img src="/image/usdeath.png">
+</p>
+
+Similar increase has been seen in the deaths reported by US with highest number of deaths(`4591`) recorded on `April 16`.
+
+__Plot country active cases, confirmed, recovered, and growth metrics in the US__
+
+<p align="center">
+  <img src="/image/us1.png">
+</p>
+
+<p align="center">
+  <img src="/image/us2.png">
+</p>
+
+<p align="center">
+  <img src="/image/us3.png">
+</p>
+
+<p align="center">
+  <img src="/image/us4.png">
+</p>
+
+<p align="center">
+  <img src="/image/us5.png">
+</p>
+
+<p align="center">
+  <img src="/image/us6.png">
+</p>
+
+
+
+
+
