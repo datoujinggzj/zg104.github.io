@@ -105,14 +105,14 @@ footer-link-col: "#404040"
 # instead of colour
 
 # 解锁背景
-# navbar-img: "/assets/img/bgimage.png"
-# footer-img: "/assets/img/bgimage.png"
+navbar-img: "/assets/img/bgimage.png"
+footer-img: "/assets/img/bgimage.png"
 # page-img: "/assets/img/bgimage.png"
 
 # --- Web Statistics Section --- #
 
 # Fill in your Google Analytics gtag.js ID to track your website using gtag
-#gtag: ""
+gtag: "UA-173057260-1"
 
 # Fill in your Google Analytics ID to track your website using GA
 #google_analytics: ""
@@ -134,7 +134,7 @@ footer-link-col: "#404040"
 #disqus: ""
 
 # To use Facebook Comments, create a Facebook app and fill in the Facebook App ID
-#fb_comment_id: ""
+fb_comment_id: "100026263117094"
 
 # To use Utterances comments: (0) uncomment the following section, (1) fill in
 # "repository" (make sure the repository is public), (2) Enable Issues in your repository,
