@@ -17,7 +17,7 @@ navbar-links:
     - Stock Prediction: "Project"
     - Glass Identification: "glass"
     - Image identification: "deeplearning"
-    - Readmission Analysis & Prediction: "readmission"
+    - Readmission Analysis & Prediction: "Readmission_prediction"
   Kaggle:
     - Safe Driver Prediction: "Safe_Driver_Prediction"
     - COVID-19 Analysis: "covid"
