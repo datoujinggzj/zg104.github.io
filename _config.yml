@@ -16,7 +16,10 @@ navbar-links:
   Resume:
     - English_Resume: 'e_cv'
     - Chinese_Resume: 'c_cv'
-  Book: "ml"
+  Book: 
+    - Linear_regression: 'Linear_regression'
+    - Logistic_regression: 'Logistic_regression'
+    - Naive_bayes: 'Naive_bayes'
   Project: 
     - Stock Prediction: "Project"
     - Glass Identification: "glass"
@@ -25,11 +28,11 @@ navbar-links:
   Kaggle:
     - Safe Driver Prediction: "Safe_Driver_Prediction"
     - COVID-19 Analysis: "covid"
-  Resources:
-    - Learn Machine Learning: "https://www.youtube.com/watch?v=PPLop4L2eGk&list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN&index=2&t=0s"
-    - Learn Deep Learning: "https://www.superdatascience.com/pages/deep-learning"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-    - Learn Julia: "https://julialang.org/learning/"
+#  Resources:
+#    - Learn Machine Learning: "https://www.youtube.com/watch?v=PPLop4L2eGk&list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN&index=2&t=0s"
+#    - Learn Deep Learning: "https://www.superdatascience.com/pages/deep-learning"
+#    - Learn markdown: "https://www.markdowntutorial.com/"
+#    - Learn Julia: "https://julialang.org/learning/"
 
 # --- Logo --- #
 
