@@ -16,7 +16,7 @@ navbar-links:
   Resume:
     - English_Resume: 'e_cv'
     - Chinese_Resume: 'c_cv'
-  Book: 
+  Machine Learning: 
     - Linear_regression: 'Linear_regression'
     - Logistic_regression: 'Logistic_regression'
     - Naive_bayes: 'Naive_bayes'
