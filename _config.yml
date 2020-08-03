@@ -60,6 +60,7 @@ social-network-links:
   github: zg104
   twitter: Zijing39896593
   rss: true
+  weixin: datoujinggzj
 #  reddit: yourname
   linkedin: zg104
 #  xing: yourname
@@ -82,6 +83,7 @@ share-links-active:
   twitter: true
   facebook: true
   linkedin: true
+  wechat: true
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
