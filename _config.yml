@@ -13,9 +13,9 @@ author: Zijing Gao
 navbar-links:
   About Me: "aboutme"
   # remember to unlock it if needed
-  Resume:
-    - English_Resume: 'e_cv'
-    - Chinese_Resume: 'c_cv'
+#  Resume:
+#   - English_Resume: 'e_cv'
+#    - Chinese_Resume: 'c_cv'
   Machine Learning: 
     - 机器学习算法总结: 'ml'
     - Linear_regression: 'Linear_regression'
@@ -25,7 +25,7 @@ navbar-links:
     - Stock Prediction: "Project"
     - Glass Identification: "glass"
     - Image identification: "deeplearning"
-    - Readmission Analysis & Prediction: "Readmission_prediction"
+#    - Readmission Analysis & Prediction: "Readmission_prediction"
   Kaggle:
     - Safe Driver Prediction: "Safe_Driver_Prediction"
     - COVID-19 Analysis: "covid"
