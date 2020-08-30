@@ -18,10 +18,11 @@ navbar-links:
 #    - Chinese_Resume: 'c_cv'
   SQL: "sql"
   Machine Learning: 
-    - 机器学习算法总结: 'ml'
-    - Linear_regression: 'Linear_regression'
-    - Logistic_regression: 'Logistic_regression'
-    - Naive_bayes: 'Naive_bayes'
+#   - 机器学习算法总结: 'ml'
+    - Linear Regression: 'Linear_regression'
+    - Logistic Regression: 'Logistic_regression'
+    - Naive Bayes: 'Naive_bayes'
+    - Support Vector Machine: 'SVM'
   Project: 
     - Stock Prediction: "Project"
     - Glass Identification: "glass"
