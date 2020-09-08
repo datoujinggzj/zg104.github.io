@@ -23,7 +23,7 @@ navbar-links:
     - Logistic Regression: 'Logistic_regression'
     - Naive Bayes: 'Naive_bayes'
     - Support Vector Machine: 'SVM'
-    - KNN: 'KNN'
+    - KNN: 'KNN_tutorial'
   Project: 
     - Stock Prediction: "Project"
     - Glass Identification: "glass"
