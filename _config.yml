@@ -27,10 +27,10 @@ navbar-links:
     - Stock Prediction: "Project"
     - Glass Identification: "glass"
     - Image identification: "deeplearning"
-#    - Readmission Analysis & Prediction: "Readmission_prediction"
-  Kaggle:
     - Safe Driver Prediction: "Safe_Driver_Prediction"
     - COVID-19 Analysis: "covid"
+#    - Readmission Analysis & Prediction: "Readmission_prediction"
+    - KNN with Iris Dataset: 'KNN'
 #  Resources:
 #    - Learn Machine Learning: "https://www.youtube.com/watch?v=PPLop4L2eGk&list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN&index=2&t=0s"
 #    - Learn Deep Learning: "https://www.superdatascience.com/pages/deep-learning"
