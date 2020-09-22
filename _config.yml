@@ -18,6 +18,7 @@ navbar-links:
 #    - Chinese_Resume: 'c_cv'
   SQL: 
     - Easy: "sql"
+    - Medium: "sql_medium"
   Machine Learning: 
 #   - 机器学习算法总结: 'ml'
     - Linear Regression: 'Linear_regression'
