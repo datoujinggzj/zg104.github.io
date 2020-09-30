@@ -37,6 +37,11 @@
 <li><a href="#14">Customers Who Bought Products A and B but Not C</a></li>
 <li><a href="#15">Department Highest Salary</a></li>
 <li><a href="#16">Evaluate Boolean Expression</a></li>
+<li><a href="#17">Exchange Seats</a></li>
+<li><a href="#18">Find the Start and End Number of Continuous Ranges</a></li>
+<li><a href="#19"><em><strong>Friend Requests II: Who Has the Most Friends</strong></em></a></li>
+<li><a href="#20"><em>Game Play Analysis III</em></a></li>
+<li><a href="#21"><em>Game Play Analysis IV</em></a></li>
 </ul>
 <h2 id="前言">前言</h2>
 <p>这篇文章主要帮助大家开启对 SQL 的深入学习，总结了 LeetCode 中的 Database 中 SQL（中等）里面代表性较高且值得去反复做的  道题，希望能对大家深入SQL 有所帮助！</p>
@@ -1685,6 +1690,420 @@ operator is an enum that takes one of the values (’&lt;’, ‘&gt;’, ‘=�
 </code></pre>
 <p align="center">
 	  <img src="https://github.com/zg104/zg104.github.io/blob/master/image/sqlm16.png?raw=true">
+</p>
+<h3 id="span-id1717.-exchange-seatsspan"><span id="17">17. Exchange Seats</span></h3>
+<p>Mary is a teacher in a middle school and she has a table  <code>seat</code>  storing students’ names and their corresponding seat ids.</p>
+<p>The column <strong>id</strong> is continuous increment.</p>
+<p>Mary wants to change seats for the adjacent students.</p>
+<p>Can you write a SQL query to output the result for Mary?</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">---------+---------+</span>
+<span class="token operator">|</span>    id   <span class="token operator">|</span> student <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------+---------+</span>
+<span class="token operator">|</span>    <span class="token number">1</span>    <span class="token operator">|</span> Abbot   <span class="token operator">|</span>
+<span class="token operator">|</span>    <span class="token number">2</span>    <span class="token operator">|</span> Doris   <span class="token operator">|</span>
+<span class="token operator">|</span>    <span class="token number">3</span>    <span class="token operator">|</span> Emerson <span class="token operator">|</span>
+<span class="token operator">|</span>    <span class="token number">4</span>    <span class="token operator">|</span> Green   <span class="token operator">|</span>
+<span class="token operator">|</span>    <span class="token number">5</span>    <span class="token operator">|</span> Jeames  <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------+---------+</span>
+</code></pre>
+<p>For the sample input, the output is:</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">---------+---------+</span>
+<span class="token operator">|</span>    id   <span class="token operator">|</span> student <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------+---------+</span>
+<span class="token operator">|</span>    <span class="token number">1</span>    <span class="token operator">|</span> Doris   <span class="token operator">|</span>
+<span class="token operator">|</span>    <span class="token number">2</span>    <span class="token operator">|</span> Abbot   <span class="token operator">|</span>
+<span class="token operator">|</span>    <span class="token number">3</span>    <span class="token operator">|</span> Green   <span class="token operator">|</span>
+<span class="token operator">|</span>    <span class="token number">4</span>    <span class="token operator">|</span> Emerson <span class="token operator">|</span>
+<span class="token operator">|</span>    <span class="token number">5</span>    <span class="token operator">|</span> Jeames  <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------+---------+</span>
+</code></pre>
+<p><strong>Note:</strong><br>
+If the number of students is odd, there is no need to change the last one’s seat.</p>
+<p><font color="#EA5FD4">详解：</font></p>
+<p>我们要把学生名称按照 id 的奇偶性来对调，那么有以下几种情况：</p>
+<ul>
+<li>当 id 为奇数，且不为最后一个，那么则 id 增加 1</li>
+<li>当 id 为奇数，且为最后一个，那么 id 不变（落单了，不互换）</li>
+<li>当 id 为偶数（不管是不是最后一个），都减去 1（偶数情况下，必然可以和前面的奇数位置互换！）</li>
+</ul>
+<p><font color="red">正确答案如下：</font></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">select</span>
+<span class="token punctuation">(</span><span class="token keyword">case</span> 
+    <span class="token keyword">when</span> mod<span class="token punctuation">(</span>id<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token number">0</span> <span class="token operator">and</span> counts <span class="token operator">!=</span> id <span class="token keyword">then</span> id<span class="token operator">+</span><span class="token number">1</span>
+    <span class="token keyword">when</span> mod<span class="token punctuation">(</span>id<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token number">0</span> <span class="token operator">and</span> counts <span class="token operator">=</span> id <span class="token keyword">then</span> id
+    <span class="token keyword">else</span> id<span class="token number">-1</span>
+<span class="token keyword">end</span><span class="token punctuation">)</span> <span class="token keyword">as</span> id<span class="token punctuation">,</span> student
+<span class="token keyword">from</span>
+    seat<span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">as</span> counts <span class="token keyword">from</span> seat<span class="token punctuation">)</span> <span class="token keyword">as</span> seat_counts
+<span class="token keyword">order</span> <span class="token keyword">by</span> id<span class="token punctuation">;</span>
+</code></pre>
+<p align="center">
+	  <img src="https://github.com/zg104/zg104.github.io/blob/master/image/sqlm17.png?raw=true">
+</p>
+<h3 id="span-id1818.-find-the-start-and-end-number-of-continuous-rangesspan"><span id="18">18. Find the Start and End Number of Continuous Ranges</span></h3>
+<p>Table:  <code>Logs</code></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+<span class="token operator">|</span> <span class="token keyword">Column</span> Name   <span class="token operator">|</span> <span class="token keyword">Type</span>    <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+<span class="token operator">|</span> log_id        <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+</code></pre>
+<p><code>id</code> is the primary key for this table.<br>
+Each row of this table contains the ID in a log Table.</p>
+<p>Since some IDs have been removed from  <code>Logs</code>. Write an SQL query to find the start and end number of continuous ranges in table  <code>Logs</code>.</p>
+<p>Order the result table by  <code>start_id</code>.</p>
+<p>The query result format is in the following example:</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token comment"># Logs table:</span>
+<span class="token operator">+</span><span class="token comment">------------+</span>
+<span class="token operator">|</span> log_id     <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+</span>
+<span class="token operator">|</span> <span class="token number">1</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">2</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">3</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">7</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">8</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">10</span>         <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+</span>
+
+<span class="token comment"># Result table:</span>
+<span class="token operator">+</span><span class="token comment">------------+--------------+</span>
+<span class="token operator">|</span> start_id   <span class="token operator">|</span> end_id       <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+--------------+</span>
+<span class="token operator">|</span> <span class="token number">1</span>          <span class="token operator">|</span> <span class="token number">3</span>            <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">7</span>          <span class="token operator">|</span> <span class="token number">8</span>            <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">10</span>         <span class="token operator">|</span> <span class="token number">10</span>           <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+--------------+</span>
+</code></pre>
+<p>The result table should contain all ranges in table Logs.</p>
+<p>From 1 to 3 is contained in the table.</p>
+<p>From 4 to 6 is missing in the table</p>
+<p>From 7 to 8 is contained in the table.</p>
+<p>Number 9 is missing in the table.</p>
+<p>Number 10 is contained in the table.</p>
+<p><font color="#EA5FD4">详解：</font></p>
+<p>我们要找到每段连续数字的开头和结尾，那么可以先尝试把所有数字用窗口函数从小到大排列。</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span> 
+	log_id<span class="token punctuation">,</span>
+    dense_rank<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">OVER</span><span class="token punctuation">(</span><span class="token keyword">order</span> <span class="token keyword">by</span> log_id<span class="token punctuation">)</span> <span class="token keyword">AS</span> rnk
+<span class="token keyword">FROM</span> Logs 
+</code></pre>
+<pre class=" language-sql"><code class="prism  language-sql">{<span class="token string">"headers"</span>: <span class="token punctuation">[</span><span class="token string">"log_id"</span><span class="token punctuation">,</span> <span class="token string">"rnk"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token string">"values"</span>: 
+<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">]</span>}
+</code></pre>
+<p>那么我们发现这两列的差值好像有些地方相似，不放试一试。</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span> 
+	l<span class="token punctuation">.</span>log_id<span class="token punctuation">,</span>
+    <span class="token punctuation">(</span>l<span class="token punctuation">.</span>log_id <span class="token operator">-</span> l<span class="token punctuation">.</span>rnk<span class="token punctuation">)</span> <span class="token keyword">AS</span> diff
+<span class="token keyword">FROM</span>
+<span class="token punctuation">(</span>
+	<span class="token keyword">SELECT</span> 
+		log_id<span class="token punctuation">,</span>
+        dense_rank<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">OVER</span><span class="token punctuation">(</span><span class="token keyword">order</span> <span class="token keyword">by</span> log_id<span class="token punctuation">)</span> <span class="token keyword">AS</span> rnk
+    <span class="token keyword">FROM</span> Logs   
+<span class="token punctuation">)</span> l
+</code></pre>
+<pre class=" language-sql"><code class="prism  language-sql">{<span class="token string">"headers"</span>: <span class="token punctuation">[</span><span class="token string">"log_id"</span><span class="token punctuation">,</span> <span class="token string">"diff"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token string">"values"</span>: 
+<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">]</span>}
+</code></pre>
+<p>我们发现连续的数字对应的 <code>diff</code> 都是一样，那么我们可以对 <code>diff</code> 进行 group by，然后取最小值当做 start，最大值当做 end。</p>
+<p><font color="red">正确答案如下：</font></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">with</span> log_diff <span class="token keyword">as</span>
+<span class="token punctuation">(</span>
+    <span class="token keyword">select</span> l<span class="token punctuation">.</span>log_id<span class="token punctuation">,</span>
+    <span class="token punctuation">(</span>l<span class="token punctuation">.</span>log_id <span class="token operator">-</span> l<span class="token punctuation">.</span>rnk<span class="token punctuation">)</span> <span class="token keyword">as</span> diff
+    <span class="token keyword">from</span>
+    <span class="token punctuation">(</span>
+        <span class="token keyword">select</span> log_id<span class="token punctuation">,</span>
+        dense_rank<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">order</span> <span class="token keyword">by</span> log_id<span class="token punctuation">)</span> <span class="token keyword">as</span> rnk
+        <span class="token keyword">from</span> Logs   
+    <span class="token punctuation">)</span> l
+<span class="token punctuation">)</span>
+
+<span class="token keyword">select</span> 
+    <span class="token function">min</span><span class="token punctuation">(</span>log_id<span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token string">'start_id'</span><span class="token punctuation">,</span>
+    <span class="token function">max</span><span class="token punctuation">(</span>log_id<span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token string">'end_id'</span>
+<span class="token keyword">from</span> log_diff
+<span class="token keyword">group</span> <span class="token keyword">by</span> diff
+</code></pre>
+<p align="center">
+	  <img src="https://github.com/zg104/zg104.github.io/blob/master/image/sqlm18.png?raw=true">
+</p>
+<h3 id="span-id1919.-friend-requests-ii-who-has-the-most-friendsspan"><span id="19">19. Friend Requests II: Who Has the Most Friends</span></h3>
+<p>先来回顾一下 <a href="https://zg104.github.io/sql#19"><em><strong>Friend Requests I: Overall Acceptance Rate</strong></em></a></p>
+<p>In social network like Facebook or Twitter, people send friend requests and accept others’ requests as well.</p>
+<p>Table  <code>request_accepted</code></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">--------------+-------------+------------+</span>
+<span class="token operator">|</span> requester_id <span class="token operator">|</span> accepter_id <span class="token operator">|</span> accept_date<span class="token operator">|</span>
+<span class="token operator">|</span><span class="token comment">--------------|-------------|------------|</span>
+<span class="token operator">|</span> <span class="token number">1</span>            <span class="token operator">|</span> <span class="token number">2</span>           <span class="token operator">|</span> 2016_06<span class="token number">-03</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">1</span>            <span class="token operator">|</span> <span class="token number">3</span>           <span class="token operator">|</span> <span class="token number">2016</span><span class="token operator">-</span><span class="token number">06</span><span class="token operator">-</span><span class="token number">08</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">2</span>            <span class="token operator">|</span> <span class="token number">3</span>           <span class="token operator">|</span> <span class="token number">2016</span><span class="token operator">-</span><span class="token number">06</span><span class="token operator">-</span><span class="token number">08</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">3</span>            <span class="token operator">|</span> <span class="token number">4</span>           <span class="token operator">|</span> <span class="token number">2016</span><span class="token operator">-</span><span class="token number">06</span><span class="token operator">-</span><span class="token number">09</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------+-------------+------------+</span>
+</code></pre>
+<p>This table holds the data of friend acceptance, while <strong>requester_id</strong> and <strong>accepter_id</strong> both are the id of a person.</p>
+<p>Write a query to find the the people who has most friends and the most friends number under the following rules:</p>
+<ul>
+<li>It is guaranteed there is only 1 people having the most friends.</li>
+<li>The friend request could only been accepted once, which mean there is no multiple records with the same  <strong>requester_id</strong>  and  <strong>accepter_id</strong>  value.</li>
+</ul>
+<p>For the sample data above, the result is:</p>
+<p>Result table:</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">------+------+</span>
+<span class="token operator">|</span> id   <span class="token operator">|</span> num  <span class="token operator">|</span>
+<span class="token operator">|</span><span class="token comment">------|------|</span>
+<span class="token operator">|</span> <span class="token number">3</span>    <span class="token operator">|</span> <span class="token number">3</span>    <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------+------+</span>
+</code></pre>
+<p>The person with id ‘3’ is a friend of people ‘1’, ‘2’ and ‘4’, so he has 3 friends in total, which is the most number than any others.</p>
+<p><strong>Follow-up:</strong><br>
+In the real world, multiple people could have the same most number of friends, can you find all these people in this case?</p>
+<p><font color="#EA5FD4">详解：</font></p>
+<p>我们要找到有最多朋友的人，定义则是：</p>
+<ul>
+<li>只有一个人有最多的朋友</li>
+<li>朋友申请只能接受一次，意味着没有多条拥有同样的 requester_id 和 accepter_id 的记录</li>
+</ul>
+<p>那么根据这个题的情况，id = 3 有最多的朋友，因为申请和接受是双向的，那么我们首先要搞清楚一共有多少个不同的人（不管是申请者还是接受者）</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">select</span> requester_id <span class="token keyword">as</span> <span class="token string">'all'</span> 
+<span class="token keyword">from</span> request_accepted
+<span class="token keyword">union</span> 
+<span class="token keyword">select</span> accepter_id 
+<span class="token keyword">from</span> request_accepted
+</code></pre>
+<pre class=" language-sql"><code class="prism  language-sql">{<span class="token string">"headers"</span>: <span class="token punctuation">[</span><span class="token string">"all"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token string">"values"</span>: <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">]</span>}
+</code></pre>
+<p>那么接下来，我们需要把上面的记录和 request_accepted 合并，保证上面的人要么是申请者要么是接受者。</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">with</span> t1 <span class="token keyword">as</span>
+<span class="token punctuation">(</span><span class="token keyword">select</span> requester_id <span class="token keyword">as</span> <span class="token string">'all'</span> <span class="token keyword">from</span> request_accepted
+<span class="token keyword">union</span> 
+<span class="token keyword">select</span> accepter_id <span class="token keyword">from</span> request_accepted<span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+t2 <span class="token keyword">as</span>
+<span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token number">c</span><span class="token punctuation">.</span><span class="token keyword">all</span> <span class="token keyword">as</span> <span class="token string">'id'</span><span class="token punctuation">,</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token string">'num'</span>
+<span class="token keyword">from</span> t1 <span class="token number">c</span>
+<span class="token keyword">left</span> <span class="token keyword">join</span> request_accepted r
+<span class="token keyword">on</span> <span class="token number">c</span><span class="token punctuation">.</span><span class="token keyword">all</span> <span class="token operator">=</span> r<span class="token punctuation">.</span>requester_id
+<span class="token operator">or</span> <span class="token number">c</span><span class="token punctuation">.</span><span class="token keyword">all</span> <span class="token operator">=</span> r<span class="token punctuation">.</span>accepter_id
+<span class="token keyword">group</span> <span class="token keyword">by</span> <span class="token number">1</span>
+<span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> t2
+</code></pre>
+<p>结果如下：</p>
+<pre class=" language-sql"><code class="prism  language-sql">{<span class="token string">"headers"</span>: <span class="token punctuation">[</span><span class="token string">"id"</span><span class="token punctuation">,</span> <span class="token string">"num"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"values"</span>: 
+<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>}
+</code></pre>
+<p>那么很容易可以看出，id = 3 是我们想要的，因为num 最大</p>
+<p><font color="red">正确答案如下：</font></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">with</span> t1 <span class="token keyword">as</span>
+<span class="token punctuation">(</span><span class="token keyword">select</span> requester_id <span class="token keyword">as</span> <span class="token string">'all'</span> <span class="token keyword">from</span> request_accepted
+<span class="token keyword">union</span> 
+<span class="token keyword">select</span> accepter_id <span class="token keyword">from</span> request_accepted<span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+t2 <span class="token keyword">as</span>
+<span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token number">c</span><span class="token punctuation">.</span><span class="token keyword">all</span> <span class="token keyword">as</span> <span class="token string">'id'</span><span class="token punctuation">,</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token string">'num'</span>
+<span class="token keyword">from</span> t1 <span class="token number">c</span>
+<span class="token keyword">left</span> <span class="token keyword">join</span> request_accepted r
+<span class="token keyword">on</span> <span class="token number">c</span><span class="token punctuation">.</span><span class="token keyword">all</span> <span class="token operator">=</span> r<span class="token punctuation">.</span>requester_id
+<span class="token operator">or</span> <span class="token number">c</span><span class="token punctuation">.</span><span class="token keyword">all</span> <span class="token operator">=</span> r<span class="token punctuation">.</span>accepter_id
+<span class="token keyword">group</span> <span class="token keyword">by</span> <span class="token number">1</span>
+<span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> t2
+<span class="token keyword">where</span> num <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token function">max</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token keyword">from</span> t2<span class="token punctuation">)</span>
+</code></pre>
+<p><strong>Follow-up:</strong></p>
+<p>在现实世界中，多个人可能拥有相同数量的朋友，在这种情况下，您可以找到所有这些人吗？</p>
+<p>这种情况，我们需要用 window function 来把 num 进行排序，rank = 1 的就是我们想要的，所以稍微改一下即可。</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">with</span> t1 <span class="token keyword">as</span>
+<span class="token punctuation">(</span><span class="token keyword">select</span> requester_id <span class="token keyword">as</span> <span class="token string">'all'</span> <span class="token keyword">from</span> request_accepted
+<span class="token keyword">union</span> 
+<span class="token keyword">select</span> accepter_id <span class="token keyword">from</span> request_accepted<span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+t2 <span class="token keyword">as</span>
+<span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token number">c</span><span class="token punctuation">.</span><span class="token keyword">all</span> <span class="token keyword">as</span> <span class="token string">'id'</span><span class="token punctuation">,</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token string">'num'</span><span class="token punctuation">,</span> dense_rank<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">desc</span><span class="token punctuation">)</span> <span class="token keyword">as</span> rnk
+<span class="token keyword">from</span> t1 <span class="token number">c</span>
+<span class="token keyword">left</span> <span class="token keyword">join</span> request_accepted r
+<span class="token keyword">on</span> <span class="token number">c</span><span class="token punctuation">.</span><span class="token keyword">all</span> <span class="token operator">=</span> r<span class="token punctuation">.</span>requester_id
+<span class="token operator">or</span> <span class="token number">c</span><span class="token punctuation">.</span><span class="token keyword">all</span> <span class="token operator">=</span> r<span class="token punctuation">.</span>accepter_id
+<span class="token keyword">group</span> <span class="token keyword">by</span> <span class="token number">1</span>
+<span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token keyword">select</span> id<span class="token punctuation">,</span>num
+<span class="token keyword">from</span> t2
+<span class="token keyword">where</span> rnk <span class="token operator">=</span> <span class="token number">1</span>
+</code></pre>
+<p>试验一下：</p>
+<pre class=" language-sql"><code class="prism  language-sql">{<span class="token string">"headers"</span>:{<span class="token string">"request_accepted"</span>:<span class="token punctuation">[</span><span class="token string">"requester_id"</span><span class="token punctuation">,</span><span class="token string">"accepter_id"</span><span class="token punctuation">,</span><span class="token string">"accept_date"</span><span class="token punctuation">]</span>}<span class="token punctuation">,</span>
+<span class="token string">"rows"</span>:
+{<span class="token string">"request_accepted"</span>:
+<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">"2016/06/03"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">"2016/06/08"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">"2016/06/08"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token string">"2016/06/09"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">"2016/06/09"</span><span class="token punctuation">]</span><span class="token punctuation">]</span>}}
+</code></pre>
+<p>结果：</p>
+<pre class=" language-sql"><code class="prism  language-sql">{<span class="token string">"headers"</span>: <span class="token punctuation">[</span><span class="token string">"id"</span><span class="token punctuation">,</span> <span class="token string">"num"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token string">"values"</span>: <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span>}
+</code></pre>
+<p>当然这个也适用于原题的情况，所以我们就把这个当做正确答案了。</p>
+<p align="center">
+	  <img src="https://github.com/zg104/zg104.github.io/blob/master/image/sqlm19.png?raw=true">
+</p>
+<h3 id="span-id2020.-game-play-analysis-iiispan"><span id="20">20. Game Play Analysis III</span></h3>
+<p>先来回顾一下：</p>
+<ul>
+<li><a href="https://zg104.github.io/sql#22"><em>Game Play Analysis I</em></a></li>
+<li><a href="https://zg104.github.io/sql#23"><em>Game Play Analysis II</em></a></li>
+</ul>
+<p>Table: <code>Activity</code></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">--------------+---------+</span>
+<span class="token operator">|</span> <span class="token keyword">Column</span> Name  <span class="token operator">|</span> <span class="token keyword">Type</span>    <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------+---------+</span>
+<span class="token operator">|</span> player_id    <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> device_id    <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> event_date   <span class="token operator">|</span> <span class="token keyword">date</span>    <span class="token operator">|</span>
+<span class="token operator">|</span> games_played <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------+---------+</span>
+</code></pre>
+<p><code>(player_id, event_date)</code> is the primary key of this table.</p>
+<p>This table shows the activity of players of some game.</p>
+<p>Each row is a record of a player who logged in and played a number of games (possibly 0) before logging out on some day using some device.</p>
+<p>Write an SQL query that reports for each player and date, how many games played <strong>so far</strong> by the player. That is, the total number of games played by the player until that date. Check the example for clarity.</p>
+<p>The query result format is in the following example:</p>
+<p><strong>Activity table:</strong></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">-----------+-----------+------------+--------------+</span>
+<span class="token operator">|</span> player_id <span class="token operator">|</span> device_id <span class="token operator">|</span> event_date <span class="token operator">|</span> games_played <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+-----------+------------+--------------+</span>
+<span class="token operator">|</span> <span class="token number">1</span>         <span class="token operator">|</span> <span class="token number">2</span>         <span class="token operator">|</span> <span class="token number">2016</span><span class="token operator">-</span><span class="token number">03</span><span class="token operator">-</span><span class="token number">01</span> <span class="token operator">|</span> <span class="token number">5</span>            <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">1</span>         <span class="token operator">|</span> <span class="token number">2</span>         <span class="token operator">|</span> <span class="token number">2016</span><span class="token operator">-</span><span class="token number">05</span><span class="token operator">-</span><span class="token number">02</span> <span class="token operator">|</span> <span class="token number">6</span>            <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">1</span>         <span class="token operator">|</span> <span class="token number">3</span>         <span class="token operator">|</span> <span class="token number">2017</span><span class="token operator">-</span><span class="token number">06</span><span class="token operator">-</span><span class="token number">25</span> <span class="token operator">|</span> <span class="token number">1</span>            <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">3</span>         <span class="token operator">|</span> <span class="token number">1</span>         <span class="token operator">|</span> <span class="token number">2016</span><span class="token operator">-</span><span class="token number">03</span><span class="token operator">-</span><span class="token number">02</span> <span class="token operator">|</span> <span class="token number">0</span>            <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">3</span>         <span class="token operator">|</span> <span class="token number">4</span>         <span class="token operator">|</span> <span class="token number">2018</span><span class="token operator">-</span><span class="token number">07</span><span class="token operator">-</span><span class="token number">03</span> <span class="token operator">|</span> <span class="token number">5</span>            <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+-----------+------------+--------------+</span>
+</code></pre>
+<p><strong>Result table:</strong></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">-----------+------------+---------------------+</span>
+<span class="token operator">|</span> player_id <span class="token operator">|</span> event_date <span class="token operator">|</span> games_played_so_far <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+------------+---------------------+</span>
+<span class="token operator">|</span> <span class="token number">1</span>         <span class="token operator">|</span> <span class="token number">2016</span><span class="token operator">-</span><span class="token number">03</span><span class="token operator">-</span><span class="token number">01</span> <span class="token operator">|</span> <span class="token number">5</span>                   <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">1</span>         <span class="token operator">|</span> <span class="token number">2016</span><span class="token operator">-</span><span class="token number">05</span><span class="token operator">-</span><span class="token number">02</span> <span class="token operator">|</span> <span class="token number">11</span>                  <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">1</span>         <span class="token operator">|</span> <span class="token number">2017</span><span class="token operator">-</span><span class="token number">06</span><span class="token operator">-</span><span class="token number">25</span> <span class="token operator">|</span> <span class="token number">12</span>                  <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">3</span>         <span class="token operator">|</span> <span class="token number">2016</span><span class="token operator">-</span><span class="token number">03</span><span class="token operator">-</span><span class="token number">02</span> <span class="token operator">|</span> <span class="token number">0</span>                   <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">3</span>         <span class="token operator">|</span> <span class="token number">2018</span><span class="token operator">-</span><span class="token number">07</span><span class="token operator">-</span><span class="token number">03</span> <span class="token operator">|</span> <span class="token number">5</span>                   <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+------------+---------------------+</span>
+</code></pre>
+<p>For the player with id 1, 5 + 6 = 11 games played by 2016-05-02, and 5 + 6 + 1 = 12 games played by 2017-06-25.</p>
+<p>For the player with id 3, 0 + 5 = 5 games played by 2018-07-03.</p>
+<p>Note that for each player we only care about the days when the player logged in.</p>
+<p><font color="#EA5FD4">详解：</font></p>
+<p>我们要计算出截止到某一日期，每个玩家一共玩了多少游戏，也就是基于 event_date 计算所玩游戏的累积和。</p>
+<p>那么我们可以使用 <strong>sum partition by</strong> 的语法来解决，sum 就是求和，partition by 意味着我们可以根据不同指标来分开求和，order by 就是按照某一指标来按照顺序求和。（这也是常用的 window function）</p>
+<p><font color="red">正确答案如下：</font></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">select</span>
+    player_id<span class="token punctuation">,</span> 
+    event_date<span class="token punctuation">,</span> 
+    <span class="token function">sum</span><span class="token punctuation">(</span>games_played<span class="token punctuation">)</span> <span class="token keyword">over</span> <span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> player_id <span class="token keyword">order</span> <span class="token keyword">by</span> event_date<span class="token punctuation">)</span> 
+    <span class="token keyword">as</span> games_played_so_far
+<span class="token keyword">from</span> activity 
+</code></pre>
+<p align="center">
+	  <img src="https://github.com/zg104/zg104.github.io/blob/master/image/sqlm20.png?raw=true">
+</p>
+<h3 id="span-id2121.-game-play-analysis-ivspan"><span id="21">21. Game Play Analysis IV</span></h3>
+<p>Table: <code>Activity</code></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">--------------+---------+</span>
+<span class="token operator">|</span> <span class="token keyword">Column</span> Name  <span class="token operator">|</span> <span class="token keyword">Type</span>    <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------+---------+</span>
+<span class="token operator">|</span> player_id    <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> device_id    <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> event_date   <span class="token operator">|</span> <span class="token keyword">date</span>    <span class="token operator">|</span>
+<span class="token operator">|</span> games_played <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------+---------+</span>
+</code></pre>
+<p><code>(player_id, event_date)</code> is the primary key of this table.</p>
+<p>This table shows the activity of players of some game.</p>
+<p>Each row is a record of a player who logged in and played a number of games (possibly 0) before logging out on some day using some device.</p>
+<p>Write an SQL query that reports the  <strong>fraction</strong>  of players that logged in again on the day after the day they first logged in, <strong>rounded to 2 decimal places</strong>. In other words, you need to count the number of players that logged in for at least two consecutive days starting from their first login date, then divide that number by the total number of players.</p>
+<p>The query result format is in the following example:</p>
+<p><strong>Activity table:</strong></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">-----------+-----------+------------+--------------+</span>
+<span class="token operator">|</span> player_id <span class="token operator">|</span> device_id <span class="token operator">|</span> event_date <span class="token operator">|</span> games_played <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+-----------+------------+--------------+</span>
+<span class="token operator">|</span> <span class="token number">1</span>         <span class="token operator">|</span> <span class="token number">2</span>         <span class="token operator">|</span> <span class="token number">2016</span><span class="token operator">-</span><span class="token number">03</span><span class="token operator">-</span><span class="token number">01</span> <span class="token operator">|</span> <span class="token number">5</span>            <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">1</span>         <span class="token operator">|</span> <span class="token number">2</span>         <span class="token operator">|</span> <span class="token number">2016</span><span class="token operator">-</span><span class="token number">03</span><span class="token operator">-</span><span class="token number">02</span> <span class="token operator">|</span> <span class="token number">6</span>            <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">2</span>         <span class="token operator">|</span> <span class="token number">3</span>         <span class="token operator">|</span> <span class="token number">2017</span><span class="token operator">-</span><span class="token number">06</span><span class="token operator">-</span><span class="token number">25</span> <span class="token operator">|</span> <span class="token number">1</span>            <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">3</span>         <span class="token operator">|</span> <span class="token number">1</span>         <span class="token operator">|</span> <span class="token number">2016</span><span class="token operator">-</span><span class="token number">03</span><span class="token operator">-</span><span class="token number">02</span> <span class="token operator">|</span> <span class="token number">0</span>            <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">3</span>         <span class="token operator">|</span> <span class="token number">4</span>         <span class="token operator">|</span> <span class="token number">2018</span><span class="token operator">-</span><span class="token number">07</span><span class="token operator">-</span><span class="token number">03</span> <span class="token operator">|</span> <span class="token number">5</span>            <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+-----------+------------+--------------+</span>
+</code></pre>
+<p><strong>Result table:</strong></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">-----------+</span>
+<span class="token operator">|</span> fraction  <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+</span>
+<span class="token operator">|</span> <span class="token number">0.33</span>      <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+</span>
+</code></pre>
+<p>Only the player with id 1 logged back in after the first day he had logged in so the answer is 1/3 = 0.33</p>
+<p><font color="#EA5FD4">详解：</font></p>
+<p>我们要求出在第一天登录后又在第二天登录的人占总人数的比例，那么我们要：</p>
+<ul>
+<li>把每个人的登录时间排序（这个人的登录时间必然存在 rank = 2）</li>
+<li>两个表格 self join，来检查 player_id 是否相等，并且 event_date 之间是否差 1</li>
+</ul>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">select</span> 
+	player_id<span class="token punctuation">,</span> 
+	event_date<span class="token punctuation">,</span> 
+	dense_rank<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> player_id <span class="token keyword">order</span> <span class="token keyword">by</span> event_date<span class="token punctuation">)</span> <span class="token keyword">as</span> date_rank
+<span class="token keyword">from</span> Activity
+</code></pre>
+<p>结果如下：</p>
+<pre class=" language-sql"><code class="prism  language-sql">{<span class="token string">"headers"</span>: <span class="token punctuation">[</span><span class="token string">"player_id"</span><span class="token punctuation">,</span> <span class="token string">"event_date"</span><span class="token punctuation">,</span> <span class="token string">"date_rank"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token string">"values"</span>: 
+<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"2016-03-01"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"2016-03-02"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"2017-06-25"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">"2016-03-02"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">"2018-07-03"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span>}
+</code></pre>
+<p>接下来把上面的结果和 activity 合并，注意要用 left join，因为此时会出现 null 的情况。</p>
+<p><font color="red">正确答案如下：</font></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">with</span> date_ranked <span class="token keyword">as</span> <span class="token punctuation">(</span>
+    <span class="token keyword">select</span> 
+	    player_id<span class="token punctuation">,</span> 
+	    event_date<span class="token punctuation">,</span> 
+	    dense_rank<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> player_id <span class="token keyword">order</span> <span class="token keyword">by</span> event_date<span class="token punctuation">)</span> 
+	    <span class="token keyword">as</span> date_rank
+    <span class="token keyword">from</span> Activity
+<span class="token punctuation">)</span>
+
+<span class="token keyword">select</span>
+	<span class="token function">round</span><span class="token punctuation">(</span><span class="token function">count</span><span class="token punctuation">(</span>checked<span class="token punctuation">.</span>player_id<span class="token punctuation">)</span><span class="token operator">/</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token keyword">distinct</span> total<span class="token punctuation">.</span>player_id<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> 
+	<span class="token keyword">as</span> fraction
+<span class="token keyword">from</span> Activity <span class="token keyword">as</span> total
+<span class="token keyword">left</span> <span class="token keyword">join</span> date_ranked <span class="token keyword">as</span> checked
+<span class="token keyword">on</span> total<span class="token punctuation">.</span>player_id <span class="token operator">=</span> checked<span class="token punctuation">.</span>player_id 
+<span class="token operator">and</span> checked<span class="token punctuation">.</span>date_rank <span class="token operator">=</span> <span class="token number">2</span> 
+<span class="token operator">and</span> datediff<span class="token punctuation">(</span>checked<span class="token punctuation">.</span>event_date<span class="token punctuation">,</span> total<span class="token punctuation">.</span>event_date<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">1</span>
+</code></pre>
+<p align="center">
+	  <img src="https://github.com/zg104/zg104.github.io/blob/master/image/sqlm21.png?raw=true">
 </p>
 </div>
 </body>
