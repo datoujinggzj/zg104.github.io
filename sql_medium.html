@@ -64,9 +64,14 @@
 <li><a href="#41">Running Total for Different Genders</a></li>
 <li><a href="#42">Shortest Distance in a Plane</a></li>
 <li><a href="#43">Team Scores in Football Tournament</a></li>
+<li><a href="#44">The Most Frequently Ordered Products for Each Customer</a> <font color="lightgreen">New</font></li>
+<li><a href="#45">The Most Recent Orders for Each Product</a></li>
+<li><a href="#46">The Most Recent Three Orders</a></li>
+<li><a href="#47">Tree Node</a></li>
+<li><a href="#48">Unpopular Books</a></li>
 </ul>
 <h2 id="前言">前言</h2>
-<p>这篇文章主要帮助大家开启对 SQL 的深入学习，总结了 LeetCode 中的 Database 中 SQL（中等）里面代表性较高且值得去反复做的  道题，希望能对大家深入SQL 有所帮助！</p>
+<p>这篇文章主要帮助大家开启对 SQL 的深入学习，总结了 LeetCode 中的 Database 中 SQL（中等）里面代表性较高且值得去反复做的 <strong>48</strong> 道题，希望能对大家深入SQL 有所帮助！</p>
 <p><strong><font color="red">Now, Let’s get started!</font></strong></p>
 <hr>
 <h3 id="span-id11.-active-businessesspan"><span id="1">1. Active Businesses</span></h3>
@@ -3620,15 +3625,16 @@ p1 = 1 and p2 = 3 It’s not possible because the rectangle has an area equal to
 </p>
 <h3 id="span-id4040.-restaurant-growthspan"><span id="40">40. Restaurant Growth</span></h3>
 <p>Table:  <code>Customer</code></p>
-<p>±--------------±--------+<br>
-| Column Name   | Type    |<br>
-±--------------±--------+<br>
-| customer_id   | int     |<br>
-| name          | varchar |<br>
-| visited_on    | date    |<br>
-| amount        | int     |<br>
-±--------------±--------+<br>
-(customer_id, visited_on) is the primary key for this table.<br>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+<span class="token operator">|</span> <span class="token keyword">Column</span> Name   <span class="token operator">|</span> <span class="token keyword">Type</span>    <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+<span class="token operator">|</span> customer_id   <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> name          <span class="token operator">|</span> <span class="token keyword">varchar</span> <span class="token operator">|</span>
+<span class="token operator">|</span> visited_on    <span class="token operator">|</span> <span class="token keyword">date</span>    <span class="token operator">|</span>
+<span class="token operator">|</span> amount        <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+</code></pre>
+<p>(customer_id, visited_on) is the primary key for this table.<br>
 This table contains data about customer transactions in a restaurant.<br>
 visited_on is the date on which the customer with ID (customer_id) have visited the restaurant.<br>
 amount is the total paid by a customer.</p>
@@ -3973,6 +3979,582 @@ Each row is a record of a finished match between two different teams.</p>
 <p align="center">
 	  <img src="https://github.com/zg104/zg104.github.io/blob/master/image/sqlm43.png?raw=true">
 </p>
+<h3 id="span-id4444.-the-most-frequently-ordered-products-for-each-customerspan"><span id="44">44. The Most Frequently Ordered Products for Each Customer</span></h3>
+<p>Table:  <code>Customers</code></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+<span class="token operator">|</span> <span class="token keyword">Column</span> Name   <span class="token operator">|</span> <span class="token keyword">Type</span>    <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+<span class="token operator">|</span> customer_id   <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> name          <span class="token operator">|</span> <span class="token keyword">varchar</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+</code></pre>
+<p>customer_id is the primary key for this table.<br>
+This table contains information about the customers.</p>
+<p>Table:  <code>Orders</code></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+<span class="token operator">|</span> <span class="token keyword">Column</span> Name   <span class="token operator">|</span> <span class="token keyword">Type</span>    <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+<span class="token operator">|</span> order_id      <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> order_date    <span class="token operator">|</span> <span class="token keyword">date</span>    <span class="token operator">|</span>
+<span class="token operator">|</span> customer_id   <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> product_id    <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+</code></pre>
+<p>order_id is the primary key for this table.<br>
+This table contains information about the orders made by customer_id.<br>
+No customer will order the same product <strong>more than once</strong> in a single day.</p>
+<p>Table:  <code>Products</code></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+<span class="token operator">|</span> <span class="token keyword">Column</span> Name   <span class="token operator">|</span> <span class="token keyword">Type</span>    <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+<span class="token operator">|</span> product_id    <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> product_name  <span class="token operator">|</span> <span class="token keyword">varchar</span> <span class="token operator">|</span>
+<span class="token operator">|</span> price         <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+</code></pre>
+<p>product_id is the primary key for this table.<br>
+This table contains information about the products.</p>
+<p>Write an SQL query to find the most frequently ordered product(s) for each customer.</p>
+<p>The result table should have the  <code>product_id</code>  and  <code>product_name</code>  for each  <code>customer_id</code>  who ordered at least one order. Return the result table in  <strong>any order</strong>.</p>
+<p>The query result format is in the following example:</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token comment"># customers</span>
+<span class="token operator">+</span><span class="token comment">-------------+-------+</span>
+<span class="token operator">|</span> customer_id <span class="token operator">|</span> name  <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-------------+-------+</span>
+<span class="token operator">|</span> <span class="token number">1</span>           <span class="token operator">|</span> Alice <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">2</span>           <span class="token operator">|</span> Bob   <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">3</span>           <span class="token operator">|</span> Tom   <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">4</span>           <span class="token operator">|</span> Jerry <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">5</span>           <span class="token operator">|</span> John  <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-------------+-------+</span>
+
+<span class="token comment"># orders</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+-------------+------------+</span>
+<span class="token operator">|</span> order_id <span class="token operator">|</span> order_date <span class="token operator">|</span> customer_id <span class="token operator">|</span> product_id <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+-------------+------------+</span>
+<span class="token operator">|</span> <span class="token number">1</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">07</span><span class="token operator">-</span><span class="token number">31</span> <span class="token operator">|</span> <span class="token number">1</span>           <span class="token operator">|</span> <span class="token number">1</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">2</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">07</span><span class="token operator">-</span><span class="token number">30</span> <span class="token operator">|</span> <span class="token number">2</span>           <span class="token operator">|</span> <span class="token number">2</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">3</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">29</span> <span class="token operator">|</span> <span class="token number">3</span>           <span class="token operator">|</span> <span class="token number">3</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">4</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">07</span><span class="token operator">-</span><span class="token number">29</span> <span class="token operator">|</span> <span class="token number">4</span>           <span class="token operator">|</span> <span class="token number">1</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">5</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">06</span><span class="token operator">-</span><span class="token number">10</span> <span class="token operator">|</span> <span class="token number">1</span>           <span class="token operator">|</span> <span class="token number">2</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">6</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">01</span> <span class="token operator">|</span> <span class="token number">2</span>           <span class="token operator">|</span> <span class="token number">1</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">7</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">01</span> <span class="token operator">|</span> <span class="token number">3</span>           <span class="token operator">|</span> <span class="token number">3</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">8</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">03</span> <span class="token operator">|</span> <span class="token number">1</span>           <span class="token operator">|</span> <span class="token number">2</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">9</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">07</span> <span class="token operator">|</span> <span class="token number">2</span>           <span class="token operator">|</span> <span class="token number">3</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">10</span>       <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">07</span><span class="token operator">-</span><span class="token number">15</span> <span class="token operator">|</span> <span class="token number">1</span>           <span class="token operator">|</span> <span class="token number">2</span>          <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+-------------+------------+</span>
+
+<span class="token comment"># products</span>
+<span class="token operator">+</span><span class="token comment">------------+--------------+-------+</span>
+<span class="token operator">|</span> product_id <span class="token operator">|</span> product_name <span class="token operator">|</span> price <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+--------------+-------+</span>
+<span class="token operator">|</span> <span class="token number">1</span>          <span class="token operator">|</span> keyboard     <span class="token operator">|</span> <span class="token number">120</span>   <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">2</span>          <span class="token operator">|</span> mouse        <span class="token operator">|</span> <span class="token number">80</span>    <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">3</span>          <span class="token operator">|</span> screen       <span class="token operator">|</span> <span class="token number">600</span>   <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">4</span>          <span class="token operator">|</span> hard <span class="token keyword">disk</span>    <span class="token operator">|</span> <span class="token number">450</span>   <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+--------------+-------+</span>
+
+<span class="token comment"># result table:</span>
+<span class="token operator">+</span><span class="token comment">-------------+------------+--------------+</span>
+<span class="token operator">|</span> customer_id <span class="token operator">|</span> product_id <span class="token operator">|</span> product_name <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-------------+------------+--------------+</span>
+<span class="token operator">|</span> <span class="token number">1</span>           <span class="token operator">|</span> <span class="token number">2</span>          <span class="token operator">|</span> mouse        <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">2</span>           <span class="token operator">|</span> <span class="token number">1</span>          <span class="token operator">|</span> keyboard     <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">2</span>           <span class="token operator">|</span> <span class="token number">2</span>          <span class="token operator">|</span> mouse        <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">2</span>           <span class="token operator">|</span> <span class="token number">3</span>          <span class="token operator">|</span> screen       <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">3</span>           <span class="token operator">|</span> <span class="token number">3</span>          <span class="token operator">|</span> screen       <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">4</span>           <span class="token operator">|</span> <span class="token number">1</span>          <span class="token operator">|</span> keyboard     <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-------------+------------+--------------+</span>
+</code></pre>
+<p>Alice (customer 1) ordered the mouse three times and the keyboard one time, so the mouse is the most frquently ordered product for them.<br>
+Bob (customer 2) ordered the keyboard, the mouse, and the screen one time, so those are the most frquently ordered products for them.<br>
+Tom (customer 3) only ordered the screen (two times), so that is the most frquently ordered product for them.<br>
+Jerry (customer 4) only ordered the keyboard (one time), so that is the most frquently ordered product for them.<br>
+John (customer 5) did not order anything, so we do not include them in the result table.</p>
+<p><font color="#EA5FD4">详解：</font></p>
+<p>本题再次考察了 window function 的使用，我们要找每个消费者最经常消费的商品，那么久对每个消费者购买商品的频数排序，取出排第一的所有商品。</p>
+<p><font color="red">正确答案如下：</font></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">with</span> cte <span class="token keyword">as</span>
+<span class="token punctuation">(</span><span class="token keyword">select</span> o<span class="token punctuation">.</span>customer_id<span class="token punctuation">,</span> p<span class="token punctuation">.</span>product_id<span class="token punctuation">,</span> p<span class="token punctuation">.</span>product_name
+<span class="token keyword">from</span> orders o
+<span class="token keyword">join</span> products p
+<span class="token keyword">using</span> <span class="token punctuation">(</span>product_id<span class="token punctuation">)</span>
+<span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token keyword">select</span> customer_id<span class="token punctuation">,</span>product_id<span class="token punctuation">,</span>product_name <span class="token keyword">from</span>
+<span class="token punctuation">(</span><span class="token keyword">select</span> 
+    customer_id<span class="token punctuation">,</span> 
+    product_id<span class="token punctuation">,</span>
+    product_name<span class="token punctuation">,</span>
+    <span class="token function">count</span><span class="token punctuation">(</span>product_name<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    dense_rank<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> customer_id <span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token function">count</span><span class="token punctuation">(</span>product_name<span class="token punctuation">)</span> <span class="token keyword">desc</span><span class="token punctuation">)</span> rnk
+<span class="token keyword">from</span> cte
+<span class="token keyword">group</span> <span class="token keyword">by</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span>
+<span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token number">1</span><span class="token punctuation">)</span> t
+<span class="token keyword">where</span> rnk <span class="token operator">=</span> <span class="token number">1</span>
+</code></pre>
+<p align="center">
+	  <img src="https://github.com/zg104/zg104.github.io/blob/master/image/sqlm44.png?raw=true">
+</p>
+<h3 id="span-id4545.-the-most-recent-orders-for-each-productspan"><span id="45">45. The Most Recent Orders for Each Product</span></h3>
+<p>Table:  <code>Customers</code></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+<span class="token operator">|</span> <span class="token keyword">Column</span> Name   <span class="token operator">|</span> <span class="token keyword">Type</span>    <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+<span class="token operator">|</span> customer_id   <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> name          <span class="token operator">|</span> <span class="token keyword">varchar</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+</code></pre>
+<p>customer_id is the primary key for this table.<br>
+This table contains information about the customers.</p>
+<p>Table:  <code>Orders</code></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+<span class="token operator">|</span> <span class="token keyword">Column</span> Name   <span class="token operator">|</span> <span class="token keyword">Type</span>    <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+<span class="token operator">|</span> order_id      <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> order_date    <span class="token operator">|</span> <span class="token keyword">date</span>    <span class="token operator">|</span>
+<span class="token operator">|</span> customer_id   <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> product_id    <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+</code></pre>
+<p>order_id is the primary key for this table.<br>
+This table contains information about the orders made by customer_id.<br>
+There will be no product ordered by the same user <strong>more than once</strong> in one day.</p>
+<p>Table:  <code>Products</code></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+<span class="token operator">|</span> <span class="token keyword">Column</span> Name   <span class="token operator">|</span> <span class="token keyword">Type</span>    <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+<span class="token operator">|</span> product_id    <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> product_name  <span class="token operator">|</span> <span class="token keyword">varchar</span> <span class="token operator">|</span>
+<span class="token operator">|</span> price         <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+</code></pre>
+<p>product_id is the primary key for this table.<br>
+This table contains information about the Products.</p>
+<p>Write an SQL query to find the most recent order(s) of each product.</p>
+<p>Return the result table sorted by  <code>product_name</code>  in  <strong>ascending</strong>  order and in case of a tie by the  <code>product_id</code>  in  <strong>ascending</strong>  order. If there still a tie, order them by the  <code>order_id</code>  in  <strong>ascending</strong>  order.</p>
+<p>The query result format is in the following example:</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token comment"># customers</span>
+<span class="token operator">+</span><span class="token comment">-------------+-----------+</span>
+<span class="token operator">|</span> customer_id <span class="token operator">|</span> name      <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-------------+-----------+</span>
+<span class="token operator">|</span> <span class="token number">1</span>           <span class="token operator">|</span> Winston   <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">2</span>           <span class="token operator">|</span> Jonathan  <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">3</span>           <span class="token operator">|</span> Annabelle <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">4</span>           <span class="token operator">|</span> Marwan    <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">5</span>           <span class="token operator">|</span> Khaled    <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-------------+-----------+</span>
+
+<span class="token comment"># orders</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+-------------+------------+</span>
+<span class="token operator">|</span> order_id <span class="token operator">|</span> order_date <span class="token operator">|</span> customer_id <span class="token operator">|</span> product_id <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+-------------+------------+</span>
+<span class="token operator">|</span> <span class="token number">1</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">07</span><span class="token operator">-</span><span class="token number">31</span> <span class="token operator">|</span> <span class="token number">1</span>           <span class="token operator">|</span> <span class="token number">1</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">2</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">07</span><span class="token operator">-</span><span class="token number">30</span> <span class="token operator">|</span> <span class="token number">2</span>           <span class="token operator">|</span> <span class="token number">2</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">3</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">29</span> <span class="token operator">|</span> <span class="token number">3</span>           <span class="token operator">|</span> <span class="token number">3</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">4</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">07</span><span class="token operator">-</span><span class="token number">29</span> <span class="token operator">|</span> <span class="token number">4</span>           <span class="token operator">|</span> <span class="token number">1</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">5</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">06</span><span class="token operator">-</span><span class="token number">10</span> <span class="token operator">|</span> <span class="token number">1</span>           <span class="token operator">|</span> <span class="token number">2</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">6</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">01</span> <span class="token operator">|</span> <span class="token number">2</span>           <span class="token operator">|</span> <span class="token number">1</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">7</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">01</span> <span class="token operator">|</span> <span class="token number">3</span>           <span class="token operator">|</span> <span class="token number">1</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">8</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">03</span> <span class="token operator">|</span> <span class="token number">1</span>           <span class="token operator">|</span> <span class="token number">2</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">9</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">07</span> <span class="token operator">|</span> <span class="token number">2</span>           <span class="token operator">|</span> <span class="token number">3</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">10</span>       <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">07</span><span class="token operator">-</span><span class="token number">15</span> <span class="token operator">|</span> <span class="token number">1</span>           <span class="token operator">|</span> <span class="token number">2</span>          <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+-------------+------------+</span>
+
+<span class="token comment"># products</span>
+<span class="token operator">+</span><span class="token comment">------------+--------------+-------+</span>
+<span class="token operator">|</span> product_id <span class="token operator">|</span> product_name <span class="token operator">|</span> price <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+--------------+-------+</span>
+<span class="token operator">|</span> <span class="token number">1</span>          <span class="token operator">|</span> keyboard     <span class="token operator">|</span> <span class="token number">120</span>   <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">2</span>          <span class="token operator">|</span> mouse        <span class="token operator">|</span> <span class="token number">80</span>    <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">3</span>          <span class="token operator">|</span> screen       <span class="token operator">|</span> <span class="token number">600</span>   <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">4</span>          <span class="token operator">|</span> hard <span class="token keyword">disk</span>    <span class="token operator">|</span> <span class="token number">450</span>   <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+--------------+-------+</span>
+
+<span class="token comment"># result table:</span>
+<span class="token operator">+</span><span class="token comment">--------------+------------+----------+------------+</span>
+<span class="token operator">|</span> product_name <span class="token operator">|</span> product_id <span class="token operator">|</span> order_id <span class="token operator">|</span> order_date <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------+------------+----------+------------+</span>
+<span class="token operator">|</span> keyboard     <span class="token operator">|</span> <span class="token number">1</span>          <span class="token operator">|</span> <span class="token number">6</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">01</span> <span class="token operator">|</span>
+<span class="token operator">|</span> keyboard     <span class="token operator">|</span> <span class="token number">1</span>          <span class="token operator">|</span> <span class="token number">7</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">01</span> <span class="token operator">|</span>
+<span class="token operator">|</span> mouse        <span class="token operator">|</span> <span class="token number">2</span>          <span class="token operator">|</span> <span class="token number">8</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">03</span> <span class="token operator">|</span>
+<span class="token operator">|</span> screen       <span class="token operator">|</span> <span class="token number">3</span>          <span class="token operator">|</span> <span class="token number">3</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">29</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------+------------+----------+------------+</span>
+</code></pre>
+<p>keyboard’s most recent order is in 2020-08-01, it was ordered two times this day.<br>
+mouse’s most recent order is in 2020-08-03, it was ordered only once this day.<br>
+screen’s most recent order is in 2020-08-29, it was ordered only once this day.<br>
+The hard disk was never ordered and we don’t include it in the result table.</p>
+<p><font color="#EA5FD4">详解：</font></p>
+<p>我们要找每个产品最近的下单时间以及下单信息，那么同样使用 window function 来对每个产品的order_date 进行降序排序，然后筛选排序第一的信息。</p>
+<p><font color="red">正确答案如下：</font></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">select</span> product_name<span class="token punctuation">,</span> product_id<span class="token punctuation">,</span> order_id<span class="token punctuation">,</span> order_date <span class="token keyword">from</span>
+<span class="token punctuation">(</span><span class="token keyword">select</span>
+    p<span class="token punctuation">.</span>product_name<span class="token punctuation">,</span> p<span class="token punctuation">.</span>product_id<span class="token punctuation">,</span> o<span class="token punctuation">.</span>order_id<span class="token punctuation">,</span> o<span class="token punctuation">.</span>order_date<span class="token punctuation">,</span>
+    dense_rank<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> p<span class="token punctuation">.</span>product_name <span class="token keyword">order</span> <span class="token keyword">by</span> order_date <span class="token keyword">desc</span><span class="token punctuation">)</span> rnk
+<span class="token keyword">from</span> products p
+<span class="token keyword">join</span> orders o
+<span class="token keyword">using</span> <span class="token punctuation">(</span>product_id<span class="token punctuation">)</span><span class="token punctuation">)</span> t
+<span class="token keyword">where</span> rnk <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">;</span>
+</code></pre>
+<p align="center">
+	  <img src="https://github.com/zg104/zg104.github.io/blob/master/image/sqlm45.png?raw=true">
+</p>
+<h3 id="span-id4646.-the-most-recent-three-ordersspan"><span id="46">46. The Most Recent Three Orders</span></h3>
+<p>Table:  <code>Customers</code></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+<span class="token operator">|</span> <span class="token keyword">Column</span> Name   <span class="token operator">|</span> <span class="token keyword">Type</span>    <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+<span class="token operator">|</span> customer_id   <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> name          <span class="token operator">|</span> <span class="token keyword">varchar</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+</code></pre>
+<p>customer_id is the primary key for this table.<br>
+This table contains information about customers.</p>
+<p>Table:  <code>Orders</code></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+<span class="token operator">|</span> <span class="token keyword">Column</span> Name   <span class="token operator">|</span> <span class="token keyword">Type</span>    <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+<span class="token operator">|</span> order_id      <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> order_date    <span class="token operator">|</span> <span class="token keyword">date</span>    <span class="token operator">|</span>
+<span class="token operator">|</span> customer_id   <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> cost          <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------+---------+</span>
+</code></pre>
+<p>order_id is the primary key for this table.<br>
+This table contains information about the orders made by customer_id.<br>
+Each customer has <strong>one order per day</strong>.</p>
+<p>Write an SQL query to find the most recent 3 orders of each user. If a user ordered less than 3 orders return all of their orders.</p>
+<p>Return the result table sorted by  <code>customer_name</code>  in  <strong>ascending</strong>  order and in case of a tie by the  <code>customer_id</code>  in  <strong>ascending</strong>  order. If there still a tie, order them by the  <code>order_date</code>  in  <strong>descending</strong>  order.</p>
+<p>The query result format is in the following example:</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token comment"># customers</span>
+<span class="token operator">+</span><span class="token comment">-------------+-----------+</span>
+<span class="token operator">|</span> customer_id <span class="token operator">|</span> name      <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-------------+-----------+</span>
+<span class="token operator">|</span> <span class="token number">1</span>           <span class="token operator">|</span> Winston   <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">2</span>           <span class="token operator">|</span> Jonathan  <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">3</span>           <span class="token operator">|</span> Annabelle <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">4</span>           <span class="token operator">|</span> Marwan    <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">5</span>           <span class="token operator">|</span> Khaled    <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-------------+-----------+</span>
+
+<span class="token comment"># orders</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+-------------+------+</span>
+<span class="token operator">|</span> order_id <span class="token operator">|</span> order_date <span class="token operator">|</span> customer_id <span class="token operator">|</span> cost <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+-------------+------+</span>
+<span class="token operator">|</span> <span class="token number">1</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">07</span><span class="token operator">-</span><span class="token number">31</span> <span class="token operator">|</span> <span class="token number">1</span>           <span class="token operator">|</span> <span class="token number">30</span>   <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">2</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">07</span><span class="token operator">-</span><span class="token number">30</span> <span class="token operator">|</span> <span class="token number">2</span>           <span class="token operator">|</span> <span class="token number">40</span>   <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">3</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">07</span><span class="token operator">-</span><span class="token number">31</span> <span class="token operator">|</span> <span class="token number">3</span>           <span class="token operator">|</span> <span class="token number">70</span>   <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">4</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">07</span><span class="token operator">-</span><span class="token number">29</span> <span class="token operator">|</span> <span class="token number">4</span>           <span class="token operator">|</span> <span class="token number">100</span>  <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">5</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">06</span><span class="token operator">-</span><span class="token number">10</span> <span class="token operator">|</span> <span class="token number">1</span>           <span class="token operator">|</span> <span class="token number">1010</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">6</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">01</span> <span class="token operator">|</span> <span class="token number">2</span>           <span class="token operator">|</span> <span class="token number">102</span>  <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">7</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">01</span> <span class="token operator">|</span> <span class="token number">3</span>           <span class="token operator">|</span> <span class="token number">111</span>  <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">8</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">03</span> <span class="token operator">|</span> <span class="token number">1</span>           <span class="token operator">|</span> <span class="token number">99</span>   <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">9</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">07</span> <span class="token operator">|</span> <span class="token number">2</span>           <span class="token operator">|</span> <span class="token number">32</span>   <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">10</span>       <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">07</span><span class="token operator">-</span><span class="token number">15</span> <span class="token operator">|</span> <span class="token number">1</span>           <span class="token operator">|</span> <span class="token number">2</span>    <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+-------------+------+</span>
+
+<span class="token comment"># result table:</span>
+<span class="token operator">+</span><span class="token comment">---------------+-------------+----------+------------+</span>
+<span class="token operator">|</span> customer_name <span class="token operator">|</span> customer_id <span class="token operator">|</span> order_id <span class="token operator">|</span> order_date <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------+-------------+----------+------------+</span>
+<span class="token operator">|</span> Annabelle     <span class="token operator">|</span> <span class="token number">3</span>           <span class="token operator">|</span> <span class="token number">7</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">01</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Annabelle     <span class="token operator">|</span> <span class="token number">3</span>           <span class="token operator">|</span> <span class="token number">3</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">07</span><span class="token operator">-</span><span class="token number">31</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Jonathan      <span class="token operator">|</span> <span class="token number">2</span>           <span class="token operator">|</span> <span class="token number">9</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">07</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Jonathan      <span class="token operator">|</span> <span class="token number">2</span>           <span class="token operator">|</span> <span class="token number">6</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">01</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Jonathan      <span class="token operator">|</span> <span class="token number">2</span>           <span class="token operator">|</span> <span class="token number">2</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">07</span><span class="token operator">-</span><span class="token number">30</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Marwan        <span class="token operator">|</span> <span class="token number">4</span>           <span class="token operator">|</span> <span class="token number">4</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">07</span><span class="token operator">-</span><span class="token number">29</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Winston       <span class="token operator">|</span> <span class="token number">1</span>           <span class="token operator">|</span> <span class="token number">8</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">03</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Winston       <span class="token operator">|</span> <span class="token number">1</span>           <span class="token operator">|</span> <span class="token number">1</span>        <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">07</span><span class="token operator">-</span><span class="token number">31</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Winston       <span class="token operator">|</span> <span class="token number">1</span>           <span class="token operator">|</span> <span class="token number">10</span>       <span class="token operator">|</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">07</span><span class="token operator">-</span><span class="token number">15</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------+-------------+----------+------------+</span>
+</code></pre>
+<p>Winston has 4 orders, we discard the order of “2020-06-10” because it is the oldest order.<br>
+Annabelle has only 2 orders, we return them.<br>
+Jonathan has exactly 3 orders.<br>
+Marwan ordered only one time.<br>
+We sort the result table by customer_name in ascending order, by customer_id in ascending order and by order_date in descending order in case of a tie.</p>
+<p><font color="#EA5FD4">详解：</font></p>
+<p>我们要找每个用户最近的三个订单，如果用户的订单少于三个那么全部显示出来。我们同样使用 window function 求解。</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">select</span>
+    name <span class="token keyword">as</span> customer_name<span class="token punctuation">,</span>
+    o<span class="token punctuation">.</span>customer_id<span class="token punctuation">,</span>
+    o<span class="token punctuation">.</span>order_id<span class="token punctuation">,</span>
+    o<span class="token punctuation">.</span>order_date<span class="token punctuation">,</span>
+    dense_rank<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> customer_id <span class="token keyword">order</span> <span class="token keyword">by</span> order_date <span class="token keyword">desc</span><span class="token punctuation">)</span> rnk
+<span class="token keyword">from</span> orders o
+<span class="token keyword">join</span> customers <span class="token number">c</span>
+<span class="token keyword">using</span> <span class="token punctuation">(</span>customer_id<span class="token punctuation">)</span> 
+<span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span> <span class="token keyword">desc</span>
+</code></pre>
+<p>结果如下：</p>
+<pre class=" language-sql"><code class="prism  language-sql">{<span class="token string">"headers"</span>: <span class="token punctuation">[</span><span class="token string">"customer_name"</span><span class="token punctuation">,</span> <span class="token string">"customer_id"</span><span class="token punctuation">,</span> <span class="token string">"order_id"</span><span class="token punctuation">,</span> <span class="token string">"order_date"</span><span class="token punctuation">,</span> <span class="token string">"rnk"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token string">"values"</span>: 
+<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"Annabelle"</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token string">"2020-08-01"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token punctuation">[</span><span class="token string">"Annabelle"</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">"2020-07-31"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">[</span><span class="token string">"Jonathan"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token string">"2020-08-07"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token punctuation">[</span><span class="token string">"Jonathan"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token string">"2020-08-01"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token punctuation">[</span><span class="token string">"Jonathan"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"2020-07-30"</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token punctuation">[</span><span class="token string">"Marwan"</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">"2020-07-29"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token punctuation">[</span><span class="token string">"Winston"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token string">"2020-08-03"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token punctuation">[</span><span class="token string">"Winston"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"2020-07-31"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token punctuation">[</span><span class="token string">"Winston"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token string">"2020-07-15"</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token punctuation">[</span><span class="token string">"Winston"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">"2020-06-10"</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">]</span>}
+</code></pre>
+<p>那么我们只需要筛选 <code>rnk &lt;= 3</code> 的情况即可。</p>
+<p><font color="red">正确答案如下：</font></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">select</span> customer_name<span class="token punctuation">,</span>customer_id<span class="token punctuation">,</span>order_id<span class="token punctuation">,</span>order_date <span class="token keyword">from</span>
+<span class="token punctuation">(</span><span class="token keyword">select</span>
+    name <span class="token keyword">as</span> customer_name<span class="token punctuation">,</span>
+    o<span class="token punctuation">.</span>customer_id<span class="token punctuation">,</span>
+    o<span class="token punctuation">.</span>order_id<span class="token punctuation">,</span>
+    o<span class="token punctuation">.</span>order_date<span class="token punctuation">,</span>
+    dense_rank<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> customer_id <span class="token keyword">order</span> <span class="token keyword">by</span> order_date <span class="token keyword">desc</span><span class="token punctuation">)</span> rnk
+<span class="token keyword">from</span> orders o
+<span class="token keyword">join</span> customers <span class="token number">c</span>
+<span class="token keyword">using</span> <span class="token punctuation">(</span>customer_id<span class="token punctuation">)</span> 
+<span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span> <span class="token keyword">desc</span><span class="token punctuation">)</span> t
+<span class="token keyword">where</span> rnk <span class="token operator">&lt;=</span> <span class="token number">3</span>
+</code></pre>
+<p align="center">
+	  <img src="https://github.com/zg104/zg104.github.io/blob/master/image/sqlm46.png?raw=true">
+</p>
+<h3 id="span-id4747.-tree-nodespan"><span id="47">47. Tree Node</span></h3>
+<p>Given a table  <code>tree</code>,  <strong>id</strong>  is identifier of the tree node and  <strong>p_id</strong>  is its parent node’s  <strong>id</strong>.</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">----+------+</span>
+<span class="token operator">|</span> id <span class="token operator">|</span> p_id <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----+------+</span>
+<span class="token operator">|</span> <span class="token number">1</span>  <span class="token operator">|</span> <span class="token boolean">null</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">2</span>  <span class="token operator">|</span> <span class="token number">1</span>    <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">3</span>  <span class="token operator">|</span> <span class="token number">1</span>    <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">4</span>  <span class="token operator">|</span> <span class="token number">2</span>    <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">5</span>  <span class="token operator">|</span> <span class="token number">2</span>    <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----+------+</span>
+</code></pre>
+<p>Each node in the tree can be one of three types:</p>
+<ul>
+<li>Leaf: if the node is a leaf node.</li>
+<li>Root: if the node is the root of the tree.</li>
+<li>Inner: If the node is neither a leaf node nor a root node.</li>
+</ul>
+<p>Write a query to print the node id and the type of the node. Sort your output by the node id. The result for the above sample is:</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">----+------+</span>
+<span class="token operator">|</span> id <span class="token operator">|</span> <span class="token keyword">Type</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----+------+</span>
+<span class="token operator">|</span> <span class="token number">1</span>  <span class="token operator">|</span> Root <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">2</span>  <span class="token operator">|</span> <span class="token keyword">Inner</span><span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">3</span>  <span class="token operator">|</span> Leaf <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">4</span>  <span class="token operator">|</span> Leaf <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">5</span>  <span class="token operator">|</span> Leaf <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----+------+</span>
+</code></pre>
+<p><strong>Explanation</strong></p>
+<ul>
+<li>
+<p>Node ‘1’ is root node, because its parent node is NULL and it has child node ‘2’ and ‘3’.</p>
+</li>
+<li>
+<p>Node ‘2’ is inner node, because it has parent node ‘1’ and child node ‘4’ and ‘5’.</p>
+</li>
+<li>
+<p>Node ‘3’, ‘4’ and ‘5’ is Leaf node, because they have parent node and they don’t have child node.</p>
+</li>
+<li>
+<p>And here is the image of the sample tree as below:</p>
+<pre><code>		    			  1
+		    			/   \
+		              2       3
+		            /   \
+		          4     5
+</code></pre>
+<p><strong>Note</strong></p>
+<p>If there is only one node on the tree, you only need to output its root attributes.</p>
+</li>
+</ul>
+<p><font color="#EA5FD4">详解：</font></p>
+<p>根据上面的图，我们可以知道，根据树的结构，我们来判断每个点的位置。</p>
+<ul>
+<li>1 是根节点因为他没有 parent</li>
+<li>3、4、5是 leaf 因为他们都有 parent 但没有 child</li>
+<li>2 是 inner 因为他们因为他既有 parent也有 child</li>
+</ul>
+<p>那么我们把这三种情况都筛选出来，然后 union 起来就可以了。</p>
+<ol>
+<li><strong>root</strong></li>
+</ol>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span> id<span class="token punctuation">,</span> <span class="token string">'Root'</span> <span class="token keyword">AS</span> <span class="token keyword">Type</span>
+<span class="token keyword">FROM</span> tree
+<span class="token keyword">WHERE</span> p_id <span class="token operator">IS</span> <span class="token boolean">NULL</span>
+</code></pre>
+<ol start="2">
+<li><strong>leaf</strong></li>
+</ol>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span> id<span class="token punctuation">,</span> <span class="token string">'Leaf'</span> <span class="token keyword">AS</span> <span class="token keyword">Type</span>
+<span class="token keyword">FROM</span> tree
+<span class="token keyword">WHERE</span>
+id <span class="token operator">NOT</span> <span class="token operator">IN</span> 
+<span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token keyword">DISTINCT</span> p_id
+<span class="token keyword">FROM</span> tree
+<span class="token keyword">WHERE</span> p_id <span class="token operator">IS</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">)</span>
+<span class="token comment"># 保证不是其他点的parent</span>
+<span class="token operator">AND</span> p_id <span class="token operator">IS</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>
+<span class="token comment"># 保证不是根节点</span>
+</code></pre>
+<ol start="3">
+<li><strong>inner</strong></li>
+</ol>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span> id<span class="token punctuation">,</span> <span class="token string">'Inner'</span> <span class="token keyword">AS</span> <span class="token keyword">Type</span>
+<span class="token keyword">FROM</span> tree
+<span class="token keyword">WHERE</span> id <span class="token operator">IN</span> 
+<span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token keyword">DISTINCT</span> p_id
+<span class="token keyword">FROM</span> tree
+<span class="token keyword">WHERE</span> p_id <span class="token operator">IS</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">)</span>
+<span class="token comment"># 保证是别的点的parent</span>
+<span class="token operator">AND</span> p_id <span class="token operator">IS</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>
+<span class="token comment"># 保证不是根节点</span>
+</code></pre>
+<p>最后把他们 union 起来。</p>
+<p><font color="red">正确答案如下：</font></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span>
+    id<span class="token punctuation">,</span> <span class="token string">'Root'</span> <span class="token keyword">AS</span> <span class="token keyword">Type</span>
+<span class="token keyword">FROM</span>
+    tree
+<span class="token keyword">WHERE</span>
+    p_id <span class="token operator">IS</span> <span class="token boolean">NULL</span>
+
+<span class="token keyword">UNION</span>
+
+<span class="token keyword">SELECT</span>
+    id<span class="token punctuation">,</span> <span class="token string">'Leaf'</span> <span class="token keyword">AS</span> <span class="token keyword">Type</span>
+<span class="token keyword">FROM</span>
+    tree
+<span class="token keyword">WHERE</span>
+    id <span class="token operator">NOT</span> <span class="token operator">IN</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token keyword">DISTINCT</span>
+            p_id
+        <span class="token keyword">FROM</span>
+            tree
+        <span class="token keyword">WHERE</span>
+            p_id <span class="token operator">IS</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">)</span>
+        <span class="token operator">AND</span> p_id <span class="token operator">IS</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>
+        
+<span class="token keyword">UNION</span>
+
+<span class="token keyword">SELECT</span>
+    id<span class="token punctuation">,</span> <span class="token string">'Inner'</span> <span class="token keyword">AS</span> <span class="token keyword">Type</span>
+<span class="token keyword">FROM</span>
+    tree
+<span class="token keyword">WHERE</span>
+    id <span class="token operator">IN</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token keyword">DISTINCT</span>
+            p_id
+        <span class="token keyword">FROM</span>
+            tree
+        <span class="token keyword">WHERE</span>
+            p_id <span class="token operator">IS</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">)</span>
+        <span class="token operator">AND</span> p_id <span class="token operator">IS</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> id<span class="token punctuation">;</span>
+</code></pre>
+<p align="center">
+	  <img src="https://github.com/zg104/zg104.github.io/blob/master/image/sqlm47.png?raw=true">
+</p>
+<h3 id="span-id4848.-unpopular-booksspan"><span id="48">48. Unpopular Books</span></h3>
+<p>Table: <code>Books</code></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">----------------+---------+</span>
+<span class="token operator">|</span> <span class="token keyword">Column</span> Name    <span class="token operator">|</span> <span class="token keyword">Type</span>    <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------------+---------+</span>
+<span class="token operator">|</span> book_id        <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> name           <span class="token operator">|</span> <span class="token keyword">varchar</span> <span class="token operator">|</span>
+<span class="token operator">|</span> available_from <span class="token operator">|</span> <span class="token keyword">date</span>    <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------------+---------+</span>
+</code></pre>
+<p>book_id is the primary key of this table.</p>
+<p>Table: <code>Orders</code></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">----------------+---------+</span>
+<span class="token operator">|</span> <span class="token keyword">Column</span> Name    <span class="token operator">|</span> <span class="token keyword">Type</span>    <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------------+---------+</span>
+<span class="token operator">|</span> order_id       <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> book_id        <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> quantity       <span class="token operator">|</span> <span class="token keyword">int</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> dispatch_date  <span class="token operator">|</span> <span class="token keyword">date</span>    <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------------+---------+</span>
+</code></pre>
+<p>order_id is the primary key of this table.<br>
+book_id is a foreign key to the Books table.</p>
+<p>Write an SQL query that reports the <strong>books</strong>  that have sold  <strong>less than 10</strong>  copies in the last year, excluding books that have been available for less than 1 month from today.  <strong>Assume today is 2019-06-23</strong>.</p>
+<p>The query result format is in the following example:</p>
+<p><strong>Books table:</strong></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">---------+--------------------+----------------+</span>
+<span class="token operator">|</span> book_id <span class="token operator">|</span> name               <span class="token operator">|</span> available_from <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------+--------------------+----------------+</span>
+<span class="token operator">|</span> <span class="token number">1</span>       <span class="token operator">|</span> <span class="token string">"Kalila And Demna"</span> <span class="token operator">|</span> <span class="token number">2010</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">01</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">2</span>       <span class="token operator">|</span> <span class="token string">"28 Letters"</span>       <span class="token operator">|</span> <span class="token number">2012</span><span class="token operator">-</span><span class="token number">05</span><span class="token operator">-</span><span class="token number">12</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">3</span>       <span class="token operator">|</span> <span class="token string">"The Hobbit"</span>       <span class="token operator">|</span> <span class="token number">2019</span><span class="token operator">-</span><span class="token number">06</span><span class="token operator">-</span><span class="token number">10</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">4</span>       <span class="token operator">|</span> <span class="token string">"13 Reasons Why"</span>   <span class="token operator">|</span> <span class="token number">2019</span><span class="token operator">-</span><span class="token number">06</span><span class="token operator">-</span><span class="token number">01</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">5</span>       <span class="token operator">|</span> <span class="token string">"The Hunger Games"</span> <span class="token operator">|</span> <span class="token number">2008</span><span class="token operator">-</span><span class="token number">09</span><span class="token operator">-</span><span class="token number">21</span>     <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------+--------------------+----------------+</span>
+</code></pre>
+<p><strong>Orders table:</strong></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">----------+---------+----------+---------------+</span>
+<span class="token operator">|</span> order_id <span class="token operator">|</span> book_id <span class="token operator">|</span> quantity <span class="token operator">|</span> dispatch_date <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+----------+---------------+</span>
+<span class="token operator">|</span> <span class="token number">1</span>        <span class="token operator">|</span> <span class="token number">1</span>       <span class="token operator">|</span> <span class="token number">2</span>        <span class="token operator">|</span> <span class="token number">2018</span><span class="token operator">-</span><span class="token number">07</span><span class="token operator">-</span><span class="token number">26</span>    <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">2</span>        <span class="token operator">|</span> <span class="token number">1</span>       <span class="token operator">|</span> <span class="token number">1</span>        <span class="token operator">|</span> <span class="token number">2018</span><span class="token operator">-</span><span class="token number">11</span><span class="token operator">-</span><span class="token number">05</span>    <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">3</span>        <span class="token operator">|</span> <span class="token number">3</span>       <span class="token operator">|</span> <span class="token number">8</span>        <span class="token operator">|</span> <span class="token number">2019</span><span class="token operator">-</span><span class="token number">06</span><span class="token operator">-</span><span class="token number">11</span>    <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">4</span>        <span class="token operator">|</span> <span class="token number">4</span>       <span class="token operator">|</span> <span class="token number">6</span>        <span class="token operator">|</span> <span class="token number">2019</span><span class="token operator">-</span><span class="token number">06</span><span class="token operator">-</span><span class="token number">05</span>    <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">5</span>        <span class="token operator">|</span> <span class="token number">4</span>       <span class="token operator">|</span> <span class="token number">5</span>        <span class="token operator">|</span> <span class="token number">2019</span><span class="token operator">-</span><span class="token number">06</span><span class="token operator">-</span><span class="token number">20</span>    <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">6</span>        <span class="token operator">|</span> <span class="token number">5</span>       <span class="token operator">|</span> <span class="token number">9</span>        <span class="token operator">|</span> <span class="token number">2009</span><span class="token operator">-</span><span class="token number">02</span><span class="token operator">-</span><span class="token number">02</span>    <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">7</span>        <span class="token operator">|</span> <span class="token number">5</span>       <span class="token operator">|</span> <span class="token number">8</span>        <span class="token operator">|</span> <span class="token number">2010</span><span class="token operator">-</span><span class="token number">04</span><span class="token operator">-</span><span class="token number">13</span>    <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+----------+---------------+</span>
+</code></pre>
+<p><strong>Result table:</strong></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token operator">+</span><span class="token comment">-----------+--------------------+</span>
+<span class="token operator">|</span> book_id   <span class="token operator">|</span> name               <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------------------+</span>
+<span class="token operator">|</span> <span class="token number">1</span>         <span class="token operator">|</span> <span class="token string">"Kalila And Demna"</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">2</span>         <span class="token operator">|</span> <span class="token string">"28 Letters"</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">5</span>         <span class="token operator">|</span> <span class="token string">"The Hunger Games"</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------------------+</span>
+</code></pre>
+<p><font color="#EA5FD4">详解：</font></p>
+<p>我们要找到去年卖的少于 10 本的书，排除从今天（2019-06-23）开始 available 少于一个月的书。</p>
+<p>那么先找每本书的销量</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">select</span> <span class="token number">b</span><span class="token punctuation">.</span>book_id<span class="token punctuation">,</span> <span class="token function">sum</span><span class="token punctuation">(</span>quantity<span class="token punctuation">)</span> <span class="token keyword">as</span> q<span class="token punctuation">,</span> dispatch_date
+<span class="token keyword">from</span> orders <span class="token number">b</span>
+<span class="token keyword">where</span> dispatch_date <span class="token operator">between</span> <span class="token string">'2018-06-23'</span> <span class="token operator">and</span> <span class="token string">'2019-06-23'</span>
+<span class="token keyword">group</span> <span class="token keyword">by</span> book_id
+</code></pre>
+<p>结果如下：</p>
+<pre class=" language-sql"><code class="prism  language-sql">{<span class="token string">"headers"</span>: <span class="token punctuation">[</span><span class="token string">"book_id"</span><span class="token punctuation">,</span> <span class="token string">"q"</span><span class="token punctuation">,</span> <span class="token string">"dispatch_date"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token string">"values"</span>: 
+<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">"2018-07-26"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token string">"2019-06-11"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token string">"2019-06-05"</span><span class="token punctuation">]</span><span class="token punctuation">]</span>}
+</code></pre>
+<p>最后再筛选时间，并把结果 join 到一起。</p>
+<p><font color="red">正确答案如下：</font></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">select</span> <span class="token number">a</span><span class="token punctuation">.</span>book_id<span class="token punctuation">,</span> <span class="token number">a</span><span class="token punctuation">.</span>name
+<span class="token keyword">from</span> books <span class="token number">a</span>
+<span class="token keyword">left</span> <span class="token keyword">join</span> 
+<span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token number">b</span><span class="token punctuation">.</span>book_id<span class="token punctuation">,</span> <span class="token function">sum</span><span class="token punctuation">(</span>quantity<span class="token punctuation">)</span> <span class="token keyword">as</span> q<span class="token punctuation">,</span> dispatch_date
+<span class="token keyword">from</span> orders <span class="token number">b</span>
+<span class="token keyword">where</span> dispatch_date <span class="token operator">between</span> <span class="token string">'2018-06-23'</span> <span class="token operator">and</span> <span class="token string">'2019-06-23'</span>
+<span class="token keyword">group</span> <span class="token keyword">by</span> book_id<span class="token punctuation">)</span> tmp
+<span class="token keyword">using</span><span class="token punctuation">(</span>book_id<span class="token punctuation">)</span>
+<span class="token keyword">where</span> available_from <span class="token operator">&lt;</span> <span class="token string">'2019-05-23'</span> <span class="token operator">and</span> <span class="token punctuation">(</span>q<span class="token operator">&lt;</span><span class="token number">10</span> <span class="token operator">or</span> q <span class="token operator">is</span> <span class="token boolean">null</span><span class="token punctuation">)</span>
+</code></pre>
+<p align="center">
+	  <img src="https://github.com/zg104/zg104.github.io/blob/master/image/sqlm48.png?raw=true">
+</p>
+<hr>
+<h2 id="附件">附件</h2>
+<p><a href="https://gist.github.com/zg104/7af3889ec1d72e11e5f26dd75414874a">https://gist.github.com/zg104/7af3889ec1d72e11e5f26dd75414874a</a></p>
+<h2 id="小结">小结</h2>
+<p>那么 SQL 中等难度部分的刷题就告一段落啦，先恭喜大家完成 SQL 简单类型题目的训练，相信大家对 SQL 的函数、语句以及解题关键点都有了更深层次的理解，并能把问题进行拆解，对一定的类型题足够敏感，对 window function 也非常的熟悉了，如果你做到了，那么恭喜你！</p>
+<p>最后我要对你说：</p>
+<p align="center">
+	  <img src="https://img.soogif.com/yNm0m9IINtAXLit6ycSUYJ8pPKVp2FsS.gif">
+</p>
+<hr>
 </div>
 </body>
 
