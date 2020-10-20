@@ -26,6 +26,7 @@ navbar-links:
     - Naive Bayes: 'Naive_bayes'
     - Support Vector Machine: 'SVM'
     - KNN: 'KNN_tutorial'
+    - K-Means: 'kmeans'
   Project: 
     - Stock Prediction: "Project"
     - Glass Identification: "glass"
