@@ -16,7 +16,7 @@ navbar-links:
 #  Resume:
 #   - English_Resume: 'e_cv'
 #    - Chinese_Resume: 'c_cv'
-  SQL: 
+  MySQL: 
     - Easy: "sql"
     - Medium: "sql_medium"
   Machine Learning: 
@@ -27,19 +27,21 @@ navbar-links:
     - Support Vector Machine: 'SVM'
     - KNN: 'KNN_tutorial'
     - K-Means: 'kmeans'
+    - Descion Tree: 'desciontree'
   Project: 
     - Stock Prediction: "Project"
     - Glass Identification: "glass"
     - Image identification: "deeplearning"
     - Safe Driver Prediction: "Safe_Driver_Prediction"
     - COVID-19 Analysis: "covid"
-#    - Readmission Analysis & Prediction: "Readmission_prediction"
+    - Readmission Analysis & Prediction: "Readmission_prediction"
     - KNN with Iris Dataset: 'KNN'
-#  Resources:
-#    - Learn Machine Learning: "https://www.youtube.com/watch?v=PPLop4L2eGk&list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN&index=2&t=0s"
-#    - Learn Deep Learning: "https://www.superdatascience.com/pages/deep-learning"
-#    - Learn markdown: "https://www.markdowntutorial.com/"
-#    - Learn Julia: "https://julialang.org/learning/"
+  Resources:
+   - Github: "https://github.com/zg104"
+   - 知乎: "https://www.zhihu.com/people/gao-zi-jing-98"
+   - LinkedIn: "https://www.linkedin.com/in/zg104/"
+   - Medium: "https://medium.com/@zg104"
+ 
 
 # --- Logo --- #
 
