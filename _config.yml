@@ -28,7 +28,8 @@ navbar-links:
     - KNN: 'KNN_tutorial'
     - K-Means: 'kmeans'
     - Descion Tree: 'desciontree'
-  Project: 
+    - Boosting: 'boost'
+  Projects: 
     - Stock Prediction: "Project"
     - Glass Identification: "glass"
     - Image identification: "deeplearning"
@@ -37,7 +38,7 @@ navbar-links:
     - Readmission Analysis & Prediction: "Readmission_prediction"
     - KNN with Iris Dataset: 'KNN'
     - Customer Profile Insights & repurchase related insights: 'xgb'
-    - 凯捷AUTO项目: 'kaijie_project'
+    - Capgemini Automobile Project: 'kaijie_project'
   Resources:
    - Github: "https://github.com/zg104"
    - 知乎: "https://www.zhihu.com/people/gao-zi-jing-98"
