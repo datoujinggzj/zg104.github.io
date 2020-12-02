@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>产能预测模型V1</title>
+  <title>capacity_prediction</title>
   <link rel="stylesheet" href="https://stackedit.io/style.css" />
 </head>
 
@@ -136,7 +136,7 @@
 <p>iForest （Isolation Forest）孤立森林 是一个基于Ensemble的快速异常检测方法，具有线性时间复杂度和高精准度，是符合大数据处理要求的state-of-the-art算法。其可以用于网络安全中的攻击检测，金融交易欺诈检测，疾病侦测，和噪声数据过滤等。</p>
 <p>该算法的动机是对于连续数据的检测，把异常定义为“容易被孤立的离群点”，也可以理解为分布系数且离密度高的群体较远的点。用统计学来解释，在数据空间里面，分布稀疏的区域表示数据发生在此区域的概率很低，因而可以认为落在这些区域的数据是异常的。</p>
  <p align="center">
-	  <img src="https://upload-images.jianshu.io/upload_images/4517099-01e49039eaa86636.png?imageMogr2/auto-orient/strip|imageView2/2/w/343/format/webp" width="400">
+	  <img src="https://tse3-mm.cn.bing.net/th/id/OIP.4GL2DYIR5ve1oCQvcg2vbQAAAA?pid=Api&amp;rs=1" width="400">
 </p>
 <p>iForest属于Non-parametric和unsupervised的方法，即不用定义数学模型也不需要有标记的训练。对于如何查找哪些点是否容易被孤立（isolated），iForest使用了一套非常高效的策略。假设我们用一个随机超平面来切割（split）数据空间（data space）, 切一次可以生成两个子空间（想象拿刀切蛋糕一分为二）。之后我们再继续用一个随机超平面来切割每个子空间，循环下去，直到每子空间里面只有一个数据点为止。直观上来讲，我们可以发现那些密度很高的簇是可以被切很多次才会停止切割，但是那些密度很低的点很容易很早的就停到一个子空间了。上图里面黑色的点就很容易被切几次就停到一个子空间，而白色点聚集的地方可以切很多次才停止。</p>
 <p>怎么来切这个数据空间是iForest的设计核心思想，本文仅介绍最基本的方法。由于切割是随机的，所以需要用ensemble的方法来得到一个收敛值（蒙特卡洛方法），即反复从头开始切，然后平均每次切的结果。iForest 由t个iTree（Isolation Tree）孤立树 组成，每个iTree是一个二叉树结构，其实现步骤如下：</p>
@@ -168,6 +168,9 @@ s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
 s-65,47,-65,47z M834 80H400000v40H845z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.23972em;"><span class=""></span></span></span></span></span></span></span></span></span> 个特征来选择最优特征来划分子树，进一步增加了泛化能力。</p>
 <p>当 <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mrow><mi>s</mi><mi>u</mi><mi>b</mi></mrow></msub></mrow><annotation encoding="application/x-tex">n_{sub}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.58056em; vertical-align: -0.15em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.336108em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">s</span><span class="mord mathdefault mtight">u</span><span class="mord mathdefault mtight">b</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span></span></span></span></span> 越小时，模型越 robust，此时方差会减小，但是偏差会增大，这个 <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mrow><mi>s</mi><mi>u</mi><mi>b</mi></mrow></msub></mrow><annotation encoding="application/x-tex">n_{sub}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.58056em; vertical-align: -0.15em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.336108em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">s</span><span class="mord mathdefault mtight">u</span><span class="mord mathdefault mtight">b</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span></span></span></span></span> 一般用交叉验证来选取。</p>
 <p>那么了解到这里，Isolation Forest 就是类似于 RF 的方法来检查异常点，对于在 T 个决策树的样本集，IForest 也会对训练集进行随机采样，但是采样个数不需要和 RF 一样（<strong>也就是不需要使得采样集样本数等于训练集个数</strong>），甚至要<font color="red">远远小于</font>训练集个数，因为我们的目的是异常点检测，只需要部分的样本我们一般就可以将异常点区别出来。</p>
+ <p align="center">
+	  <img src="https://img2018.cnblogs.com/blog/1226410/201904/1226410-20190413113358072-1214774939.png" width="700">
+</p>
 <p>对于每一个决策树的建立， IForest采用随机选择一个划分特征，对划分特征随机选择一个划分阈值。这点也和 RF 不同。</p>
 <p>另外，IForest一般会选择一个比较小的最大决策树深度max_depth,原因同样本采集，用少量的异常点检测一般不需要这么大规模的决策树。</p>
 <p>对于异常点的判断，则是将测试样本点xx拟合到T颗决策树。计算在每颗决策树上该样本的叶子节点的深度 <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>h</mi><mi>t</mi></msub><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">h_t(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord"><span class="mord mathdefault">h</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.280556em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span></span>。，从而可以计算出平均高度 <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">h(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord mathdefault">h</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span></span>。获得 t 个 iTree 之后，iForest 训练就结束，然后我们可以用生成的 iForest 来评估测试数据了。对于一个训练数据 <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.43056em; vertical-align: 0em;"></span><span class="mord mathdefault">x</span></span></span></span></span>，我们令其遍历每一棵iTree，然后计算x最终落在每个树第几层（<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.43056em; vertical-align: 0em;"></span><span class="mord mathdefault">x</span></span></span></span></span> 在树的高度）。值得注意的是，如果x落在一个节点中含多个训练数据，可以使用一个公式来修正x的高度计算，详细公式推导见<a href="https://link.jianshu.com/?t=http%3A%2F%2Fcs.nju.edu.cn%2Fzhouzh%2Fzhouzh.files%2Fpublication%2Ficdm08b.pdf">原论文</a>。</p>
@@ -196,13 +199,26 @@ Tree height <span class="token operator">=</span> <span class="token number">8</
 Number of trees <span class="token operator">=</span> <span class="token number">100</span>
 </code></pre>
 <p>通俗解释就是——建100棵iTree，每棵iTree最高8层，且每棵iTree都是独立随机选择256个数据样本建成。</p>
+<p><strong>异常点检测算法使用场景</strong></p>
+<p>什么时候我们需要异常点检测算法呢？常用的有三种情况。</p>
+<ul>
+<li>做数据预处理的时候需要对异常的数据做过滤，防止对归一化等处理的结果。</li>
+<li>对没有标记输出的特征数据做筛选，找出异常的数据。</li>
+<li>对有标记输出的特征数据做二分类时，由于某些类别的训练样本非常少，类别严重不平衡，此时也可以考虑用非监督的异常点检测算法来做。</li>
+</ul>
+<p>在以上场景中，异常的数据量都是很少的一部分，因此诸如：SVM，逻辑回归等分类算法，都不适用，因为监督学习算法适用于有大量的正向样本，也有大量的负向样本，有足够的样本让算法去学习其特征，且未来新出现的样本与训练样本分布一致。</p>
+<p>下面是异常检测和监督学习相关算法的适用范围：</p>
+<ul>
+<li>异常检测：信用卡诈骗，制造业产品异常检测，数据中心机器异常检测，入侵检测</li>
+<li>监督学习：垃圾邮件识别，新闻分类</li>
+</ul>
 <p><strong>个人理解：</strong></p>
 <ol>
 <li>
 <p><strong>IForest 具有线性时间复杂度。</strong> 因为是ensemble 的方法，所以可以用在含有<em>海量数据</em>的数据集上面。通常树的数量越多，算法越稳定。由于每棵树都是互相独立生成的，因此可以部署在大规模分布式系统上来加速运算。</p>
 </li>
 <li>
-<p>IForest不适用于特别高维的数据。由于每次切数据空间都是随机选取一个维度，建完树后仍然有大量的维度信息没有被使用，导致算法可靠性降低。高维空间还可能存在大量噪音维度或无关维度（irrelevant attributes），影响树的构建。对这类数据，建议使用子空间异常检测（Subspace Anomaly Detection）技术。</p>
+<p>**IForest不适用于特别高维的数据。**由于每次切数据空间都是随机选取一个维度，建完树后仍然有大量的维度信息没有被使用，导致算法可靠性降低。高维空间还可能存在大量噪音维度或无关维度（irrelevant attributes），影响树的构建。对这类数据，建议使用子空间异常检测（Subspace Anomaly Detection）技术。</p>
 </li>
 <li>
 <p><strong>IForest仅对Global Anomaly 敏感，即全局稀疏点敏感，不擅长处理局部的相对稀疏点 （Local Anomaly）。</strong> 目前已有改进方法发表于 PAKDD，详见“<a href="https://link.jianshu.com?t=http%3A%2F%2Flink.springer.com%2Fchapter%2F10.1007%2F978-3-319-06605-9_42">Improving iForest with Relative Mass</a>”。</p>
@@ -211,6 +227,179 @@ Number of trees <span class="token operator">=</span> <span class="token number"
 <p>IForest推动了重心估计（Mass Estimation）理论发展，目前在分类聚类和异常检测中都取得显著效果，发表于各大顶级数据挖掘会议和期刊（如SIGKDD，ICDM，ECML）。</p>
 </li>
 </ol>
+<h3 id="代码实现">代码实现</h3>
+<pre class=" language-python"><code class="prism  language-python"><span class="token comment"># -*- coding: utf-8 -*-</span>
+<span class="token triple-quoted-string string">"""
+Created on Wed Dec  2 09:52:34 2020
+
+@author: gzjgz
+"""</span>
+
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>ensemble <span class="token keyword">import</span> IsolationForest
+ 
+rng <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>RandomState<span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span>
+ 
+<span class="token comment"># Generate  train data</span>
+X <span class="token operator">=</span> <span class="token number">0.3</span> <span class="token operator">*</span> rng<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token comment"># np.r_是按列连接两个矩阵，就是把两矩阵上下相加，要求列数相等</span>
+X_train <span class="token operator">=</span> np<span class="token punctuation">.</span>r_<span class="token punctuation">[</span>X <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">,</span> X <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">]</span> 
+X <span class="token operator">=</span> <span class="token number">0.3</span> <span class="token operator">*</span> rng<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+X_test <span class="token operator">=</span> np<span class="token punctuation">.</span>r_<span class="token punctuation">[</span>X <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">,</span> X <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">]</span>
+X_outliers <span class="token operator">=</span> rng<span class="token punctuation">.</span>uniform<span class="token punctuation">(</span>low<span class="token operator">=</span><span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">,</span> high<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ 
+<span class="token comment"># fit the model</span>
+clf <span class="token operator">=</span> IsolationForest<span class="token punctuation">(</span>max_samples<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span>
+                      random_state<span class="token operator">=</span>rng<span class="token punctuation">,</span> contamination<span class="token operator">=</span><span class="token string">'auto'</span><span class="token punctuation">)</span>
+clf<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_train<span class="token punctuation">)</span>
+y_pred_train <span class="token operator">=</span> clf<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X_train<span class="token punctuation">)</span>
+y_pred_test <span class="token operator">=</span> clf<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X_outliers<span class="token punctuation">)</span>
+
+<span class="token comment"># np.meshgrid生成网格点坐标矩阵 </span>
+<span class="token comment"># https://blog.csdn.net/lllxxq141592654/article/details/81532855</span>
+xx<span class="token punctuation">,</span> yy <span class="token operator">=</span> np<span class="token punctuation">.</span>meshgrid<span class="token punctuation">(</span>np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># ravel 将矩阵向量化 https://www.jianshu.com/p/d7f87cbf29e9</span>
+Z <span class="token operator">=</span> clf<span class="token punctuation">.</span>decision_function<span class="token punctuation">(</span>np<span class="token punctuation">.</span>c_<span class="token punctuation">[</span>xx<span class="token punctuation">.</span>ravel<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> yy<span class="token punctuation">.</span>ravel<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+Z <span class="token operator">=</span> Z<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span>xx<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+ 
+plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">"IsolationForest"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>contourf<span class="token punctuation">(</span>xx<span class="token punctuation">,</span> yy<span class="token punctuation">,</span> Z<span class="token punctuation">,</span> camp<span class="token operator">=</span>plt<span class="token punctuation">.</span>cm<span class="token punctuation">.</span>Blues_r<span class="token punctuation">)</span> <span class="token comment"># 填充颜色</span>
+b1 <span class="token operator">=</span> plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>X_train<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> X_train<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token string">'white'</span><span class="token punctuation">,</span>
+                 s<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> edgecolor<span class="token operator">=</span><span class="token string">'k'</span><span class="token punctuation">)</span>
+b2 <span class="token operator">=</span> plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>X_test<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> X_test<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token string">'green'</span><span class="token punctuation">,</span>
+                 s<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> edgecolor<span class="token operator">=</span><span class="token string">'k'</span><span class="token punctuation">)</span>
+c <span class="token operator">=</span> plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>X_outliers<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> X_outliers<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token string">'red'</span><span class="token punctuation">,</span>
+                s<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> edgecolor<span class="token operator">=</span><span class="token string">'k'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>axis<span class="token punctuation">(</span><span class="token string">'tight'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlim<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylim<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">[</span>b1<span class="token punctuation">,</span> b2<span class="token punctuation">,</span> c<span class="token punctuation">]</span><span class="token punctuation">,</span>
+           <span class="token punctuation">[</span><span class="token string">"training observations"</span><span class="token punctuation">,</span>
+            <span class="token string">"new regular observations"</span><span class="token punctuation">,</span> <span class="token string">"new abnormal observations"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+           loc<span class="token operator">=</span><span class="token string">"upper left"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># 图如下</span>
+</code></pre>
+ <p align="center">
+	  <img src="https://i.bmp.ovh/imgs/2020/12/ab69d8569f29d060.png" width="500">
+</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token comment"># -*- coding: utf-8 -*-</span>
+<span class="token triple-quoted-string string">"""
+Created on Wed Dec  2 10:31:43 2020
+
+@author: gzjgz
+"""</span>
+
+<span class="token triple-quoted-string string">'''
+此示例显示了2D数据集上不同异常检测算法的特征。数据集包含一种或两种模式（高密度区域），以说明算法处理多模态数据的能力。
+
+对于每个数据集，15%的样本被生成为随机均匀噪声。该比例是给予OneClassSVM的nu参数的值和其他异常值检测算法的污染参数。除了局部异常因子（LOF）之外，内部和异常值之间的决策边界以黑色显示，因为当用于异常值检测时，它没有预测方法应用于新数据。
+  
+svm.OneClassSVM被称为是对异常值敏感，并因此对异常值检测不执行的非常好。当训练集未被异常值污染时，该估计器最适合于新颖性检测。也就是说，高维中的离群检测，或者对上层数据的分布没有任何假设是非常具有挑战性的，并且单类SVM可能在这些情况下根据其超参数的值给出有用的结果。
+  
+covariance.EllipticEnvelope假设数据是高斯数据并学习椭圆。因此，当数据不是单峰时，它会降级。但请注意，此估算器对异常值很稳健。
+
+ensemble.IsolationForest并且neighbors.LocalOutlierFactor 似乎对多模态数据集表现得相当好。neighbors.LocalOutlierFactor对于第三数据集示出了优于其他估计器的优点 ，其中两种模式具有不同的密度。这一优势可以通过LOF的局部方面来解释，这意味着它只将一个样本的异常得分与其邻居的得分进行比较。
+
+最后，对于最后一个数据集，很难说一个样本比另一个样本更异常，因为它们均匀分布在超立方体中。除了svm.OneClassSVM稍微过度拟合之外，所有估算者都为这种情况提供了不错的解决方案。在这种情况下，更仔细地观察样本的异常分数是明智的，因为良好的估计器应该为所有样本分配相似的分数。
+
+虽然这些例子给出了一些关于算法的直觉，但这种直觉可能不适用于非常高维的数据。
+
+最后，请注意模型的参数已经在这里精心挑选，但实际上它们需要进行调整。在没有标记数据的情况下，问题完全没有监督，因此模型选择可能是一个挑战。
+'''</span>
+
+<span class="token keyword">import</span> time
+ 
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+ 
+<span class="token keyword">from</span> sklearn <span class="token keyword">import</span> svm
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>datasets <span class="token keyword">import</span> make_blobs<span class="token punctuation">,</span> make_moons
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>covariance <span class="token keyword">import</span> EllipticEnvelope
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>ensemble <span class="token keyword">import</span> IsolationForest
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>neighbors <span class="token keyword">import</span> LocalOutlierFactor
+ 
+matplotlib<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">'contour.negative_linestyle'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'solid'</span>
+ 
+<span class="token comment"># Example settings</span>
+n_samples <span class="token operator">=</span> <span class="token number">300</span>
+outliers_fraction <span class="token operator">=</span> <span class="token number">0.15</span>
+n_outliers <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>outliers_fraction <span class="token operator">*</span> n_samples<span class="token punctuation">)</span>
+n_inliers <span class="token operator">=</span> n_samples <span class="token operator">-</span> n_outliers
+ 
+<span class="token comment"># define outlier/ anomaly detection methods to be compared</span>
+anomaly_algorithms <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">(</span><span class="token string">"Robust covariance"</span><span class="token punctuation">,</span> EllipticEnvelope<span class="token punctuation">(</span>contamination<span class="token operator">=</span>outliers_fraction<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token string">"One-Class SVM"</span><span class="token punctuation">,</span> svm<span class="token punctuation">.</span>OneClassSVM<span class="token punctuation">(</span>nu<span class="token operator">=</span>outliers_fraction<span class="token punctuation">,</span> kernel<span class="token operator">=</span><span class="token string">'rbf'</span><span class="token punctuation">,</span>gamma<span class="token operator">=</span><span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token string">"Isolation Forest"</span><span class="token punctuation">,</span> IsolationForest<span class="token punctuation">(</span>contamination<span class="token operator">=</span>outliers_fraction<span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token string">"Local Outlier Factor"</span><span class="token punctuation">,</span> LocalOutlierFactor<span class="token punctuation">(</span>n_neighbors<span class="token operator">=</span><span class="token number">35</span><span class="token punctuation">,</span> contamination<span class="token operator">=</span>outliers_fraction<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span>
+ 
+<span class="token comment"># define datasets</span>
+blobs_params <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span>random_state<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> n_samples<span class="token operator">=</span>n_inliers<span class="token punctuation">,</span> n_features<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+datasets <span class="token operator">=</span> <span class="token punctuation">[</span>
+    make_blobs<span class="token punctuation">(</span>centers<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> cluster_std<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token operator">**</span>blobs_params<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    make_blobs<span class="token punctuation">(</span>centers<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> cluster_std<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">**</span>blobs_params<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    make_blobs<span class="token punctuation">(</span>centers<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> cluster_std<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1.5</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">**</span>blobs_params<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token number">4</span><span class="token punctuation">.</span> <span class="token operator">*</span> <span class="token punctuation">(</span>make_moons<span class="token punctuation">(</span>n_samples<span class="token operator">=</span>n_samples<span class="token punctuation">,</span> noise<span class="token operator">=</span><span class="token number">0.05</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">-</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.25</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token number">14</span><span class="token punctuation">.</span> <span class="token operator">*</span> <span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>RandomState<span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span><span class="token punctuation">.</span>rand<span class="token punctuation">(</span>n_samples<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">0.5</span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span>
+ 
+<span class="token comment"># Compare given classifiers under given settings</span>
+xx<span class="token punctuation">,</span> yy <span class="token operator">=</span> np<span class="token punctuation">.</span>meshgrid<span class="token punctuation">(</span>np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">150</span><span class="token punctuation">)</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">150</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ 
+plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>anomaly_algorithms<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">12.5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>subplots_adjust<span class="token punctuation">(</span>left<span class="token operator">=</span><span class="token number">0.02</span><span class="token punctuation">,</span> right<span class="token operator">=</span><span class="token number">0.98</span><span class="token punctuation">,</span> bottom<span class="token operator">=</span><span class="token number">0.001</span><span class="token punctuation">,</span> top<span class="token operator">=</span><span class="token number">0.96</span><span class="token punctuation">,</span> wspace<span class="token operator">=</span><span class="token number">0.05</span><span class="token punctuation">,</span> hspace<span class="token operator">=</span><span class="token number">0.01</span><span class="token punctuation">)</span>
+ 
+plot_num <span class="token operator">=</span> <span class="token number">1</span>
+rng <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>RandomState<span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span>
+ 
+ 
+<span class="token keyword">for</span> i_dataset<span class="token punctuation">,</span> X <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>datasets<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># add outliers</span>
+    X <span class="token operator">=</span> np<span class="token punctuation">.</span>concatenate<span class="token punctuation">(</span><span class="token punctuation">[</span>X<span class="token punctuation">,</span> rng<span class="token punctuation">.</span>uniform<span class="token punctuation">(</span>low<span class="token operator">=</span><span class="token operator">-</span><span class="token number">6</span><span class="token punctuation">,</span> high<span class="token operator">=</span><span class="token number">6</span><span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token punctuation">(</span>n_outliers<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> name<span class="token punctuation">,</span> algorithm <span class="token keyword">in</span> anomaly_algorithms<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>name <span class="token punctuation">,</span> algorithm<span class="token punctuation">)</span>
+        t0 <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        algorithm<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+        t1 <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>datasets<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>anomaly_algorithms<span class="token punctuation">)</span><span class="token punctuation">,</span> plot_num<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> i_dataset <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span>name<span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token number">18</span><span class="token punctuation">)</span>
+ 
+        <span class="token comment"># fit the data and tag outliers</span>
+        <span class="token keyword">if</span> name <span class="token operator">==</span> <span class="token string">'Local Outlier Factor'</span><span class="token punctuation">:</span>
+            y_pred <span class="token operator">=</span> algorithm<span class="token punctuation">.</span>fit_predict<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            y_pred <span class="token operator">=</span> algorithm<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+ 
+        <span class="token comment"># plot the levels lines and the points</span>
+        <span class="token keyword">if</span> name <span class="token operator">!=</span> <span class="token string">"Local Outlier Factor"</span><span class="token punctuation">:</span>
+            Z <span class="token operator">=</span> algorithm<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>np<span class="token punctuation">.</span>c_<span class="token punctuation">[</span>xx<span class="token punctuation">.</span>ravel<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> yy<span class="token punctuation">.</span>ravel<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            Z <span class="token operator">=</span> Z<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span>xx<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+            plt<span class="token punctuation">.</span>contour<span class="token punctuation">(</span>xx<span class="token punctuation">,</span> yy<span class="token punctuation">,</span> Z<span class="token punctuation">,</span> levels<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> linewidths<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> colors<span class="token operator">=</span><span class="token string">'black'</span><span class="token punctuation">)</span>
+ 
+        colors <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"#377eb8"</span><span class="token punctuation">,</span> <span class="token string">'#ff7f00'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>X<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> X<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> color<span class="token operator">=</span>colors<span class="token punctuation">[</span><span class="token punctuation">(</span>y_pred <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+ 
+        plt<span class="token punctuation">.</span>xlim<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>ylim<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>xticks<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>yticks<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>text<span class="token punctuation">(</span><span class="token number">0.99</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">'%.2fs'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>t1 <span class="token operator">-</span> t0<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>lstrip<span class="token punctuation">(</span><span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                 transform<span class="token operator">=</span>plt<span class="token punctuation">.</span>gca<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>transAxes<span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token number">15</span><span class="token punctuation">,</span>
+                 horizontalalignment<span class="token operator">=</span><span class="token string">'right'</span><span class="token punctuation">)</span>
+        plot_num <span class="token operator">+=</span> <span class="token number">1</span>
+ 
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># 图如下</span>
+</code></pre>
+ <p align="center">
+	  <img src="https://i.bmp.ovh/imgs/2020/12/82ab6e14e9fb123b.png" width="500">
+</p>
+<h3 id="其他资源">其他资源</h3>
 <p><strong>论文下载</strong>：</p>
 <p><a href="https://link.jianshu.com?t=http%3A%2F%2Fcs.nju.edu.cn%2Fzhouzh%2Fzhouzh.files%2Fpublication%2Ficdm08b.pdf">http://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/icdm08b.pdf</a></p>
 <p><a href="https://link.jianshu.com?t=http%3A%2F%2Fcs.nju.edu.cn%2Fzhouzh%2Fzhouzh.files%2Fpublication%2Ftkdd11.pdf">http://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/tkdd11.pdf</a></p>
