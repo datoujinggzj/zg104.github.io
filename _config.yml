@@ -39,7 +39,7 @@ navbar-links:
     - KNN with Iris Dataset: 'KNN'
     - Customer Profile Insights & repurchase related insights: 'xgb'
     - Capgemini Automobile Project: 'kaijie_project'
-    - Capacity prediction model: 'capacity_prediction'
+    - Capacity Prediction Model: 'capacity_prediction'
   Resources:
    - Github: "https://github.com/zg104"
    - 知乎: "https://www.zhihu.com/people/gao-zi-jing-98"
