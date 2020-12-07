@@ -21,14 +21,15 @@ navbar-links:
     - Medium: "sql_medium"
   Machine Learning: 
 #   - 机器学习算法总结: 'ml'
-    - Linear Regression: 'Linear_regression'
-    - Logistic Regression: 'Logistic_regression'
-    - Naive Bayes: 'Naive_bayes'
-    - Support Vector Machine: 'SVM'
-    - KNN: 'KNN_tutorial'
-    - K-Means: 'kmeans'
-    - Descion Tree: 'desciontree'
-    - Boosting: 'boost'
+    - 线性回归: 'Linear_regression'
+    - 逻辑回归: 'Logistic_regression'
+    - 朴素贝叶斯: 'Naive_bayes'
+    - 支持向量机: 'SVM'
+    - k近邻: 'KNN_tutorial'
+    - K平均: 'kmeans'
+    - 决策树: 'desciontree'
+    - 提升算法: 'boost'
+    - EM算法&应用: 'em'
   Projects: 
     - Stock Prediction: "Project"
     - Glass Identification: "glass"
