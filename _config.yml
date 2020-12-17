@@ -21,16 +21,16 @@ navbar-links:
     - Medium: "sql_medium"
   Machine Learning: 
 #   - 机器学习算法总结: 'ml'
-    - 线性回归: 'Linear_regression'
-    - 逻辑回归: 'Logistic_regression'
-    - 朴素贝叶斯: 'Naive_bayes'
-    - 支持向量机: 'SVM'
-    - k近邻: 'KNN_tutorial'
-    - K平均: 'kmeans'
-    - 决策树: 'desciontree'
-    - 提升算法: 'boost'
-    - EM算法&应用: 'em'
-    - 隐马尔科夫模型: 'HMM'
+    - 线性回归: "Linear_regression"
+    - 逻辑回归: "Logistic_regression"
+    - 朴素贝叶斯: "Naive_bayes"
+    - 支持向量机: "SVM"
+    - k近邻: "KNN_tutorial"
+    - K平均: "kmeans"
+    - 决策树: "desciontree"
+    - 提升算法: "boost"
+    - EM算法&应用: "em"
+    - 隐马尔科夫模型: "HMM"
   Projects: 
     - Stock Prediction: "Project"
     - Glass Identification: "glass"
@@ -75,8 +75,8 @@ social-network-links:
   facebook: zijing.gao.12
   github: zg104
   twitter: Zijing39896593
-  rss: true
-  weixin: datoujinggzj
+  rss: false
+#  weixin: datoujinggzj
 #  reddit: yourname
   linkedin: zg104
 #  xing: yourname
@@ -99,16 +99,15 @@ share-links-active:
   twitter: true
   facebook: true
   linkedin: true
-  wechat: true
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
 
 # Create a "tags" index page and make tags on each post clickable
-link-tags: true
+#link-tags: true
 
 # Excerpt Word Length - Truncates the excerpt to the specified number of words on the index page
-excerpt_length: 50
+#excerpt_length: 50
 
 # --- Colours / background image --- #
 
@@ -135,7 +134,7 @@ footer-img: "/assets/img/bgimage.png"
 # --- Web Statistics Section --- #
 
 # Fill in your Google Analytics gtag.js ID to track your website using gtag
-gtag: "UA-173057260-1"
+#gtag: "UA-173057260-1"
 
 # Fill in your Google Analytics ID to track your website using GA
 #google_analytics: ""
@@ -157,7 +156,7 @@ gtag: "UA-173057260-1"
 #disqus: ""
 
 # To use Facebook Comments, create a Facebook app and fill in the Facebook App ID
-fb_comment_id: "100026263117094"
+#fb_comment_id: "100026263117094"
 
 # To use Utterances comments: (0) uncomment the following section, (1) fill in
 # "repository" (make sure the repository is public), (2) Enable Issues in your repository,
@@ -187,7 +186,7 @@ fb_comment_id: "100026263117094"
 
 # Character used to separate site title and description in HTML document title
 # and RSS feed title
-title-separator: "-"
+#title-separator: "-"
 
 # Ruby Date Format to show dates of posts
 date_format: "%B %-d, %Y"
