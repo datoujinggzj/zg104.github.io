@@ -44,6 +44,7 @@ navbar-links:
     - Capacity Prediction Model: 'capacity_prediction'
     - Purchase/Redemption Forecast (part 1): 'eda1'
     - Purchase/Redemption Forecast (part 2): 'eda2'
+    - 基于 LSTM 的设备健康评估与剩余寿面预测的研究: 'phm'
   Resources:
    - Github: "https://github.com/zg104"
    - 知乎: "https://www.zhihu.com/people/gao-zi-jing-98"
