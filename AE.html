@@ -13078,19 +13078,19 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="&#33258;&#32534;&#30721;&#22120;&#65288;Autoencoder&#65289;">&#33258;&#32534;&#30721;&#22120;&#65288;Autoencoder&#65289;<a class="anchor-link" href="#&#33258;&#32534;&#30721;&#22120;&#65288;Autoencoder&#65289;">&#182;</a></h1><h2 id="AE-&#29702;&#35770;&#22522;&#30784;">AE &#29702;&#35770;&#22522;&#30784;<a class="anchor-link" href="#AE-&#29702;&#35770;&#22522;&#30784;">&#182;</a></h2><ol>
-<li><a href="#a1">简介</a></li>
-<li><a href="#a2">特点</a></li>
-<li><a href="#a3">结构</a></li>
-<li><a href="#a4">实例</a></li>
+<li><a href="#Intro">简介</a></li>
+<li><a href="#Features">特点</a></li>
+<li><a href="#Structure">结构</a></li>
+<li><a href="#Instance">实例</a></li>
 </ol>
 <h2 id="TensorFlow-&#31616;&#21333;&#23454;&#29616;">TensorFlow &#31616;&#21333;&#23454;&#29616;<a class="anchor-link" href="#TensorFlow-&#31616;&#21333;&#23454;&#29616;">&#182;</a></h2><ol>
-<li><a href="#b1">调包</a></li>
-<li><a href="#b2">载入数据</a></li>
-<li><a href="#b3">实例1：基本AE</a></li>
-<li><a href="#b4">实例2：去噪AE</a></li>
-<li><a href="#b5">实例3：卷积AE</a></li>
-<li><a href="#b6">实例4：异常检测</a></li>
-<li><a href="#b7">其他资料</a></li>
+<li><a href="#Library">调包</a></li>
+<li><a href="#Load_the_data">载入数据</a></li>
+<li><a href="#Basic_AE">实例1：基本AE</a></li>
+<li><a href="#Denoised_AE">实例2：去噪AE</a></li>
+<li><a href="#Conv_AE">实例3：卷积AE</a></li>
+<li><a href="#Anomaly_detection">实例4：异常检测</a></li>
+<li><a href="#Other_materials">其他资料</a></li>
 </ol>
 
 </div>
@@ -13107,12 +13107,12 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#29702;&#35770;&#22522;&#30784;">&#29702;&#35770;&#22522;&#30784;<a class="anchor-link" href="#&#29702;&#35770;&#22522;&#30784;">&#182;</a></h2><h3 id="&#31616;&#20171;"><font id="a1">&#31616;&#20171;</font><a class="anchor-link" href="#&#31616;&#20171;">&#182;</a></h3><p>自编码器是一种能够通过无监督学习，学到输入数据高效表示的人工神经网络。输入数据的这一高效表示称为编码（codings），其维度一般远小于输入数据，使得自编码器可用于降维。更重要的是，自编码器可作为强大的特征检测器（feature detectors），应用于深度神经网络的预训练。此外，自编码器还可以随机生成与训练数据类似的数据，这被称作生成模型（generative model）。比如，可以用人脸图片训练一个自编码器，它可以生成新的图片。</p>
+<h2 id="&#29702;&#35770;&#22522;&#30784;">&#29702;&#35770;&#22522;&#30784;<a class="anchor-link" href="#&#29702;&#35770;&#22522;&#30784;">&#182;</a></h2><h3 id="&#31616;&#20171;"><font id="Intro">&#31616;&#20171;</font><a class="anchor-link" href="#&#31616;&#20171;">&#182;</a></h3><p>自编码器是一种能够通过无监督学习，学到输入数据高效表示的人工神经网络。输入数据的这一高效表示称为编码（codings），其维度一般远小于输入数据，使得自编码器可用于降维。更重要的是，自编码器可作为强大的特征检测器（feature detectors），应用于深度神经网络的预训练。此外，自编码器还可以随机生成与训练数据类似的数据，这被称作生成模型（generative model）。比如，可以用人脸图片训练一个自编码器，它可以生成新的图片。</p>
 <p>自编码器通过简单地学习将输入复制到输出来工作。这一任务（就是输入训练数据， 再输出训练数据的任务）听起来似乎微不足道，但通过不同方式对神经网络增加约束，可以使这一任务变得极其困难。比如，可以限制内部表示的尺寸（这就实现降维了），或者对训练数据增加噪声并训练自编码器使其能恢复原有。这些限制条件防止自编码器机械地将输入复制到输出，并强制它学习数据的高效表示。</p>
-<h3 id="&#29305;&#28857;"><font id="a2">&#29305;&#28857;</font><a class="anchor-link" href="#&#29305;&#28857;">&#182;</a></h3><p>自动编码器 (AutoEncoder) 最开始作为一种数据的压缩方法，其特点有:</p>
+<h3 id="&#29305;&#28857;"><font id="Features">&#29305;&#28857;</font><a class="anchor-link" href="#&#29305;&#28857;">&#182;</a></h3><p>自动编码器 (AutoEncoder) 最开始作为一种数据的压缩方法，其特点有:</p>
 <p>（1）跟数据相关程度很高，这意味着自动编码器只能压缩与训练数据相似的数据，这个其实比较显然，因为使用神经网络提取的特征一般是高度相关于原始的训练集，使用人脸训练出来的自动编码器在压缩自然界动物的图片是表现就会比较差，因为它只学习到了人脸的特征，而没有能够学习到自然界图片的特征；那么在航空航天方面，自然我们要处理一些高清的精密仪器或者系统的图像数据，我们不想直接用神经网络来提取特征，维度会很高，所以可以使用自动编码器先对图像做压缩降维处理。</p>
 <p>（2）压缩后数据是有损的，这是因为在降维的过程中不可避免的要丢失掉信息；那么图像数据尽管有损，但也保存了绝大多数信息，从而大幅度提升模型训练效率。</p>
-<h3 id="&#32467;&#26500;"><font id="a3">&#32467;&#26500;</font><a class="anchor-link" href="#&#32467;&#26500;">&#182;</a></h3><p><img src="https://pic2.zhimg.com/80/v2-e5745659cd57562c1dcfc3de7e2a4229_1440w.png" alt=""></p>
+<h3 id="&#32467;&#26500;"><font id="Structure">&#32467;&#26500;</font><a class="anchor-link" href="#&#32467;&#26500;">&#182;</a></h3><p><img src="https://pic2.zhimg.com/80/v2-e5745659cd57562c1dcfc3de7e2a4229_1440w.png" alt=""></p>
 <p>从上面的图中，我们能够看到两个部分，第一个部分是编码器 (Encoder)，第二个部分是解码器 (Decoder)，编码器和解码器都可以是任意的模型，通常我们使用神经网络模型作为编码器和解码器。输入的数据经过神经网络降维到一个编码 (code)，接着又通过另外一个神经网络去解码得到一个与输入原数据一模一样的生成数据，然后通过去比较这两个数据，最小化他们之间的差异来训练这个网络中编码器和解码器的参数。当这个过程训练完之后，我们可以拿出这个解码器，随机传入一个编码 (code)，希望通过解码器能够生成一个和原数据差不多的数据，上面这种图这个例子就是希望能够生成一张差不多的图片。</p>
 <p align="center">
       <img      src="https://pic.downk.cc/item/5fe1ae0e3ffa7d37b3522c7d.jpg" width = 500>
@@ -13123,7 +13123,7 @@ div#notebook {
 <li>异常检测</li>
 </ul>
 <p>自编码器实际上是一个特殊的神经网络，被训练去“复制”其输入并转化成输出。举个例子，给定一个手写的数字，AE 首先对图片进行编码，使其1变成一个低维的隐变量表达，然后再通过对其解码重构，返还成图片的形式作为输出，那么为什么要这么做呢？我们要做的不是去完全复制图片，而是想办法把原来的输入中的重要特征提取出来，然后重构成一个更低维度的“复制品”，目的是在降低数据维度的情况下，尽量少的损失输入信息，并尽量多的提取特征，也就是极小化重构误差（reconstruction error）。</p>
-<h3 id="&#23454;&#20363;"><font id="a4">&#23454;&#20363;</font><a class="anchor-link" href="#&#23454;&#20363;">&#182;</a></h3><p>可能现在你还是不理解编码和解码是什么意思，那么来举个例子。</p>
+<h3 id="&#23454;&#20363;"><font id="Instance">&#23454;&#20363;</font><a class="anchor-link" href="#&#23454;&#20363;">&#182;</a></h3><p>可能现在你还是不理解编码和解码是什么意思，那么来举个例子。</p>
 <p>下面有两组数字，哪组更容易记忆呢？</p>
 <ul>
 <li>40, 27, 25, 36, 81, 57, 10, 73, 19, 68</li>
@@ -13166,7 +13166,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.-&#35843;&#21253;"><font id="b1">1. &#35843;&#21253;</font><a class="anchor-link" href="#1.-&#35843;&#21253;">&#182;</a></h3>
+<h3 id="1.-&#35843;&#21253;"><font id="Library">1. &#35843;&#21253;</font><a class="anchor-link" href="#1.-&#35843;&#21253;">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13195,7 +13195,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.-&#36733;&#20837;&#25968;&#25454;&#65288;&#25968;&#25454;&#39044;&#22788;&#29702;&#65289;"><font id="b2">2. &#36733;&#20837;&#25968;&#25454;&#65288;&#25968;&#25454;&#39044;&#22788;&#29702;&#65289;</font><a class="anchor-link" href="#2.-&#36733;&#20837;&#25968;&#25454;&#65288;&#25968;&#25454;&#39044;&#22788;&#29702;&#65289;">&#182;</a></h3>
+<h3 id="2.-&#36733;&#20837;&#25968;&#25454;&#65288;&#25968;&#25454;&#39044;&#22788;&#29702;&#65289;"><font id="Load_the_data">2. &#36733;&#20837;&#25968;&#25454;&#65288;&#25968;&#25454;&#39044;&#22788;&#29702;&#65289;</font><a class="anchor-link" href="#2.-&#36733;&#20837;&#25968;&#25454;&#65288;&#25968;&#25454;&#39044;&#22788;&#29702;&#65289;">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13266,7 +13266,7 @@ Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-dataset
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="3.-&#23454;&#20363;1&#65306;&#22522;&#26412;-AE"><font id="b3">3. &#23454;&#20363;1&#65306;&#22522;&#26412; AE</font><a class="anchor-link" href="#3.-&#23454;&#20363;1&#65306;&#22522;&#26412;-AE">&#182;</a></h3><p align="center">
+<h3 id="3.-&#23454;&#20363;1&#65306;&#22522;&#26412;-AE"><font id="Basic_AE">3. &#23454;&#20363;1&#65306;&#22522;&#26412; AE</font><a class="anchor-link" href="#3.-&#23454;&#20363;1&#65306;&#22522;&#26412;-AE">&#182;</a></h3><p align="center">
    <img   src="https://pic.downk.cc/item/5feaf2543ffa7d37b37086e0.jpg
 " width = 600>
 </p>
@@ -13465,7 +13465,7 @@ Epoch 10/10
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="4.-&#21435;&#22122;-AE"><font id="b4">4. &#21435;&#22122; AE</font><a class="anchor-link" href="#4.-&#21435;&#22122;-AE">&#182;</a></h3><p>自编码器也可以被训练用于对图片去噪。我们先回对刚才的 Fashion MNIST 数据集通过对每一张图片加上一个随机噪声来进行一个噪声处理。那么接下来要训练一个自编码器，使得带噪音的图片作为输入，原图片作为输出。</p>
+<h3 id="4.-&#21435;&#22122;-AE"><font id="Denoised_AE">4. &#21435;&#22122; AE</font><a class="anchor-link" href="#4.-&#21435;&#22122;-AE">&#182;</a></h3><p>自编码器也可以被训练用于对图片去噪。我们先回对刚才的 Fashion MNIST 数据集通过对每一张图片加上一个随机噪声来进行一个噪声处理。那么接下来要训练一个自编码器，使得带噪音的图片作为输入，原图片作为输出。</p>
 <p align="center">
       <img      src="https://pic.downk.cc/item/5feaee6d3ffa7d37b368d0f8.jpg
 " width = 600>
@@ -13611,7 +13611,7 @@ Epoch 10/10
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="5.-&#21367;&#31215;-AE"><font id="b5">5. &#21367;&#31215; AE</font><a class="anchor-link" href="#5.-&#21367;&#31215;-AE">&#182;</a></h3><p align="center">
+<h3 id="5.-&#21367;&#31215;-AE"><font id="Conv_AE">5. &#21367;&#31215; AE</font><a class="anchor-link" href="#5.-&#21367;&#31215;-AE">&#182;</a></h3><p align="center">
    <img   src="https://pic.downk.cc/item/5feaefab3ffa7d37b36b2b96.jpg
 " width = 700>
 </p><p>这里我们将利用在 <code>encoder</code> 里面的 <a href="https://tensorflow.google.cn/api_docs/python/tf/keras/layers/Conv2D?hl=en">Conv2D</a> 层，和在 <code>decoder</code> 里面的 <a href="https://tensorflow.google.cn/api_docs/python/tf/keras/layers/Conv2DTranspose?hl=en">Conv2DTranspose</a> 来训练卷积自编码器。</p>
@@ -13905,7 +13905,7 @@ _________________________________________________________________
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="6.-&#24322;&#24120;&#26816;&#27979;&#65288;Anomaly-Detection&#65289;"><font id="b6">6. &#24322;&#24120;&#26816;&#27979;&#65288;Anomaly Detection&#65289;</font><a class="anchor-link" href="#6.-&#24322;&#24120;&#26816;&#27979;&#65288;Anomaly-Detection&#65289;">&#182;</a></h3><p align="center">
+<h3 id="6.-&#24322;&#24120;&#26816;&#27979;&#65288;Anomaly-Detection&#65289;"><font id="Anomaly_detection">6. &#24322;&#24120;&#26816;&#27979;&#65288;Anomaly Detection&#65289;</font><a class="anchor-link" href="#6.-&#24322;&#24120;&#26816;&#27979;&#65288;Anomaly-Detection&#65289;">&#182;</a></h3><p align="center">
    <img   src="https://pic.downk.cc/item/5feaf3903ffa7d37b37307a2.jpg
 " width = 900>
 </p><p>在这里，我们将要使用 <a href="http://www.timeseriesclassification.com/description.php?Dataset=ECG5000">ECG5000</a> 数据集。本数据集含有 5,000 幅心电图，每一个有 140 个数据点。我们将用一个较为简化的版本，也就是每个实例已经被打上标签：</p>
@@ -14136,10 +14136,10 @@ _________________________________________________________________
 <div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># zuihou1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 贴标签</span>
 <span class="n">labels</span> <span class="o">=</span> <span class="n">raw_data</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
-<span class="c1"># The other data points are the electrocadriogram data</span>
+<span class="c1"># 其他数据</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">raw_data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
 <span class="n">train_data</span><span class="p">,</span> <span class="n">test_data</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">,</span> <span class="n">test_labels</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
@@ -14812,7 +14812,7 @@ Recall = 0.9107142857142857
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="7.-&#20854;&#20182;&#36164;&#26009;"><font id="b7">7. &#20854;&#20182;&#36164;&#26009;</font><a class="anchor-link" href="#7.-&#20854;&#20182;&#36164;&#26009;">&#182;</a></h3>
+<h3 id="7.-&#20854;&#20182;&#36164;&#26009;"><font id="Other_materials">7. &#20854;&#20182;&#36164;&#26009;</font><a class="anchor-link" href="#7.-&#20854;&#20182;&#36164;&#26009;">&#182;</a></h3>
 </div>
 </div>
 </div>
