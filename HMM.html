@@ -13408,7 +13408,7 @@ $$
 $$</p>
 <p>跟以前一样，根据 $\delta_t(i)$ 与转移概率相乘得到在时刻 $t$ 状态由 $j$ 转移到 $i$ 的概率，然后再乘观测概率得到在 $t+1$ 时刻状态为 $i$ 的所有单个路径中的概率最大值。</p>
 <p>定义在时刻 $t$ 状态为 $i$ 的所有单个路径 $(i_1,i_2,\cdots,i_{t-1},i)$ 中概率最大的路径的第 $t-1$ 个结点为</p>
-$$\Psi_t(i) = \arg \max_{1 \leq j \leq N} [\delta_{t-1}(j)a_{ji}], \ i=1,2,\cdots,N$$<p><font color = #803DDE>**维特比算法：**</font></p>
+$$\Psi_t(i) = \arg \max_{1 \leq j \leq N} [\delta_{t-1}(j)a_{ji}], \ i=1,2,\cdots,N$$<p><strong><font color = #803DDE>维特比算法：</font></strong></p>
 <p>输入：模型 $\lambda = (A,B,\pi)$ 和观测 $O = (o_1,o_2,\cdots,o_T)$
 输出：最优路径 $I^* = (i_1^*,i_2^*, \cdots, i_T^*)$</p>
 <ol>
@@ -13561,6 +13561,19 @@ $$\delta_t(i) = \max_{1 \leq j \leq N} [\delta_{t-1}(j)a_{ji}]b_i(o_t), \ i=1,2,
 </p>
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div>
     </div>
   </div>
