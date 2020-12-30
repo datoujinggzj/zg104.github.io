@@ -13287,12 +13287,9 @@ Q(\theta,\theta^{(i)}) &amp;= E[\log P(y,\gamma|\theta)|y,\theta^{(i)}] \\
  迭代的 M 步是求函数 $Q(\theta,\theta^{(i)})$ 对 $\theta$ 的极大值，即求新一轮迭代的模型参数：
  $$\theta^{(i+1)} = \arg \max_{\theta}(\theta,\theta^{(i)})$$</p>
 <p>用 $\hat \mu_k$，$\hat \sigma_k^2$ 以及 $\hat \alpha_k$，$k=1,2,\cdots,K$，表示 $\theta^{(i+1)}$ 的各参数。求 $\hat \mu_k$，$\hat \sigma_k^2$ 只需将式（1）分别对 $\hat \mu_k$，$\hat \sigma_k^2$ 求偏导数并令其为 0，即可得到；求 $\hat \alpha_k$ 是在 $\sum_{k=1}^{K} \alpha_k = 1$ 条件下（拉格朗日乘子）求偏导数并令其为 0 得到的。结果如下：</p>
-<p><p align="center"></p>
-
-<pre><code>   &lt;img      src="https://pic.downk.cc/item/5fec4ec93ffa7d37b3846643.jpg" width = 300&gt;
-</code></pre>
-<p>&lt;/p&gt;
-重复以上计算，直到对数似然函数值不再有明显变化为止。</p>
+<p align="center">
+       <img      src="https://pic.downk.cc/item/5fec4ec93ffa7d37b3846643.jpg" width = 300>
+</p><p>重复以上计算，直到对数似然函数值不再有明显变化为止。</p>
 <p><font color = 'red'>算法：</font></p>
 <p>输入：观测数据 $y_1,y_2,\cdots,y_N$，高斯混合模型；</p>
 <p>输出：高斯混合模型参数</p>
