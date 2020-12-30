@@ -13204,7 +13204,7 @@ $$\pi = (0.25,0.25,0.25,0.25)^T$$<p>状态转移概率分布（transition matrix
 <h3 id="1.-&#21069;&#21521;&#31639;&#27861;"><font id="Forward">1. &#21069;&#21521;&#31639;&#27861;</font><a class="anchor-link" href="#1.-&#21069;&#21521;&#31639;&#27861;">&#182;</a></h3><p>定义前向概率。</p>
 <p>给定隐马尔科夫模型 $\lambda$，定义到时刻 $t$ 部分观测序列为 $o_1, o_2, \cdots, o_t$，且状态为 $q_i$ 的概率为前向概率，记作</p>
 $$\alpha_t(i) = P(o_1,o_2,\cdots,o_t,i_t = q_i|\lambda)$$<p>可以递推地求得前向概率 $\alpha_t(i)$ 以及观测序列概率 $P(O|\lambda)$</p>
-<p><font color = #f3f>**算法：**</font></p>
+<p><strong><font color = #f3f>算法：</font></strong></p>
 <p>输入：$\lambda$，$O$
 输出：观测序列概率 $P(O|\lambda)$</p>
 <ol>
@@ -13218,7 +13218,7 @@ $$\alpha_1(i) = \pi_ib_i(o_1), \ i = 1,2,\cdots,N$$<ol>
 $$\alpha_{t+1}(i) = \Bigg[\sum_{j=1}^{N}\alpha_t(j)a_{ji} \Bigg]b_i(o_{t+1}), \ i=1,2,\cdots,N$$<ol>
 <li>终止</li>
 </ol>
-$$P(O|\lambda) = \sum_{i=1}^{N}\alpha_T(i)$$<p><font color = #f3f>**解释：**</font></p>
+$$P(O|\lambda) = \sum_{i=1}^{N}\alpha_T(i)$$<p><strong><font color = #f3f>解释：</font></strong></p>
 <p>步骤 1，初始化前向概率，也就是初始时刻（t=1）的状态 $i_1 = q_i$ 和观测 $o_1$ 的联合概率。</p>
 <p>步骤 2，是前向概率的递推公式，计算到时刻 $t+1$ 部分观测序列为 $o_1,o_2,\cdots, o_t,o_{t+1}$，且在时刻 $t+1$ 处于状态 $q_i$ 的前向概率。</p>
 <ol>
@@ -13247,7 +13247,7 @@ $$P(O|\lambda) = \sum_{i=1}^{N}\alpha_T(i)$$<p align="center">
       width = 600>
 </p><h3 id="2.-&#21518;&#21521;&#31639;&#27861;"><font id="Backward">2. &#21518;&#21521;&#31639;&#27861;</font><a class="anchor-link" href="#2.-&#21518;&#21521;&#31639;&#27861;">&#182;</a></h3><p>给定隐马尔科夫模型 $\lambda$，定义在时刻 $t$ 状态为 $q_i$ 的条件下，从 $t+1$ 到 $T$ 的部分观测序列为 $o_{t+1}, o_{t+2}, \cdots, o_T$ 的概率为后向概率，记作</p>
 $$\beta_t(i) = P(o_{t+1}, o_{t+2}, \cdots, o_T|i_t = q_i,\lambda)$$<p>可以用递推的方法求得后向概率 $\beta_t(i)$ 及观测序列概率 $P(O|\lambda)$。</p>
-<p><font color = #E5854E>**算法：**</font></p>
+<p><strong><font color = #E5854E>算法：</font></strong></p>
 <p>输入：$\lambda$，$O$
 输出：$P(O|\lambda)$</p>
 <ol>
@@ -13261,7 +13261,7 @@ $$\beta_t(i) = P(o_{t+1}, o_{t+2}, \cdots, o_T|i_t = q_i,\lambda)$$<p>可以用�
  $$P(O|\lambda) = \sum_{i=1}^N \pi_ib_i(o_1)\beta_1(i)$$</p>
 </li>
 </ol>
-<p><font color = #E5854E>**解释：**</font></p>
+<p><strong><font color = #E5854E>解释：</font></strong></p>
 <p>步骤 1， 初始化后向概率，对最终时刻的所有状态 $q_i$ 规定 $\beta_T(i) = 1$。</p>
 <p>步骤 2， 后向概率的递推公式，为了计算在时刻 $t$ 状态为 $q_i$ 的条件下，时刻 $t+1$ 之后的观测序列为 $o_{t+1}, o_{t+2}, \cdots, o_T$ 的后向概率 $\beta_t(i)$，只需考虑在时刻 $t+1$ 所有可能的 $N$ 个状态 $q_j$ 的转移概率 （$a_{ij}$），以及在此状态下的观测 $o_{t+1}$ 的观测概率（$b_j(o_{t+1})$），然后考虑状态 $q_j$ 之后的观测序列的后向概率 （$\beta_{t+1}(j)$）。</p>
 <p>步骤 3 求 $P(P|\lambda)$ 的思路与步骤 2 一致，只是初始概率 $\pi_i$ 代替转移概率。</p>
@@ -13337,7 +13337,7 @@ $$</p>
 </li>
 <li><p>EM 算法的 M 步：极大化 $Q$ 函数 $Q(\lambda,\overline \lambda)$ 求模型参数 $A,B,\pi$</p>
 <p>由于要极大化的参数在上面的式子中单独的出现在 3 个项中，所以只需要对各项分别极大化即可。</p>
-<ol>
+<ul>
 <li><p>第 1 项可以写成：</p>
 <p>$$\sum_{I} \log \pi_{i_1} P(O,I|\overline \lambda) = \sum_{i=1}^{N} \log \pi_i P(O,i_1 = i|\overline \lambda)$$</p>
 <p>注意到 $\pi_i$ 满足约束条件 $\sum_{i=1}^{N} \pi_i = 1$，利用拉格朗日乘子法，写出拉格朗日函数：</p>
@@ -13348,41 +13348,37 @@ $$</p>
 <p>$$P(O,i_1 = i|\overline \lambda) + \gamma \pi_i = 0$$</p>
 <p>对 $i$ 求和得到</p>
 <p>$$
- \begin{aligned}
- \sum_{i=1}^{N} P(O,i_1 &amp;= i|\overline \lambda)  = - \sum_{i=1}^{N} \gamma \pi_i \\
- \gamma &amp;= -\sum_{i=1}^{N} P(O,i_1 = i|\overline \lambda)   \\
- &amp;= -P(O|\overline \lambda)
- \end{aligned}
- $$</p>
+   \begin{aligned}
+   \sum_{i=1}^{N} P(O,i_1 &amp;= i|\overline \lambda)  = - \sum_{i=1}^{N} \gamma \pi_i \\
+   \gamma &amp;= -\sum_{i=1}^{N} P(O,i_1 = i|\overline \lambda)   \\
+   &amp;= -P(O|\overline \lambda)
+   \end{aligned}
+   $$</p>
 <p>带入上面的式子得到</p>
 <p>$$\pi_i = \frac{P(O,i_1=i|\overline \lambda)}{P(O|\overline \lambda)}$$</p>
 </li>
 <li><p>第 2 项可以写成</p>
 <p>$$\sum_{I} \Bigg(\sum_{t=1}^{T-1} \log a_{i_ti_{t+1}} \Bigg) P(O,I|\overline \lambda) = 
- \sum_{i=1}^{N}\sum_{j=1}^{N}\sum_{t=1}^{T-1} \log a_{ij} P(O,i_t=i,i_{t+1} = j |\overline \lambda)$$</p>
+   \sum_{i=1}^{N}\sum_{j=1}^{N}\sum_{t=1}^{T-1} \log a_{ij} P(O,i_t=i,i_{t+1} = j |\overline \lambda)$$</p>
 <p>类似第 1 项，应用具有条件 $\sum_{j=1}^{N}a_{ij} = 1$ 的拉格朗日乘子法可以求出</p>
-<ul>
-<li>拉格朗日函数
-$$\sum_{i=1}^{N}\sum_{j=1}^{N}\sum_{t=1}^{T-1} \log a_{ij} P(O,i_t=i,i_{t+1} = j |\overline \lambda)+\gamma(\sum_{j=1}^{N}a_{ij} -1) $$</li>
-<li>求偏导等于 0
-  $$P(O,i_t=i,i_{t+1} = j |\overline \lambda) + \gamma a_{ij} = 0$$</li>
-<li>求出 $a_{ij}$
-  $$a_{ij} = \frac{ \sum_{t=1}^{T-1}P(O,i_t=i,i_{t+1} = j |\overline \lambda) }{\sum_{t=1}^{T-1}P(O,i_t=i|\overline \lambda)}$$</li>
-</ul>
+<p>拉格朗日函数</p>
+<p>$$\sum_{i=1}^{N}\sum_{j=1}^{N}\sum_{t=1}^{T-1} \log a_{ij} P(O,i_t=i,i_{t+1} = j |\overline \lambda)+\gamma(\sum_{j=1}^{N}a_{ij} -1) $$
+   求偏导等于 0</p>
+<p>$$P(O,i_t=i,i_{t+1} = j |\overline \lambda) + \gamma a_{ij} = 0$$</p>
+<p>求出 $a_{ij}$</p>
+<p>$$a_{ij} = \frac{ \sum_{t=1}^{T-1}P(O,i_t=i,i_{t+1} = j |\overline \lambda) }{\sum_{t=1}^{T-1}P(O,i_t=i|\overline \lambda)}$$</p>
 </li>
-</ol>
-<ol>
-<li><p>第 3 项为
-  $$\sum_{I} \Bigg(\sum_{t=1}^{T} \log b_{i_t}(o_t) \Bigg) P(O,I|\overline \lambda) = \sum_{j=1}^{N}\sum_{t=1}^{T} \log b_j(o_t)P(O,i_t=j|\overline \lambda)$$</p>
+<li><p>第 3 项为</p>
+<p>$$\sum_{I} \Bigg(\sum_{t=1}^{T} \log b_{i_t}(o_t) \Bigg) P(O,I|\overline \lambda) = \sum_{j=1}^{N}\sum_{t=1}^{T} \log b_j(o_t)P(O,i_t=j|\overline \lambda)$$</p>
 <p>同样使用拉格朗日乘子法，约束条件为 $\sum_{k=1}^{M}b_j(k)=1$。注意，只有在 $o_t = v_k$ 时 $b_j(o_t)$ 对 $b_j(k)$ 的偏导数才不为 0，以 $I(o_t = v_k)$ 表示。求得</p>
 <p>$$b_j(k) = \frac{\sum_{t=1}^{T}P(O,i_t=j|\overline\lambda)I(o_t=v_k)}{\sum_{t=1}^{T}P(O,i_t=j|\overline \lambda)}$$</p>
 </li>
-</ol>
+</ul>
 </li>
 </ol>
 <h3 id="Baum-Welch-&#27169;&#22411;&#21442;&#25968;&#20272;&#35745;&#20844;&#24335;"><font id="BW_para">Baum-Welch &#27169;&#22411;&#21442;&#25968;&#20272;&#35745;&#20844;&#24335;</font><a class="anchor-link" href="#Baum-Welch-&#27169;&#22411;&#21442;&#25968;&#20272;&#35745;&#20844;&#24335;">&#182;</a></h3><p>将上面几个式子的各概率分别用 $\gamma_t(i), \xi_t(i,j)$ 表示，则可将相应的公式写成：</p>
 $$a_{ij} = \frac{\sum_{t=1}^{T-1}\xi_t(i,j)}{\sum_{t=1}^{T-1}\gamma_t(i)}$$$$b_j(k) = \frac{\sum_{t=1,o_t = v_k}^{T}\gamma_t(j)}{\sum_{t=1}^{T}\gamma_t(j)}$$$$\pi_i = \gamma_1(i)$$<p>其中， $\gamma_t(i), \xi_t(i,j)$ 分别由前面推导的公式给出。</p>
-<p><font color = #04B45F>**算法：**</font></p>
+<p><strong><font color = #04B45F>算法：</font></strong></p>
 <p align="center">
       <img      src="https://pic.downk.cc/item/5fd2e5063ffa7d37b34ee705.jpg"
       width = 600>
@@ -13561,19 +13557,6 @@ $$\delta_t(i) = \max_{1 \leq j \leq N} [\delta_{t-1}(j)a_{ji}]b_i(o_t), \ i=1,2,
 </p>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div>
     </div>
   </div>
