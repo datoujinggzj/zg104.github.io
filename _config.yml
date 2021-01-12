@@ -17,9 +17,9 @@ navbar-links:
 #   - English_Resume: 'e_cv'
 #    - Chinese_Resume: 'c_cv'
   MySQL: 
-    - Easy: "sql"
-    - Medium: "sql_medium"
-  Machine Learning: 
+    - 简单: "sql"
+    - 中等: "sql_medium"
+  机器学习: 
 #   - 机器学习算法总结: 'ml'
     - 线性回归: "Linear_regression"
     - 逻辑回归: "Logistic_regression"
@@ -34,25 +34,30 @@ navbar-links:
     - 自编码器: 'AE'
     - 卷积变分自编码器: 'Conv_VAE'
 
-  Projects: 
-    - Stock Prediction: "Project"
-    - Glass Identification: "glass"
-    - Image identification: "deeplearning"
-    - Safe Driver Prediction: "Safe_Driver_Prediction"
-    - COVID-19 Analysis: "covid"
-    - Readmission Analysis & Prediction: "Readmission_prediction"
-    - KNN with Iris Dataset: 'KNN'
-    - Customer Profile Insights & repurchase related insights: 'xgb'
-    - Capgemini Automobile Project: 'kaijie_project'
-    - Capacity Prediction Model: 'capacity_prediction'
-    - Purchase/Redemption Forecast (part 1): 'eda1'
-    - Purchase/Redemption Forecast (part 2): 'eda2'
+  个人项目: 
     - 基于 LSTM 的设备健康评估与剩余寿面预测的研究: 'phm'
-  Resources:
-   - Github: "https://github.com/zg104"
-   - 知乎: "https://www.zhihu.com/people/gao-zi-jing-98"
-   - LinkedIn: "https://www.linkedin.com/in/zg104/"
-   - Medium: "https://medium.com/@zg104"
+    - 癌症再入院率预测: "Readmission_prediction"
+    - 安全驾驶预测: "Safe_Driver_Prediction"
+    - 客户画像&回购预测: 'xgb'
+    - 基于XGBoost的回购预测: 'kaijie_project'
+    - 产能预测: 'capacity_prediction'
+    - COVID-19分析预测: "covid"
+    - 资金流入流出预测（上）: 'eda1'
+    - 资金流入流出预测（下）: 'eda2'
+    - 股价预测: "Project"
+    - 玻璃碎片识别: "glass"
+    - 图像识别: "deeplearning"
+    - 安全驾驶预测: "Safe_Driver_Prediction"
+    - KNN算法在Iris上的应用: 'KNN'
+  量化:
+    - 量化之路（一）: "Quant1"
+    - 量化之路（二）: "Quant2"
+
+  #Resources:
+  # - Github: "https://github.com/zg104"
+  # - 知乎: "https://www.zhihu.com/people/gao-zi-jing-98"
+  # - LinkedIn: "https://www.linkedin.com/in/zg104/"
+  # - Medium: "https://medium.com/@zg104"
  
 
 # --- Logo --- #
