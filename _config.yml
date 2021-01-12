@@ -35,7 +35,7 @@ navbar-links:
     - 卷积变分自编码器: 'Conv_VAE'
 
   个人项目: 
-    - 基于 LSTM 的设备健康评估与剩余寿面预测的研究: 'phm'
+    - 基于 LSTM 的设备健康评估与剩余寿面预测的研究: 'hpm'
     - 癌症再入院率预测: "Readmission_prediction"
     - 安全驾驶预测: "Safe_Driver_Prediction"
     - 客户画像&回购预测: 'xgb'
