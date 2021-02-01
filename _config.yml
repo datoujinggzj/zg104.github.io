@@ -52,6 +52,9 @@ navbar-links:
   量化:
     - 量化之路（一）: "Quant1"
     - 量化之路（二）: "Quant2"
+    - AFML 金融数据结构: "AFML_structure"
+    - AFML 为金融数据打标签: "AFML_label"
+
 
   #Resources:
   # - Github: "https://github.com/zg104"
