@@ -51,10 +51,10 @@ navbar-links:
     - 量化之路（二）: "Quant2"
     - AFML 金融数据结构: "AFML_structure"
     - AFML 为金融数据打标签: "AFML_label"
-    - AFML Stacking & Meta Labeling: "stack_meta"
-    - AFML Sample Weights: "AFML Sample Weights"
-    - AFML Fractionally Differentiated Features: "fdf"
-    - Tushare for Freshers: "tushare"
+    - AFML 元标签: "stack_meta"
+    - AFML 抽样权重: "AFML_Sample_Weights"
+    - AFML 分数差分: "AFML_fdf"
+    - Tushare: "tushare"
     - What Makes An Asset Useful: "wmaau"
     - 资金流入流出预测（上）: 'eda1'
     - 资金流入流出预测（下）: 'eda2'
