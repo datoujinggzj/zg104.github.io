@@ -52,7 +52,7 @@ navbar-links:
     - AFML 金融数据结构: "AFML_structure"
     - AFML 为金融数据打标签: "AFML_label"
     - AFML Stacking & Meta Labeling: "stack_meta"
-    - AFML Sample Weights: "sampleweights"
+    - AFML Sample Weights: "AFML Sample Weights"
     - AFML Fractionally Differentiated Features: "fdf"
     - Tushare for Freshers: "tushare"
     - What Makes An Asset Useful: "wmaau"
