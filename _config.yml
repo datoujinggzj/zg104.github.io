@@ -36,6 +36,7 @@ navbar-links:
 
   个人项目: 
     - 基于 LSTM 的设备健康评估与剩余寿面预测的研究: 'hpm'
+    - 基于神经网络模型的机队可靠性故障报告分析: 'relia'
     - 癌症再入院率预测: "Readmission_prediction"
     - 安全驾驶预测: "Safe_Driver_Prediction"
     - 客户画像&回购预测: 'xgb'
