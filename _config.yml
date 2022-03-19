@@ -16,9 +16,22 @@ navbar-links:
 #  Resume:
 #   - English_Resume: 'e_cv'
 #    - Chinese_Resume: 'c_cv'
+
+  鲸析:
+    - 鲸析项目: 
+    - Python学习:
+    - R学习:
+    - 数据分析:
+    - 统计:
+    
+    
+    
+    
+    
   MySQL: 
     - 简单: "sql"
     - 中等: "sql_medium"
+  
   机器学习: 
 #   - 机器学习算法总结: 'ml'
     - 线性回归: "Linear_regression"
@@ -34,7 +47,7 @@ navbar-links:
     - 自编码器: 'AE'
     - 卷积变分自编码器: 'Conv_VAE'
 
-  个人项目: 
+  项目: 
     - 基于 LSTM 的设备健康评估与剩余寿面预测的研究: 'hpm'
     - 基于神经网络模型的机队可靠性故障报告分析: 'relia'
     - 癌症再入院率预测: "Readmission_prediction"
