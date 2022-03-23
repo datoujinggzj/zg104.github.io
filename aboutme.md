@@ -1,13 +1,16 @@
 ---
 layout: page
-title: About me
-subtitle: If not you, who?
+title: 「鲸析」
+subtitle: 关注鲸析，给你惊喜~
 cover-img: image/cover10.jpg
 ---
 
-# I'm Zijing Gao...
 
-![](/image/self.jpg)
+
+
+<div align=center>
+<img src=/image/project_logo.jpg width='800' />
+</div>
 
 I originally studied Applied Mathematcis to Bachelor’s level and then moved into the machine learning field, completing a Master in Deep Learning, Time Series analysis, and Stochastic Simulation in quantitative finance at Georgetown University in 2020.
 
