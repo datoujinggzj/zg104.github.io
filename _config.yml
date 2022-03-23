@@ -1,17 +1,17 @@
 # --- Basic options --- #
 
 # Name of website
-title: Zijing Gao
+title: 鲸析
 # Short description of your site
-description: Thorough and meticulous Data Analyst passionate about helping businesses succeed.
+description: 关注鲸析，给你惊喜！
 
 # Your name to show in the footer
-author: Zijing Gao
+author: WhaleG
 
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  About Me: "aboutme"
+  关于鲸析: "aboutme"
   # remember to unlock it if needed
 #  Resume:
 #   - English_Resume: 'e_cv'
