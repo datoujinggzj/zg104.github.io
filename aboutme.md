@@ -9,37 +9,83 @@ cover-img: image/cover10.jpg
 ![](/image/project_logo.jpg)
 
 
-I originally studied Applied Mathematcis to Bachelor’s level and then moved into the machine learning field, completing a Master in Deep Learning, Time Series analysis, and Stochastic Simulation in quantitative finance at Georgetown University in 2020.
 
-I have stayed in the exciting field of machine learning for more than 3 years. I have worked as an intern in several companies in industries including consulting, finance, as well as some research experience.
 
-I just graduate from Georgetown University in May 2020, top 20% best colleges and universities nationwide, where I developped myself in constructing algorithms, building models by cloud computing, and improve model performance in several industries to practice what I learn. This website will be constantly updated if excellent projects, learning materials, and business accmen are collected.
+## 👉关于我
 
-These days, I have specialised in deep learning, which is an exciting area of machine learning that not only allows computers to interpret text, sound and images, but also allow us to predict the stock market in a more statistical and technical way. I am aiming to develop deep learning algorithms to achieve commercial success in the finance industry if possible.
 
-Through me last two working experiences, I can provide various support for the data science team to steadily produce machine learning solutions. I participated in the model establishment, development, and evaluation along with leading in data analysis and visualization tasks.
+哈喽大家好，我是鲸鲸。
 
-You can find more details on my projects, resume/CV, blogs, qualifications, and career on various parts of this website!
+熟悉我的伙伴知道我是什么样的人，那我就对新来的伙伴再磨叽两句（这也是我的属性之一。。。）
 
-__Here are 3 sentences I'd like to use to summarize myself:__
+### 我讨厌打工
 
-- Thorough and meticulous data analyst passionate about helping businesses succeed.
-- Mathematics and Statistics program graduate with keenness in obtaining details.
-- Possessing strong technical skills rooted in substantial training as an engineer.
+大家都以为我是个数据分析博主，但是我其实是数学出身，生长在条条框框的规矩之下。
 
-__Technologies:__
+严谨是数学的特点之一，但我不是个做学问之人，就像我讨厌俺不就按，讨厌风平浪静一样，我总想做个“坏人”。
 
-- Programming languages (Python, R)
-- Machine Learning & Deep Learning
-- Relational Databases (PostgreSQL, MySQL)
-- Data Visualization Tools (Tableau, Looker)
-- Mathematics & Statistics
-- Cloud Computing (GCP,AWS)
+所以，创办鲸析是我的一份为了我自己而做的事业。
 
-__Soft Skills:__
+为什么直到现在，这条路走得还算顺利？ 
 
-- Logic and Analysis
-- Communication and Public Speaking
-- Clear Writing and Report Writing
-- Critical Thinking
-- Time Management
+### 我讨厌欺骗
+
+回国之后，我本着记录学习点滴和知识扩充的想法创立了我的个人公众号：鲸析。
+
+一个没人知道的我的个人知识库，当时几乎每天都会更新一篇，每篇内容都会花掉我四五小时的时间。
+
+有人看么？没有
+
+有人在乎么？只有我
+
+我讨厌骗别人，我更讨厌被别人骗，我最讨厌欺骗自己。
+
+99%的人因为内容关注了我，但是鲸析远远不止这些。
+
+### 我很唠叨
+
+是的，我很唠叨。
+
+什么时候会唠叨呢？
+
+见到数据统计本科的学弟学妹，我会多唠叨几句，仿佛见到了影子。
+
+讲内容的时候，不得不反复强调大家所忽视的问题、知识点和细节。
+
+哈哈哈唠叨带给我的后果就是emmm嗓子疼。。。
+
+但是，希望对喜欢、支持鲸析的人来说，唠叨的后果是成长。
+
+### 我说话直
+
+如数据这一行，就要做好终身学习的准备。
+
+鲸析不是个帮你实现愿望的地方，不管做什么事，你最好靠自己。
+
+我不能一个月教会你Python，因为编程不是教出来的，是一行行代码敲出来的。
+
+我不能保你拿offer，但是我能保你试用期不被踢出来。
+
+内驱力拉满，你才能在这找到你想要的。
+
+---
+
+## 👉关于鲸析
+
+我不是商人，我愿称自己为一名老师。
+
+鲸析不是机构，我愿称它是我的教案。
+
+我相信我们有能力、且一定会帮助更多的伙伴！
+
+
+
+
+
+
+
+
+
+
+
+
