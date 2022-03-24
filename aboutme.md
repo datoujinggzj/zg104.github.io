@@ -6,10 +6,7 @@ cover-img: image/cover10.jpg
 ---
 
 
-
-
-
-<img src=/image/project_logo.jpg/>
+![](/image/project_logo.jpg)
 
 
 I originally studied Applied Mathematcis to Bachelor’s level and then moved into the machine learning field, completing a Master in Deep Learning, Time Series analysis, and Stochastic Simulation in quantitative finance at Georgetown University in 2020.
