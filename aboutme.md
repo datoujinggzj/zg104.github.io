@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 「鲸析」
-subtitle: 关注鲸析，给你惊喜~
+subtitle: 关注鲸析 给你惊喜
 cover-img: image/cover10.jpg
 ---
 
