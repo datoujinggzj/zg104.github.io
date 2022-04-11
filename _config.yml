@@ -48,6 +48,7 @@ navbar-links:
     - 卷积变分自编码器: 'Conv_VAE'
 
   项目: 
+    - DATA3888: 'DATA3888_2021_Week1_cv'
     - 基于 LSTM 的设备健康评估与剩余寿面预测的研究: 'hpm'
     - 基于神经网络模型的机队可靠性故障报告分析: 'relia'
     - 癌症再入院率预测: "Readmission_prediction"
