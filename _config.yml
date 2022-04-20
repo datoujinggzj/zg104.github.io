@@ -25,11 +25,13 @@ navbar-links:
     - 统计:
     
     
-  DATA3888: 
-    - Week1 KNN & CV: 'DATA3888_2021_Week1_cv'
-    - Week1 Clustering: 'DATA3888_2021_Week1_clustering'
+#   DATA3888: 
+#     - Week1 KNN & CV: 'DATA3888_2021_Week1_cv'
+#     - Week1 Clustering: 'DATA3888_2021_Week1_clustering'
     
-    
+  Python数据分析
+    - Plotly: "Plotly"
+  
   MySQL: 
     - 简单: "sql"
     - 中等: "sql_medium"
