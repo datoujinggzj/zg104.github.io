@@ -28,13 +28,15 @@ navbar-links:
 #   DATA3888: 
 #     - Week1 KNN & CV: 'DATA3888_2021_Week1_cv'
 #     - Week1 Clustering: 'DATA3888_2021_Week1_clustering'
-    
-  Python数据分析:
-    - Plotly: "Plotly"
-  
-  MySQL: 
+
+  数据库: 
     - 简单: "sql"
     - 中等: "sql_medium"
+    
+  数据分析:
+    - Seaborn: "Seaborn"
+    - Plotly: "Plotly"
+ 
   
   机器学习: 
 #   - 机器学习算法总结: 'ml'
@@ -51,7 +53,7 @@ navbar-links:
     - 自编码器: 'AE'
     - 卷积变分自编码器: 'Conv_VAE'
 
-  项目:
+  个人项目:
     - 基于 LSTM 的设备健康评估与剩余寿面预测的研究: 'hpm'
     - 基于神经网络模型的机队可靠性故障报告分析: 'relia'
     - 癌症再入院率预测: "Readmission_prediction"
@@ -64,19 +66,19 @@ navbar-links:
     - 图像识别: "deeplearning"
     - 安全驾驶预测: "Safe_Driver_Prediction"
     - KNN算法在Iris上的应用: 'KNN'
-  量化:
-    - 量化之路（一）: "Quant1"
-    - 量化之路（二）: "Quant2"
-    - AFML 金融数据结构: "AFML_structure"
-    - AFML 为金融数据打标签: "AFML_label"
-    - AFML 元标签: "stack_meta"
-    - AFML 抽样权重: "AFML_Sample_Weights"
-    - AFML 分数差分: "AFML_fdf"
-    - Tushare: "tushare"
-    - What Makes An Asset Useful: "wmaau"
-    - 资金流入流出预测（上）: 'eda1'
-    - 资金流入流出预测（下）: 'eda2'
-    - 股价预测: "Project"
+#   量化:
+#     - 量化之路（一）: "Quant1"
+#     - 量化之路（二）: "Quant2"
+#     - AFML 金融数据结构: "AFML_structure"
+#     - AFML 为金融数据打标签: "AFML_label"
+#     - AFML 元标签: "stack_meta"
+#     - AFML 抽样权重: "AFML_Sample_Weights"
+#     - AFML 分数差分: "AFML_fdf"
+#     - Tushare: "tushare"
+#     - What Makes An Asset Useful: "wmaau"
+#     - 资金流入流出预测（上）: 'eda1'
+#     - 资金流入流出预测（下）: 'eda2'
+#     - 股价预测: "Project"
 
 
   #Resources:
