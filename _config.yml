@@ -33,7 +33,7 @@ navbar-links:
     - 简单: "sql"
     - 中等: "sql_medium"
     
-  数据分析: "python_source"
+  数据分析: "Python_source"
 #     - Matplotlib: "Matplotlib"
 #     - Seaborn: "Seaborn"
 #     - Plotly: "Plotly"
