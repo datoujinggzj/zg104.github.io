@@ -3,10 +3,10 @@ layout: page
 cover-img: image/youtube_cover.png
 ---
 
+<div align=center>
+<img src=https://github.com/datoujinggzj/WhaleDataScienceProject/blob/master/pic/followme_cover.gif?raw=true width='800' />
+</div>
 
-![](https://github.com/datoujinggzj/WhaleDataScienceProject/blob/master/pic/followme_cover.gif?raw=true width = 450)
-
-  
 ---
 
 ### 👉YouTube：WhaleG
