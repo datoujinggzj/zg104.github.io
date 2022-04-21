@@ -11,7 +11,7 @@ author: Zijing Gao
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  关于鲸析: "aboutme"
+  👉关于鲸析🐋: "aboutme"
   # remember to unlock it if needed
 #  Resume:
 #   - English_Resume: 'e_cv'
@@ -33,26 +33,26 @@ navbar-links:
 #     - 简单: "sql"
 #     - 中等: "sql_medium"
     
-  🔥鲸析课堂🔥: "DSCrashCourse"
+  👉鲸析课堂👨‍🏫: "DSCrashCourse"
 #     - Matplotlib: "Matplotlib"
 #     - Seaborn: "Seaborn"
 #     - Plotly: "Plotly"
  
   
-  机器学习: 
-#   - 机器学习算法总结: 'ml'
-    - 线性回归: "Linear_regression"
-    - 逻辑回归: "Logistic_regression"
-    - 朴素贝叶斯: "Naive_bayes"
-    - 支持向量机: "SVM"
-    - k近邻: "KNN_tutorial"
-    - K平均: "kmeans"
-    - 决策树: "desciontree"
-    - 提升算法: "boost"
-    - EM算法&应用: "em"
-    - 隐马尔科夫模型: "HMM"
-    - 自编码器: 'AE'
-    - 卷积变分自编码器: 'Conv_VAE'
+#   👉机器学习👨‍💻: 
+# #   - 机器学习算法总结: 'ml'
+#     - 线性回归: "Linear_regression"
+#     - 逻辑回归: "Logistic_regression"
+#     - 朴素贝叶斯: "Naive_bayes"
+#     - 支持向量机: "SVM"
+#     - k近邻: "KNN_tutorial"
+#     - K平均: "kmeans"
+#     - 决策树: "desciontree"
+#     - 提升算法: "boost"
+#     - EM算法&应用: "em"
+#     - 隐马尔科夫模型: "HMM"
+#     - 自编码器: 'AE'
+#     - 卷积变分自编码器: 'Conv_VAE'
 
 #   个人项目:
 #     - 基于 LSTM 的设备健康评估与剩余寿面预测的研究: 'hpm'
