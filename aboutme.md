@@ -8,10 +8,16 @@ cover-img: image/youtube_cover.png
 <a href='https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg2OTU4NzI3NQ==&action=getalbum&album_id=1764511202329624577&scene=126#wechat_redirect'> 
 <img src=https://github.com/datoujinggzj/WhaleDataScienceProject/blob/master/pic/followme_cover.gif?raw=true  width='800'/>
 </div>
+  
+---
 
 ### 👉YouTube：WhaleG
+  
+  
 
 Don't forget to follow my channel! 👇👇👇
+  
+  
 
 <iframe width="600" height="450" src="https://www.youtube.com/embed/gGZZwDCbwmM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -19,6 +25,8 @@ Don't forget to follow my channel! 👇👇👇
 
 <iframe width="600" height="450" src="https://www.youtube.com/embed/vJCvyPof5gc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+  
+  
 ### 👉个人公众号：鲸析
 
 
@@ -26,6 +34,8 @@ Don't forget to follow my channel! 👇👇👇
 <div align=center>
 <img src=https://github.com/datoujinggzj/WhaleDataScienceProject/blob/master/pic/qrcode_account.jpg?raw=true width='300' />
 </div>
+  
+  
 
 ### 👉个人小红书：鲸鲸说数据🐋
 
@@ -34,6 +44,8 @@ Don't forget to follow my channel! 👇👇👇
 <div align=center>
 <img src=https://github.com/datoujinggzj/WhaleDataScienceProject/blob/master/pic/xhs_cover.jpg?raw=true width='300' />
 </div>
+  
+  
 
 ### 👉Gitee
 
