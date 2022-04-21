@@ -29,9 +29,9 @@ Don't forget to follow my channel! 👇👇👇
 
 
 
-<div align=center>
-<img src=https://github.com/datoujinggzj/WhaleDataScienceProject/blob/master/pic/qrcode_account.jpg?raw=true width='300' />
-</div>
+
+![](https://github.com/datoujinggzj/WhaleDataScienceProject/blob/master/pic/qrcode_account.jpg?raw=true width='300')
+
   
   
 
@@ -39,9 +39,9 @@ Don't forget to follow my channel! 👇👇👇
 
 
 
-<div align=center>
-<img src=https://github.com/datoujinggzj/WhaleDataScienceProject/blob/master/pic/xhs_cover.jpg?raw=true width='300' />
-</div>
+
+![](https://github.com/datoujinggzj/WhaleDataScienceProject/blob/master/pic/xhs_cover.jpg?raw=true width='300')
+
   
   
 
