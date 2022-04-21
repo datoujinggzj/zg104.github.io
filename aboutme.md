@@ -47,13 +47,13 @@ Don't forget to follow my channel! 👇👇👇
 
 快来关注我的星选集吧！👇👇👇
 
-https://gitee.com/gzjzg/collections
+🔗星选集[传送门](https://gitee.com/gzjzg/collections)
 
 ### 👉GitHub
 
 请多多关注！👇👇👇
 
-https://github.com/datoujinggzj/
+🔗Github[传送门](https://github.com/datoujinggzj/)
 
 
 ---
