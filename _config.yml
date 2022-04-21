@@ -111,7 +111,7 @@ round-avatar: true
 social-network-links:
   email: "2328247224@qq.com"
   facebook: zijing.gao.12
-  github: zg104
+  github: datoujinggzj
   twitter: Zijing39896593
   rss: false
 #  weixin: datoujinggzj
@@ -167,7 +167,7 @@ footer-link-col: "#404040"
 # 解锁背景
 navbar-img: "/assets/img/bgimage.png"
 footer-img: "/assets/img/bgimage.png"
-# page-img: "/assets/img/bgimage.png"
+page-img: "/assets/img/bgimage.png"
 
 # --- Web Statistics Section --- #
 
