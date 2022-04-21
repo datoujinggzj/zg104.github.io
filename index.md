@@ -6,7 +6,7 @@ cover-img: image/background_img.gif
 ---
 
 <div align=center>
-<img src="image/studywhale.png" style="zoom: 60%;" />
+<img src="image/studywhale.png" style="zoom: 80%;" />
 </div>
 
 
