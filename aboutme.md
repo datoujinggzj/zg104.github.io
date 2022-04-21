@@ -4,7 +4,7 @@ cover-img: image/youtube_cover.png
 ---
 
 
-<img src=https://github.com/datoujinggzj/WhaleDataScienceProject/blob/master/pic/followme_cover.gif?raw=true width='800' />
+![](https://github.com/datoujinggzj/WhaleDataScienceProject/blob/master/pic/followme_cover.gif?raw=true)
 
 
 ---
@@ -30,7 +30,7 @@ Don't forget to follow my channel! 👇👇👇
 
 
 
-![](https://github.com/datoujinggzj/WhaleDataScienceProject/blob/master/pic/qrcode_account.jpg?raw=true width='300')
+![](https://github.com/datoujinggzj/WhaleDataScienceProject/blob/master/pic/qrcode_account.jpg?raw=true)
 
   
   
@@ -40,9 +40,7 @@ Don't forget to follow my channel! 👇👇👇
 
 
 
-![](https://github.com/datoujinggzj/WhaleDataScienceProject/blob/master/pic/xhs_cover.jpg?raw=true width='300')
-
-  
+![](image/xhs_qr.png)
   
 
 ### 👉Gitee
