@@ -1,6 +1,10 @@
-# # Whale Repository
+# Whale Repository
 
-<iframe width="973" height="465" src="https://www.youtube.com/embed/gGZZwDCbwmM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="600" height="450" src="https://www.youtube.com/embed/gGZZwDCbwmM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+![](https://github.com/datoujinggzj/WhaleDataScienceProject/blob/master/pic/sep.gif?raw=true)
 
 ## Python数据可视化
 
