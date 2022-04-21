@@ -4,19 +4,59 @@ cover-img: image/youtube_cover.png
 ---
 
 
-![](/image/project_logo.jpg)
+<div align=center>
+<a href='https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg2OTU4NzI3NQ==&action=getalbum&album_id=1764511202329624577&scene=126#wechat_redirect'> 
+<img src=https://github.com/datoujinggzj/WhaleDataScienceProject/blob/master/pic/followme_cover.gif?raw=true  width='800'/>
+</div>
+
+### 👉YouTube：WhaleG
+
+Don't forget to follow my channel! 👇👇👇
+
+<iframe width="600" height="450" src="https://www.youtube.com/embed/gGZZwDCbwmM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="600" height="450" src="https://www.youtube.com/embed/wylE0sLhvUA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="600" height="450" src="https://www.youtube.com/embed/vJCvyPof5gc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### 👉个人公众号：鲸析
 
 
 
+<div align=center>
+<img src=https://github.com/datoujinggzj/WhaleDataScienceProject/blob/master/pic/qrcode_account.jpg?raw=true width='300' />
+</div>
 
-## 👉关于我
+### 👉个人小红书：鲸鲸说数据🐋
 
+
+
+<div align=center>
+<img src=https://github.com/datoujinggzj/WhaleDataScienceProject/blob/master/pic/xhs_cover.jpg?raw=true width='300' />
+</div>
+
+### 👉Gitee
+
+快来关注我的星选集吧！👇👇👇
+
+https://gitee.com/gzjzg/collections
+
+### 👉GitHub
+
+请多多关注！👇👇👇
+
+https://github.com/datoujinggzj/
+
+
+---
+  
+If you want to know MORE about me, please go ahead!
 
 哈喽大家好，我是鲸鲸。
 
 熟悉我的伙伴知道我是什么样的人，那我就对新来的伙伴再磨叽两句（这也是我的属性之一。。。）
 
-### 我讨厌打工
+#### 我讨厌打工
 
 大家都以为我是个数据分析博主，但是我其实是数学出身，生长在条条框框的规矩之下。
 
@@ -26,7 +66,7 @@ cover-img: image/youtube_cover.png
 
 为什么直到现在，这条路走得还算顺利？ 
 
-### 我讨厌欺骗
+#### 我讨厌欺骗
 
 回国之后，我本着记录学习点滴和知识扩充的想法创立了我的个人公众号：鲸析。
 
@@ -40,7 +80,7 @@ cover-img: image/youtube_cover.png
 
 99%的人因为内容关注了我，但是鲸析远远不止这些。
 
-### 我很唠叨
+#### 我很唠叨
 
 是的，我很唠叨。
 
@@ -54,7 +94,7 @@ cover-img: image/youtube_cover.png
 
 但是，希望对喜欢、支持鲸析的人来说，唠叨的后果是成长。
 
-### 我说话直
+#### 我说话直
 
 如数据这一行，就要做好终身学习的准备。
 
@@ -66,9 +106,7 @@ cover-img: image/youtube_cover.png
 
 内驱力拉满，你才能在这找到你想要的。
 
----
-
-## 👉关于鲸析
+#### 👉关于鲸析
 
 我不是商人，我愿称自己为一名老师。
 
