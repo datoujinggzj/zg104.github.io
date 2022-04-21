@@ -3,9 +3,9 @@ layout: page
 cover-img: image/youtube_cover.png
 ---
 
-<div align=center>
+
 <img src=https://github.com/datoujinggzj/WhaleDataScienceProject/blob/master/pic/followme_cover.gif?raw=true width='800' />
-</div>
+
 
 ---
 
@@ -21,7 +21,7 @@ Don't forget to follow my channel! 👇👇👇
 
 <iframe width="600" height="450" src="https://www.youtube.com/embed/wylE0sLhvUA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<iframe width="965" height="419" src="https://www.youtube.com/embed/vJCvyPof5gc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="750" height="450" src="https://www.youtube.com/embed/vJCvyPof5gc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
   
   
