@@ -1,8 +1,8 @@
 ---
 layout: page
-title: 「鲸析」
+title: 「鲸 析 数 据」
 subtitle: 关注鲸析 给你惊喜
-cover-img: image/cover10.jpg
+cover-img: image/youtube_cover.png
 ---
 
 
