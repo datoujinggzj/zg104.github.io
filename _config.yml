@@ -29,11 +29,11 @@ navbar-links:
 #     - Week1 KNN & CV: 'DATA3888_2021_Week1_cv'
 #     - Week1 Clustering: 'DATA3888_2021_Week1_clustering'
 
-  数据库: 
-    - 简单: "sql"
-    - 中等: "sql_medium"
+#   数据库: 
+#     - 简单: "sql"
+#     - 中等: "sql_medium"
     
-  数据分析: "Python_source"
+  🔥鲸析课堂🔥: "DSCrashCourse"
 #     - Matplotlib: "Matplotlib"
 #     - Seaborn: "Seaborn"
 #     - Plotly: "Plotly"
