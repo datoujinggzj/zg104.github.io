@@ -1,14 +1,10 @@
-# Python数据分析|数据科学资源大全
+# # Whale Repository
 
+<iframe width="973" height="465" src="https://www.youtube.com/embed/gGZZwDCbwmM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+## Python数据可视化
 
-
-
-
-
-## 数据分析
-
-- Matplotlib
-- [Seaborn](https://raw.githubusercontent.com/zg104/zg104.github.io/master/Seaborn.html)
-- Plotly
+- [Matplotlib](https://zg104.github.io/Seaborn)
+- [Seaborn](https://zg104.github.io/Seaborn)
+- [Plotly](https://zg104.github.io/Plotly)
 
