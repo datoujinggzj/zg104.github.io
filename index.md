@@ -4,7 +4,10 @@ title: 鲸 析 数 据
 subtitle: StudyWhale StudyWell
 ---
 
-<img src="image/studywhale.png" style="zoom: 35%;" />
+<div align=center>
+<img src="image/studywhale.png" style="zoom: 50%;" />
+</div>
 
-<center><font size = 4>💖关注鲸析 给你惊喜💖</font></center>
+
+<center><font size = 4>💖<b>关注鲸析 给你惊喜</b>💖</font></center>
 
