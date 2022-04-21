@@ -5,7 +5,7 @@ subtitle: StudyWhale StudyWell
 ---
 
 <div align=center>
-<img src="image/studywhale.png" style="zoom: 40%;" />
+<img src="image/studywhale.png" style="zoom: 60%;" />
 </div>
 
 
