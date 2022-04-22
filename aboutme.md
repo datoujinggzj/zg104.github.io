@@ -25,22 +25,9 @@ Don't forget to follow my channel! 👇👇👇
 
   
   
-### 👉个人公众号：鲸析
+### 👉Find Me 
 
-
-
-
-![](https://github.com/datoujinggzj/WhaleDataScienceProject/blob/master/pic/qrcode_account.jpg?raw=true)
-
-  
-  
-
-### 👉个人小红书：鲸鲸说数据🐋
-
-
-
-
-![](image/xhs_qr.png)
+![](image/ds_repo_qr.png)
   
 
 ### 👉Gitee
@@ -120,7 +107,7 @@ If you want to know MORE about me, please go ahead!
 
 鲸析不是机构，我愿称它是我的教案。
 
-我相信我们有能力、且一定会帮助更多的伙伴！
+每个梦想的背后，都是恒久的坚持！
 
 
 
