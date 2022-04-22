@@ -110,9 +110,9 @@ round-avatar: true
 # If you don't want to show a link to an RSS feed, set rss to "false".
 social-network-links:
   email: "2328247224@qq.com"
-  facebook: zijing.gao.12
+#   facebook: zijing.gao.12
   github: datoujinggzj
-  twitter: Zijing39896593
+#   twitter: Zijing39896593
   rss: false
 #  weixin: datoujinggzj
 #  reddit: yourname
@@ -134,8 +134,8 @@ social-network-links:
 
 # Select which social network share links to show in posts
 share-links-active:
-  twitter: true
-  facebook: true
+#   twitter: true
+#   facebook: true
   linkedin: true
 
 # How to display the link to your website in the footer
